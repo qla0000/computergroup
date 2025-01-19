@@ -42,16 +42,9 @@
   --accent-900: #002e7a;
   --accent-950: #001f51;
 
-  /* Háttér és szöveg */
-  --background: #fafbff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--primary-950);
-    --foreground: var(--neutral-50);
-  }
+  /* Alapértelmezett háttér és szöveg */
+  --background: var(--primary-950);
+  --foreground: var(--neutral-50);
 }
 
 body {
