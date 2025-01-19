@@ -18,7 +18,7 @@ export default function ContactForm() {
           <input
             type="text"
             placeholder="Név"
-            className="w-full rounded-lg border border-primary-200 p-3 transition-all duration-300 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 group-hover:border-primary-400 dark:border-primary-700 dark:bg-primary-800/50"
+            className="w-full rounded-lg border border-primary-200 bg-neutral-50 p-3 text-primary-900 placeholder:text-primary-400 transition-all duration-300 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 group-hover:border-primary-400 dark:border-primary-700 dark:bg-primary-800 dark:text-primary-50 dark:placeholder:text-primary-400"
             required
           />
         </div>
@@ -26,7 +26,7 @@ export default function ContactForm() {
           <input
             type="email"
             placeholder="Email"
-            className="w-full rounded-lg border border-primary-200 p-3 transition-all duration-300 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 group-hover:border-primary-400 dark:border-primary-700 dark:bg-primary-800/50"
+            className="w-full rounded-lg border border-primary-200 bg-neutral-50 p-3 text-primary-900 placeholder:text-primary-400 transition-all duration-300 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 group-hover:border-primary-400 dark:border-primary-700 dark:bg-primary-800 dark:text-primary-50 dark:placeholder:text-primary-400"
             required
           />
         </div>
@@ -35,7 +35,7 @@ export default function ContactForm() {
         <textarea
           placeholder="Üzenet"
           rows={6}
-          className="w-full rounded-lg border border-primary-200 p-3 transition-all duration-300 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 group-hover:border-primary-400 dark:border-primary-700 dark:bg-primary-800/50"
+          className="w-full rounded-lg border border-primary-200 bg-neutral-50 p-3 text-primary-900 placeholder:text-primary-400 transition-all duration-300 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 group-hover:border-primary-400 dark:border-primary-700 dark:bg-primary-800 dark:text-primary-50 dark:placeholder:text-primary-400"
           required
         ></textarea>
       </div>
