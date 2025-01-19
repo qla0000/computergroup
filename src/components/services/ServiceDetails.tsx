@@ -72,7 +72,7 @@ export default function ServiceDetails() {
     <section className="py-24">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <div 
               key={service.title}
               className="group p-6 bg-primary-50 dark:bg-primary-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "next build && gh-pages -d out"
   },
   "dependencies": {
     "@hcaptcha/react-hcaptcha": "^1.11.1",
@@ -27,6 +28,7 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
+    "gh-pages": "^6.3.0",
     "postcss": "^8",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.10",

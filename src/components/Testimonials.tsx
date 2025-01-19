@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import Image from 'next/image';
 
 // Swiper CSS importok
 import "swiper/css";
@@ -62,13 +63,15 @@ export default function Testimonials() {
             <SwiperSlide key={testimonial.name}>
               <div className="rounded-lg bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-primary-800">
                 <div className="mb-4 text-primary-700 dark:text-primary-200">
-                  "{testimonial.content}"
+                  <p>&quot;{testimonial.content}&quot;</p>
                 </div>
                 <div className="flex items-center">
                   <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-accent-500">
-                    <img
+                    <Image 
                       src={testimonial.image}
                       alt={testimonial.name}
+                      width={64}
+                      height={64}
                       className="h-full w-full object-cover"
                     />
                   </div>

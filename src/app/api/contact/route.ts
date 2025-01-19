@@ -30,10 +30,10 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ success: true });
-  } catch (error: any) {
+  } catch (error: Error | unknown) {
     console.error('Resend API hiba:', error);
     return NextResponse.json(
-      { error: error.message || 'Ismeretlen hiba történt' },
+      { error: error instanceof Error ? error.message : 'Ismeretlen hiba történt' },
       { status: 500 }
     );
   }
