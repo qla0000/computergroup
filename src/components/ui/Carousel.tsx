@@ -6,22 +6,22 @@ import Image from "next/image";
 const slides = [
   {
     image: "/responsiveness.jpg",
-    title: "Digitális Megoldások a Jövőért",
-    description: "Modern webalkalmazások fejlesztése, amelyek előreviszik vállalkozását",
+    title: "Értékesítést segítő weboldalakat készítünk vállalkozásának",
+    description: "Valójában egy dolgot csinálunk, de annak minden részletét, ráadásul szívből: WEBOLDALT",
     buttonText: "Kapcsolatfelvétel",
     buttonLink: "/contact"
   },
   {
     image: "/ui-design-mac.jpg",
-    title: "Egyedi Fejlesztések",
-    description: "Személyre szabott megoldások az Ön vállalkozásának egyedi igényeire",
+    title: "Együtt gondolkodunk",
+    description: "Számíthatsz ránk a stratégiai tervezéstől kezdve, a tartalom és a design kialakításán át, egészen a lenyűgöző végeredmény publikálásig.",
     buttonText: "Szolgáltatásaink",
     buttonLink: "/services"
   },
   {
     image: "/webpage-on-mac.jpg",
-    title: "Innovatív Technológiák",
-    description: "A legújabb technológiák használata a maximális hatékonyság érdekében",
+    title: "Hosszútávú partnerség",
+    description: "Nálunk a weboldalkészítés nemcsak egyszeri tevékenység, hanem egy hosszú távú partnerség kezdete. Évek múlva is ott leszünk, ha változtatni, fejleszteni szeretne az oldalán.",
     buttonText: "Portfólió",
     buttonLink: "/portfolio"
   }
