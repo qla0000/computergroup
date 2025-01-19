@@ -41,9 +41,11 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="bg-gray-50 py-20 dark:bg-gray-900">
+    <section className="bg-primary-50 py-20 dark:bg-primary-900">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-4xl font-bold">Ügyfeleink Mondták</h2>
+        <h2 className="mb-12 text-center text-4xl font-bold text-primary-900 dark:text-primary-50">
+          Ügyfeleink Mondták
+        </h2>
         <Swiper
           modules={[Pagination, Autoplay]}
           spaceBetween={30}
@@ -58,12 +60,12 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.name}>
-              <div className="rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800">
-                <div className="mb-4 text-gray-600 dark:text-gray-300">
+              <div className="rounded-lg bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-primary-800">
+                <div className="mb-4 text-primary-700 dark:text-primary-200">
                   "{testimonial.content}"
                 </div>
                 <div className="flex items-center">
-                  <div className="h-12 w-12 overflow-hidden rounded-full">
+                  <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-accent-500">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
@@ -71,8 +73,10 @@ export default function Testimonials() {
                     />
                   </div>
                   <div className="ml-4">
-                    <div className="font-bold">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                    <div className="font-bold text-primary-900 dark:text-primary-50">
+                      {testimonial.name}
+                    </div>
+                    <div className="text-sm text-primary-600 dark:text-primary-300">
                       {testimonial.role}
                     </div>
                   </div>

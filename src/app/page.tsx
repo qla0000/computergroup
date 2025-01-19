@@ -1,4 +1,4 @@
-import Hero from "@/components/ui/Hero";
+import Carousel from "@/components/ui/Carousel";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <main>
-        <Hero />
+        <Carousel />
         <Services />
         <Portfolio />
         <Testimonials />

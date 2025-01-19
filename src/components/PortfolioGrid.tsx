@@ -32,7 +32,7 @@ export default function PortfolioGrid() {
           {projects.map((project) => (
             <div 
               key={project.title}
-              className="group overflow-hidden rounded-lg bg-white shadow-lg transition hover:shadow-xl dark:bg-gray-800"
+              className="group overflow-hidden rounded-lg bg-white shadow-lg transition hover:shadow-xl dark:bg-primary-900"
             >
               <div className="relative aspect-video">
                 <Image
@@ -43,18 +43,18 @@ export default function PortfolioGrid() {
                 />
               </div>
               <div className="p-6">
-                <div className="mb-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                <div className="mb-2 inline-block rounded-full bg-primary-100 px-3 py-1 text-sm text-primary-800 dark:bg-primary-800 dark:text-primary-100">
                   {project.category}
                 </div>
-                <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
-                <p className="mb-4 text-gray-600 dark:text-gray-300">
+                <h3 className="mb-2 text-xl font-bold text-primary-900 dark:text-primary-50">{project.title}</h3>
+                <p className="mb-4 text-primary-700 dark:text-primary-200">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-800 dark:bg-gray-700 dark:text-gray-300"
+                      className="rounded-full bg-accent-100 px-3 py-1 text-sm text-accent-800 dark:bg-accent-900 dark:text-accent-100"
                     >
                       {tech}
                     </span>

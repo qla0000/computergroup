@@ -4,12 +4,12 @@ export default function Hero() {
   return (
     <section className="relative h-screen w-screen">
       {/* Háttér videó vagy animált gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 to-secondary-600/20 animate-gradient" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-400/20 to-accent-400/20 animate-gradient" />
       
       {/* Lebegő elemek */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-float absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-primary-400/10" />
-        <div className="animate-float-delayed absolute top-1/2 right-1/4 h-48 w-48 rounded-full bg-secondary-400/10" />
+        <div className="animate-float absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-primary-300/10" />
+        <div className="animate-float-delayed absolute top-1/2 right-1/4 h-48 w-48 rounded-full bg-accent-300/10" />
       </div>
 
       {/* Fő tartalom */}
@@ -32,7 +32,7 @@ export default function Hero() {
             Modern webalkalmazások fejlesztése, amelyek előreviszik vállalkozását
           </p>
           <a href="/contact">
-            <button className="rounded-full bg-blue-600 px-6 py-3 text-base font-semibold transition-all duration-300 hover:bg-blue-700 hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:scale-105 sm:px-8 sm:py-4 sm:text-lg translate-y-10 transform opacity-0 animate-[slideUp_1s_ease-out_0.6s_forwards]">
+            <button className="rounded-full bg-primary-500 px-6 py-3 text-base font-semibold transition-all duration-300 hover:bg-primary-600 hover:shadow-[0_0_30px_rgba(3,169,244,0.5)] hover:scale-105 sm:px-8 sm:py-4 sm:text-lg translate-y-10 transform opacity-0 animate-[slideUp_1s_ease-out_0.6s_forwards]">
               Kapcsolatfelvétel
             </button>
           </a>

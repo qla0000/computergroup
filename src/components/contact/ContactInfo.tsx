@@ -7,10 +7,10 @@ export default function ContactInfo() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold transition-colors duration-300 group-hover:text-primary-600 sm:text-2xl">
+      <h2 className="text-xl font-bold transition-colors duration-300 group-hover:text-primary-500 sm:text-2xl">
         Elérhetőségeink
       </h2>
-      {contactDetails.map((detail, index) => (
+      {contactDetails.map((detail) => (
         <div 
           key={detail.title}
           className="flex items-start space-x-4 transform transition-all duration-300 hover:translate-x-2"
@@ -19,10 +19,10 @@ export default function ContactInfo() {
             {detail.icon}
           </div>
           <div>
-            <h3 className="font-semibold text-gray-900 dark:text-white">
+            <h3 className="font-semibold text-primary-900 dark:text-primary-50">
               {detail.title}
             </h3>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-primary-700 dark:text-primary-200">
               {detail.content}
             </p>
           </div>
