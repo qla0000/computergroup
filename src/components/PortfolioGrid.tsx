@@ -3,24 +3,51 @@ import Image from "next/image";
 const projects = [
   {
     title: "E-commerce Platform",
-    description: "Modern webáruház fejlesztése React és Next.js alapokon",
-    image: "/ia-forrest.png",
-    category: "Webshop",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Stripe"]
-  },
-  {
-    title: "SaaS Dashboard",
-    description: "Komplex adminisztrációs felület vállalatirányítási rendszerhez",
-    image: "/ia-forrest.png",
-    category: "Alkalmazás",
-    technologies: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"]
+    description: "Modern webáruház fejlesztése React és Next.js alapokon. Teljes körű e-commerce megoldás egyedi design-nal és adminisztrációs felülettel.",
+    image: "/portfolio/ecommerce.webp",
+    category: "Webáruház",
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
+    link: "#"
   },
   {
     title: "Vállalati Weboldal",
-    description: "Reszponzív vállalati weboldal tervezése és fejlesztése",
-    image: "/ia-forrest.png",
+    description: "Reszponzív vállalati weboldal tervezése és fejlesztése. Modern, letisztult design SEO-optimalizálással.",
+    image: "/portfolio/corporate.webp",
     category: "Weboldal",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"]
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
+    link: "#"
+  },
+  {
+    title: "SaaS Dashboard",
+    description: "Komplex adminisztrációs felület vállalatirányítási rendszerhez. Valós idejű adatmegjelenítés és elemzések.",
+    image: "/portfolio/dashboard.webp",
+    category: "Alkalmazás",
+    technologies: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"],
+    link: "#"
+  },
+  {
+    title: "Ingatlan Portál",
+    description: "Ingatlan kereső és hirdető platform fejlesztése részletes keresési funkciókkal és térképes megjelenítéssel.",
+    image: "/portfolio/realestate.webp",
+    category: "Webportál",
+    technologies: ["Next.js", "MongoDB", "Google Maps API", "AWS S3"],
+    link: "#"
+  },
+  {
+    title: "Étterem Weboldal",
+    description: "Étterem bemutatkozó oldal online foglalási rendszerrel és ételrendelési lehetőséggel.",
+    image: "/portfolio/restaurant.webp",
+    category: "Weboldal",
+    technologies: ["React", "Firebase", "Stripe", "Google Calendar API"],
+    link: "#"
+  },
+  {
+    title: "Oktatási Platform",
+    description: "Online oktatási platform videós tartalmakkal, kvízekkel és előrehaladás követéssel.",
+    image: "/portfolio/education.webp",
+    category: "E-learning",
+    technologies: ["Next.js", "PostgreSQL", "AWS", "Mux Video"],
+    link: "#"
   }
 ];
 

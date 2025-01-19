@@ -1,66 +1,96 @@
 export default function ServiceDetails() {
   const services = [
     {
-      title: "Frontend Fejlesztés",
-      description: "Modern, reszponzív webalkalmazások React és Next.js használatával",
+      title: "Tervezés",
+      description: "Közösen meghatározzuk az üzleti célját, megtervezzük az eléréséhez szükséges weboldal struktúráját és tartalmát, majd elkészítjük annak tervrajzát.",
       features: [
-        "Reszponzív webdesign",
-        "Modern UI komponensek",
-        "Teljesítményoptimalizálás",
-        "SEO-barát fejlesztés"
+        "Üzleti célok elemzése",
+        "Weboldal struktúra tervezés",
+        "Tartalom stratégia",
+        "Wireframe készítés"
+      ],
+      icon: "📋"
+    },
+    {
+      title: "Szövegírás",
+      description: "Segítünk a tartalom összeállításában és a szövegírásban, hogy az önazonos, de mégis hatásos, könnyen érthető és konverzióra optimalizált legyen.",
+      features: [
+        "SEO-optimalizált szövegírás",
+        "Konverziófókuszú tartalom",
+        "Márkaidentitás tükrözése",
+        "Célközönség-specifikus megfogalmazás"
+      ],
+      icon: "✍️"
+    },
+    {
+      title: "Webdesign kidolgozás",
+      description: "Kidolgozzuk a weboldalát egyedi látványtervét, amely személyiségét és márkáját tükrözi, így bizalmat, hitelességet és profizmust sugall majd.",
+      features: [
+        "Egyedi dizájn tervezés",
+        "Reszponzív megjelenés",
+        "Modern UI elemek",
+        "Márkaidentitás integráció"
       ],
       icon: "🎨"
     },
     {
-      title: "Backend Fejlesztés",
-      description: "Skálázható szerveroldali megoldások Node.js és TypeScript alapokon",
+      title: "Webfejlesztés",
+      description: "Megépítjük a megbeszéltek szerinti tervet – minden eszközön tökéletesen megjelenő – reszponzív kialakítást úgy, hogy közben minél jobban megfeleljen a keresőmotorok elvárásainak.",
       features: [
-        "API fejlesztés",
-        "Adatbázis tervezés",
-        "Biztonságos authentikáció",
-        "Teljesítmény optimalizálás"
+        "Reszponzív fejlesztés",
+        "SEO-barát kódolás",
+        "Teljesítményoptimalizálás",
+        "Keresztböngésző kompatibilitás"
       ],
-      icon: "⚙️"
+      icon: "💻"
     },
     {
-      title: "UI/UX Tervezés",
-      description: "Felhasználóbarát felületek tervezése és implementálása",
+      title: "Támogatás, karbantartás",
+      description: "Átadás után sem hagyunk magadra, gondoskodunk weboldala biztonságáról és rendelkezésedre állunk, ha módosítanál a tartalmán.",
       features: [
-        "Felhasználói felület tervezés",
-        "Prototípus készítés",
-        "Használhatósági tesztelés",
-        "Design rendszerek"
+        "Folyamatos biztonsági frissítések",
+        "Rendszeres mentések",
+        "Technikai támogatás",
+        "Tartalom frissítések"
       ],
-      icon: "✨"
+      icon: "🛠️"
+    },
+    {
+      title: "Hirdetés, Marketing",
+      description: "Segítünk kidolgozni a megfelelő hirdetési stratégiákat a szükséges platformokon – Google, Facebook, Instagram, stb.",
+      features: [
+        "Google Ads kampányok",
+        "Social media marketing",
+        "Analitika és követés",
+        "Konverzióoptimalizálás"
+      ],
+      icon: "📈"
     }
   ];
 
   return (
-    <section className="py-20">
+    <section className="py-24">
       <div className="container mx-auto px-4">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div 
-              key={service.title} 
-              className="group rounded-xl bg-white p-8 shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 dark:bg-primary-900 opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]"
-              style={{ animationDelay: `${index * 200}ms` }}
+              key={service.title}
+              className="group p-6 bg-primary-50 dark:bg-primary-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              <div className="mb-6 text-4xl transition-transform duration-300 group-hover:scale-125">
-                {service.icon}
-              </div>
-              <h3 className="mb-4 text-2xl font-bold transition-colors duration-300 group-hover:text-accent-500">
+              <div className="mb-4 text-4xl">{service.icon}</div>
+              <h3 className="text-xl font-bold mb-3 text-primary-900 dark:text-primary-50 group-hover:text-accent-500 dark:group-hover:text-accent-400 transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="mb-6 text-primary-700 dark:text-primary-200">
+              <p className="mb-4 text-primary-700 dark:text-primary-300">
                 {service.description}
               </p>
-              <ul className="space-y-3">
-                {service.features.map((feature) => (
+              <ul className="space-y-2">
+                {service.features.map((feature, featureIndex) => (
                   <li 
-                    key={feature} 
-                    className="flex items-center text-primary-600 dark:text-primary-300 transition-transform duration-300 hover:translate-x-2"
+                    key={featureIndex}
+                    className="flex items-center text-primary-600 dark:text-primary-400"
                   >
-                    <span className="mr-2 text-accent-500">•</span>
+                    <span className="mr-2">•</span>
                     {feature}
                   </li>
                 ))}

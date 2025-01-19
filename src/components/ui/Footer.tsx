@@ -49,37 +49,57 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-primary-100 dark:bg-primary-800">
+    <footer className="relative overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900 dark:to-primary-950">
       <div className="absolute inset-0">
-        <div className="animate-pulse-slow absolute -left-32 bottom-0 h-64 w-64 rounded-full bg-primary-200/20 dark:bg-primary-300/10" />
-        <div className="animate-pulse-slow absolute -right-32 top-0 h-64 w-64 rounded-full bg-primary-300/20 dark:bg-primary-400/10" />
+        <div className="animate-float absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-primary-200/20 blur-3xl dark:bg-primary-300/10" />
+        <div className="animate-float-delayed absolute -right-32 top-0 h-96 w-96 rounded-full bg-accent-200/20 blur-3xl dark:bg-accent-300/10" />
       </div>
       
-      <div className="container relative mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-200 dark:via-primary-700 to-transparent" />
+      
+      <div className="container relative mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-3 group">
-            <div className="mb-4 transition-transform duration-300 hover:scale-105">
+            <div className="mb-6 inline-block transform transition-all duration-300 hover:scale-105">
               <Image
                 src="/logo.png"
                 alt="Company Logo"
-                width={150}
-                height={40}
+                width={180}
+                height={48}
                 className="dark:invert"
               />
             </div>
-            <p className="text-primary-600 dark:text-primary-300 transition-colors duration-300 group-hover:text-primary-700 dark:group-hover:text-primary-200">
+            <p className="max-w-sm text-primary-600 dark:text-primary-300">
               Modern webalkalmazások fejlesztése, amelyek előreviszik vállalkozását
             </p>
+            <div className="mt-8 flex space-x-5">
+              {navigation.social.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="group relative rounded-full bg-white p-3 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-primary-800"
+                >
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon 
+                    className="h-5 w-5 text-primary-600 transition-colors duration-300 group-hover:text-accent-500 dark:text-primary-300" 
+                    aria-hidden="true" 
+                  />
+                </Link>
+              ))}
+            </div>
           </div>
           <nav className="lg:col-span-2">
-            <h3 className="mb-4 font-semibold text-primary-900 dark:text-primary-50">Menü</h3>
-            <ul className="space-y-3">
+            <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">
+              Menü
+            </h3>
+            <ul className="space-y-4">
               {navigation.main.map((item) => (
-                <li key={item.name} className="transform transition-all duration-300 hover:translate-x-2">
+                <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-primary-600 transition-colors duration-300 hover:text-primary-400 dark:text-primary-300 dark:hover:text-primary-200"
+                    className="group flex items-center text-primary-600 transition-all duration-300 hover:text-accent-500 dark:text-primary-300"
                   >
+                    <span className="mr-2 h-px w-0 bg-accent-500 transition-all duration-300 group-hover:w-6" />
                     {item.name}
                   </Link>
                 </li>
@@ -87,14 +107,15 @@ export default function Footer() {
             </ul>
           </nav>
           <nav className="lg:col-span-2">
-            <h3 className="mb-4 font-semibold text-primary-900 dark:text-primary-50">Szolgáltatások</h3>
-            <ul className="space-y-3">
+            <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">Szolgáltatások</h3>
+            <ul className="space-y-4">
               {navigation.services.map((item) => (
-                <li key={item.name} className="transform transition-all duration-300 hover:translate-x-2">
+                <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-primary-600 transition-colors duration-300 hover:text-primary-400 dark:text-primary-300 dark:hover:text-primary-200"
+                    className="group flex items-center text-primary-600 transition-all duration-300 hover:text-accent-500 dark:text-primary-300"
                   >
+                    <span className="mr-2 h-px w-0 bg-accent-500 transition-all duration-300 group-hover:w-6" />
                     {item.name}
                   </Link>
                 </li>
@@ -102,14 +123,15 @@ export default function Footer() {
             </ul>
           </nav>
           <nav className="lg:col-span-2">
-            <h3 className="mb-4 font-semibold text-primary-900 dark:text-primary-50">Cég</h3>
-            <ul className="space-y-3">
+            <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">Cég</h3>
+            <ul className="space-y-4">
               {navigation.company.map((item) => (
-                <li key={item.name} className="transform transition-all duration-300 hover:translate-x-2">
+                <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-primary-600 transition-colors duration-300 hover:text-primary-400 dark:text-primary-300 dark:hover:text-primary-200"
+                    className="group flex items-center text-primary-600 transition-all duration-300 hover:text-accent-500 dark:text-primary-300"
                   >
+                    <span className="mr-2 h-px w-0 bg-accent-500 transition-all duration-300 group-hover:w-6" />
                     {item.name}
                   </Link>
                 </li>
@@ -117,57 +139,52 @@ export default function Footer() {
             </ul>
           </nav>
           <div className="lg:col-span-3">
-            <h3 className="mb-4 font-semibold text-primary-900 dark:text-primary-50">Kapcsolat</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center space-x-3 text-primary-600 dark:text-primary-300">
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span>{navigation.contact.email}</span>
+            <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">
+              Kapcsolat
+            </h3>
+            <ul className="space-y-4">
+              <li className="group flex items-center space-x-3 text-primary-600 dark:text-primary-300">
+                <div className="rounded-full bg-white p-2 shadow-md transition-all duration-300 group-hover:shadow-lg dark:bg-primary-800">
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <span className="transition-colors duration-300 group-hover:text-accent-500">
+                  {navigation.contact.email}
+                </span>
               </li>
-              <li className="flex items-center space-x-3 text-primary-600 dark:text-primary-300">
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span>{navigation.contact.phone}</span>
+              <li className="group flex items-center space-x-3 text-primary-600 dark:text-primary-300">
+                <div className="rounded-full bg-white p-2 shadow-md transition-all duration-300 group-hover:shadow-lg dark:bg-primary-800">
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <span className="transition-colors duration-300 group-hover:text-accent-500">
+                  {navigation.contact.phone}
+                </span>
               </li>
-              <li className="flex items-center space-x-3 text-primary-600 dark:text-primary-300">
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span>{navigation.contact.address}</span>
+              <li className="group flex items-center space-x-3 text-primary-600 dark:text-primary-300">
+                <div className="rounded-full bg-white p-2 shadow-md transition-all duration-300 group-hover:shadow-lg dark:bg-primary-800">
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <span className="transition-colors duration-300 group-hover:text-accent-500">
+                  {navigation.contact.address}
+                </span>
               </li>
             </ul>
-            <div className="mt-6 flex space-x-6">
-              {navigation.social.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-primary-500 transition-all duration-300 hover:scale-125 hover:text-primary-400 dark:text-primary-300 dark:hover:text-primary-200"
-                >
-                  <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-6 w-6" aria-hidden="true" />
-                </Link>
-              ))}
-            </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-primary-200 dark:border-primary-800 pt-8">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <p className="text-primary-600 dark:text-primary-300 transition-opacity duration-300 hover:opacity-75">
-              © {new Date().getFullYear()} Minden jog fenntartva.
-            </p>
-            <div className="flex space-x-6 sm:justify-end">
-              <Link href="/privacy" className="text-primary-600 transition-colors duration-300 hover:text-primary-400 dark:text-primary-300 dark:hover:text-primary-200">
-                Adatvédelem
-              </Link>
-              <Link href="/terms" className="text-primary-600 transition-colors duration-300 hover:text-primary-400 dark:text-primary-300 dark:hover:text-primary-200">
-                ÁSZF
-              </Link>
-              <Link href="/cookies" className="text-primary-600 transition-colors duration-300 hover:text-primary-400 dark:text-primary-300 dark:hover:text-primary-200">
-                Cookie szabályzat
-              </Link>
+        <div className="relative mt-16 pt-8">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-200 dark:via-primary-700 to-transparent" />
+          <div className="flex flex-col items-center justify-between space-y-4 text-sm text-primary-500 dark:text-primary-400 sm:flex-row sm:space-y-0">
+            <p>© {new Date().getFullYear()} Minden jog fenntartva.</p>
+            <div className="flex space-x-8">
+              <Link href="/privacy" className="hover:text-accent-500">Adatvédelem</Link>
+              <Link href="/terms" className="hover:text-accent-500">ÁSZF</Link>
+              <Link href="/cookies" className="hover:text-accent-500">Cookie szabályzat</Link>
             </div>
           </div>
         </div>

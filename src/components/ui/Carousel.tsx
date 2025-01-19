@@ -6,7 +6,7 @@ import Image from "next/image";
 const slides = [
   {
     image: "/responsiveness.jpg",
-    title: "Értékesítést segítő weboldalakat készítünk vállalkozásának",
+    title: "Modern weboldalak készítése",
     description: "Valójában egy dolgot csinálunk, de annak minden részletét, ráadásul szívből: WEBOLDALT",
     buttonText: "Kapcsolatfelvétel",
     buttonLink: "/contact"
