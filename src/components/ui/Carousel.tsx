@@ -132,8 +132,8 @@ export default function Carousel() {
             onClick={() => setCurrentSlide(index)}
             className={`h-2 w-2 rounded-full transition-all duration-300 sm:h-3 sm:w-3 ${
               currentSlide === index
-                ? "bg-accent-400 w-8 sm:w-12 shadow-[0_0_10px_rgba(250,204,21,0.5)]"
-                : "bg-primary-100/90 hover:bg-white hover:shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+                ? "bg-accent-400 w-8 sm:w-12 shadow-[0_0_10px_rgba(58,169,255,0.5)]"
+                : "bg-primary-300 hover:bg-primary-400 hover:shadow-[0_0_10px_rgba(58,169,255,0.3)]"
             }`}
             aria-label={`Ugrás a ${index + 1}. diára`}
           />

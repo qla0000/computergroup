@@ -3,53 +3,53 @@
 @tailwind utilities;
 
 :root {
-  /* Elsődleges színek */
+  /* Elsődleges színek - világoskék árnyalatok */
   --primary-50: #f0f9ff;
-  --primary-100: #e0f2fe;
-  --primary-200: #bae6fd;
-  --primary-300: #7dd3fc;
-  --primary-400: #38bdf8;
-  --primary-500: #0ea5e9;
-  --primary-600: #0284c7;
-  --primary-700: #0369a1;
-  --primary-800: #075985;
-  --primary-900: #0c4a6e;
-  --primary-950: #082f49;
+  --primary-100: #e0f7ff;
+  --primary-200: #b9ecff;
+  --primary-300: #7dd8ff;
+  --primary-400: #38beff;
+  --primary-500: #0099ff;
+  --primary-600: #0077ff;
+  --primary-700: #0066cc;
+  --primary-800: #0052a3;
+  --primary-900: #003d7a;
+  --primary-950: #002851;
 
-  /* Semleges színek */
-  --neutral-50: #f8fafc;
-  --neutral-100: #f1f5f9;
-  --neutral-200: #e2e8f0;
-  --neutral-300: #cbd5e1;
-  --neutral-400: #94a3b8;
-  --neutral-500: #64748b;
-  --neutral-600: #475569;
-  --neutral-700: #334155;
-  --neutral-800: #1e293b;
-  --neutral-900: #0f172a;
-  --neutral-950: #020617;
+  /* Semleges színek - világosabb árnyalatok */
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+  --neutral-950: #0a0a0a;
 
-  /* Accent színek */
-  --accent-50: #fffbeb;
-  --accent-100: #fef3c7;
-  --accent-200: #fde68a;
-  --accent-300: #fcd34d;
-  --accent-400: #fbbf24;
-  --accent-500: #f59e0b;
-  --accent-600: #d97706;
-  --accent-700: #b45309;
-  --accent-800: #92400e;
-  --accent-900: #78350f;
-  --accent-950: #451a03;
+  /* Accent színek - élénkebb kék árnyalatok */
+  --accent-50: #f0f7ff;
+  --accent-100: #e0efff;
+  --accent-200: #b8dfff;
+  --accent-300: #7cc7ff;
+  --accent-400: #3aa9ff;
+  --accent-500: #0088ff;
+  --accent-600: #006ee6;
+  --accent-700: #0058cc;
+  --accent-800: #0042a3;
+  --accent-900: #002e7a;
+  --accent-950: #001f51;
 
   /* Háttér és szöveg */
-  --background: #ffffff;
-  --foreground: #001333;
+  --background: #fafbff;
+  --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--neutral-950);
+    --background: var(--primary-950);
     --foreground: var(--neutral-50);
   }
 }

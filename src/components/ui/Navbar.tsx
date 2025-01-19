@@ -31,7 +31,7 @@ export default function Navbar() {
       {/* Navbar háttér */}
       <div className={`absolute inset-0 transition-all duration-300 ${
         scrolled 
-          ? 'bg-primary-900/90 backdrop-blur-md dark:bg-primary-950/90' 
+          ? 'bg-primary-900/70 backdrop-blur-sm dark:bg-primary-950/70' 
           : 'bg-transparent'
       } ${isOpen ? '!bg-primary-900/95 dark:!bg-primary-950/95' : ''}`} />
 
