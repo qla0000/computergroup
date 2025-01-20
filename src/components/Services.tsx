@@ -20,20 +20,20 @@ export default function Services() {
     return (
       <section className="py-12 sm:py-16 md:py-20 bg-primary-50 dark:bg-primary-900" id="services">
         <div className="container mx-auto px-4">
-          <h2 className="mb-8 text-center text-3xl font-bold sm:mb-12 sm:text-4xl hover:text-accent-500 transition-colors duration-300">
+          <h2 className="mb-8 text-center text-4xl font-bold text-primary-900 sm:mb-12 sm:text-4xl hover:text-accent-500 transition-colors duration-300 dark:text-primary-50">
             Szolgáltatásaink
           </h2>
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service, index) => (
               <div 
                 key={service.title}
-                className="group rounded-lg bg-white p-6 shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 dark:bg-primary-800 sm:p-8 opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]"
+                className="group rounded-lg bg-white p-6 shadow-lg transition-all duration-500 hover:shadow-xl hover:-translate-y-2 dark:bg-primary-800 sm:p-8 opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="mb-4 text-3xl transition-transform duration-300 group-hover:scale-110 sm:text-4xl">
                   {service.icon}
                 </div>
-                <h3 className="mb-3 text-lg font-bold transition-colors duration-300 group-hover:text-accent-500 sm:mb-4 sm:text-xl">
+                <h3 className="mb-3 text-lg font-bold text-primary-900 transition-colors duration-300 group-hover:text-accent-500 sm:mb-4 sm:text-xl dark:text-primary-50">
                   {service.title}
                 </h3>
                 <p className="text-sm text-primary-700 transition-colors duration-300 group-hover:text-primary-900 dark:text-primary-200 dark:group-hover:text-primary-50 sm:text-base">

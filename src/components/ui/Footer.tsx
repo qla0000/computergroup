@@ -14,12 +14,6 @@ export default function Footer() {
       { name: "Backend Fejlesztés", href: "/services#backend" },
       { name: "UI/UX Tervezés", href: "/services#design" },
     ],
-    company: [
-      { name: "Rólunk", href: "/about" },
-      { name: "Karrier", href: "/career" },
-      { name: "Blog", href: "/blog" },
-      { name: "GYIK", href: "/faq" }
-    ],
     contact: {
       email: "info@pelda.hu",
       phone: "+36 1 234 5678",
@@ -57,7 +51,7 @@ export default function Footer() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-200 dark:via-primary-700 to-transparent" />
       
       <div className="container relative mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="mb-6 inline-block transform transition-all duration-300 hover:scale-105">
               <Image
@@ -68,8 +62,8 @@ export default function Footer() {
                 className="dark:invert"
               />
             </div>
-            <p className="max-w-sm text-primary-600 dark:text-primary-300">
-              Modern webalkalmazások fejlesztése, amelyek előreviszik vállalkozását
+            <p className="max-w-sm text-lg font-medium text-primary-800 dark:text-primary-200">
+              Modern webalkalmazások fejlesztése, amelyek előreviszik vállalkozását.
             </p>
             <div className="mt-8 flex space-x-5">
               {navigation.social.map((item) => (
@@ -87,7 +81,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 lg:col-span-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-4">
             <nav>
               <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">
                 Menü
@@ -116,28 +110,6 @@ export default function Footer() {
               </h3>
               <ul className="space-y-4">
                 {navigation.services.map((item) => (
-                  <li key={item.name}>
-                    <div className="relative">
-                      <Link
-                        href={item.href}
-                        className="group flex items-center text-primary-600 transition-all duration-300 hover:text-accent-500 dark:text-primary-300"
-                      >
-                        <span className="absolute left-0 h-px w-0 bg-accent-500 transition-all duration-300 group-hover:w-6" />
-                        <span className="ml-0 transition-all duration-300 group-hover:ml-8">
-                          {item.name}
-                        </span>
-                      </Link>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <nav>
-              <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">
-                Cég
-              </h3>
-              <ul className="space-y-4">
-                {navigation.company.map((item) => (
                   <li key={item.name}>
                     <div className="relative">
                       <Link
