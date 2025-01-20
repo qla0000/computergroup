@@ -127,3 +127,18 @@ body {
     transform: scale(1.1);
   }
 }
+
+@layer utilities {
+  .details-none {
+    & > summary {
+      list-style: none;
+      &::marker,
+      &::-webkit-details-marker {
+        display: none;
+      }
+    }
+    &[open] > summary {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

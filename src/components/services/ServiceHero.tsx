@@ -1,19 +1,18 @@
-import Image from "next/image";
-
 export default function ServiceHero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-20">
       {/* Háttérkép */}
-      <div className="absolute inset-0">
-        <Image
-          src="/code.jpg"
-          alt="Szolgáltatások háttér"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/80 to-primary-950/80" />
-      </div>
+      <div 
+        className="absolute inset-0 bg-[url('/code.jpg')] bg-cover bg-center bg-no-repeat bg-fixed scale-110 sm:scale-105"
+        style={{ 
+          transform: 'scale(var(--bg-scale))',
+          transformOrigin: 'center center',
+          '--bg-scale': 'calc(1.1 + (0.4 * (1 - var(--viewport-scale))))',
+          '--viewport-scale': 'clamp(0, (100vw - 400px) / 800, 1)'
+        } as any}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/60 to-primary-950/60" />
 
       {/* Lebegő elemek */}
       <div className="absolute inset-0 overflow-hidden">

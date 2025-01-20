@@ -10,10 +10,9 @@ export default function Footer() {
       { name: "Kapcsolat", href: "/contact" }
     ],
     services: [
-      { name: "Frontend Fejlesztés", href: "/services#frontend" },
+      { name: "Webfejlesztés", href: "/services#development" },
       { name: "Backend Fejlesztés", href: "/services#backend" },
       { name: "UI/UX Tervezés", href: "/services#design" },
-      { name: "Mobilfejlesztés", href: "/services#mobile" }
     ],
     company: [
       { name: "Rólunk", href: "/about" },
@@ -59,7 +58,7 @@ export default function Footer() {
       
       <div className="container relative mx-auto px-4 py-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-3 group">
+          <div className="lg:col-span-4">
             <div className="mb-6 inline-block transform transition-all duration-300 hover:scale-105">
               <Image
                 src="/logo.png"
@@ -88,57 +87,75 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <nav className="lg:col-span-2">
-            <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">
-              Menü
-            </h3>
-            <ul className="space-y-4">
-              {navigation.main.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="group flex items-center text-primary-600 transition-all duration-300 hover:text-accent-500 dark:text-primary-300"
-                  >
-                    <span className="mr-2 h-px w-0 bg-accent-500 transition-all duration-300 group-hover:w-6" />
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <nav className="lg:col-span-2">
-            <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">Szolgáltatások</h3>
-            <ul className="space-y-4">
-              {navigation.services.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="group flex items-center text-primary-600 transition-all duration-300 hover:text-accent-500 dark:text-primary-300"
-                  >
-                    <span className="mr-2 h-px w-0 bg-accent-500 transition-all duration-300 group-hover:w-6" />
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <nav className="lg:col-span-2">
-            <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">Cég</h3>
-            <ul className="space-y-4">
-              {navigation.company.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="group flex items-center text-primary-600 transition-all duration-300 hover:text-accent-500 dark:text-primary-300"
-                  >
-                    <span className="mr-2 h-px w-0 bg-accent-500 transition-all duration-300 group-hover:w-6" />
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className="lg:col-span-3">
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 lg:col-span-4">
+            <nav>
+              <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">
+                Menü
+              </h3>
+              <ul className="space-y-4">
+                {navigation.main.map((item) => (
+                  <li key={item.name}>
+                    <div className="relative">
+                      <Link
+                        href={item.href}
+                        className="group flex items-center text-primary-600 transition-all duration-300 hover:text-accent-500 dark:text-primary-300"
+                      >
+                        <span className="absolute left-0 h-px w-0 bg-accent-500 transition-all duration-300 group-hover:w-6" />
+                        <span className="ml-0 transition-all duration-300 group-hover:ml-8">
+                          {item.name}
+                        </span>
+                      </Link>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <nav>
+              <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">
+                Szolgáltatások
+              </h3>
+              <ul className="space-y-4">
+                {navigation.services.map((item) => (
+                  <li key={item.name}>
+                    <div className="relative">
+                      <Link
+                        href={item.href}
+                        className="group flex items-center text-primary-600 transition-all duration-300 hover:text-accent-500 dark:text-primary-300"
+                      >
+                        <span className="absolute left-0 h-px w-0 bg-accent-500 transition-all duration-300 group-hover:w-6" />
+                        <span className="ml-0 transition-all duration-300 group-hover:ml-8">
+                          {item.name}
+                        </span>
+                      </Link>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <nav>
+              <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">
+                Cég
+              </h3>
+              <ul className="space-y-4">
+                {navigation.company.map((item) => (
+                  <li key={item.name}>
+                    <div className="relative">
+                      <Link
+                        href={item.href}
+                        className="group flex items-center text-primary-600 transition-all duration-300 hover:text-accent-500 dark:text-primary-300"
+                      >
+                        <span className="absolute left-0 h-px w-0 bg-accent-500 transition-all duration-300 group-hover:w-6" />
+                        <span className="ml-0 transition-all duration-300 group-hover:ml-8">
+                          {item.name}
+                        </span>
+                      </Link>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+          <div className="lg:col-span-4">
             <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">
               Kapcsolat
             </h3>
