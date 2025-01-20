@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import Image from 'next/image';
+import Image from "next/image";
 
 // Swiper CSS importok
 import "swiper/css";
@@ -13,21 +13,24 @@ const testimonials = [
   {
     name: "Nagy Péter",
     role: "CEO, TechStart Kft.",
-    content: "Kiváló munkát végeztek a weboldalunk fejlesztésében. Professzionális és megbízható partner.",
-    image: "/profile.png"
+    content:
+      "Kiváló munkát végeztek a weboldalunk fejlesztésében. Professzionális és megbízható partner.",
+    image: "/profile.png",
   },
   {
     name: "Kiss Anna",
     role: "Marketing Vezető, Digital Solutions",
-    content: "A csapat kreativitása és szakértelme kiemelkedő. Maximálisan elégedettek vagyunk az eredménnyel.",
-    image: "/profile.png"
+    content:
+      "A csapat kreativitása és szakértelme kiemelkedő. Maximálisan elégedettek vagyunk az eredménnyel.",
+    image: "/profile.png",
   },
   {
     name: "Kovács János",
     role: "Alapító, InnoTech",
-    content: "Rugalmas és hatékony együttműködés, modern technológiai megoldások. Csak ajánlani tudom!",
-    image: "/profile.png"
-  }
+    content:
+      "Rugalmas és hatékony együttműködés, modern technológiai megoldások. Csak ajánlani tudom!",
+    image: "/profile.png",
+  },
 ];
 
 export default function Testimonials() {
@@ -42,16 +45,20 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-24">
+    <section className="to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-900 py-24">
       {/* Háttérkép */}
       <div
         className="absolute inset-0 scale-110 bg-[url('/bg-testimonials.jpg')] bg-cover bg-fixed bg-center bg-no-repeat sm:scale-105"
-        style={{ 
-          transform: 'scale(var(--bg-scale))',
-          transformOrigin: 'center center',
-          ['--bg-scale' as string]: 'calc(1.1 + (0.4 * (1 - var(--viewport-scale))))',
-          ['--viewport-scale' as string]: 'clamp(0, (100vw - 400px) / 800, 1)'
-        } as React.CSSProperties}
+        style={
+          {
+            transform: "scale(var(--bg-scale))",
+            transformOrigin: "center center",
+            ["--bg-scale" as string]:
+              "calc(1.1 + (0.4 * (1 - var(--viewport-scale))))",
+            ["--viewport-scale" as string]:
+              "clamp(0, (100vw - 400px) / 800, 1)",
+          } as React.CSSProperties
+        }
         aria-hidden="true"
       />
       <div className="from-primary-900/50 to-primary-950/50 absolute inset-0 bg-gradient-to-br" />
@@ -74,19 +81,19 @@ export default function Testimonials() {
           autoplay={{ delay: 5000 }}
           breakpoints={{
             640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 }
+            1024: { slidesPerView: 3 },
           }}
           className="pb-12"
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.name}>
-              <div className="rounded-lg bg-white/10 backdrop-blur-sm p-8 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-primary-800/50">
+              <div className="dark:bg-primary-800/50 rounded-lg bg-white/10 p-8 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl">
                 <div className="mb-4 text-primary-100">
                   <p>&quot;{testimonial.content}&quot;</p>
                 </div>
                 <div className="flex items-center">
                   <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-accent-500">
-                    <Image 
+                    <Image
                       src={testimonial.image}
                       alt={testimonial.name}
                       width={64}

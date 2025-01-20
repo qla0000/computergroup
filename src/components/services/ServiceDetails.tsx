@@ -5,22 +5,22 @@ export default function ServiceDetails() {
       description:
         "Közösen meghatározzuk az üzleti célját, megtervezzük az eléréséhez szükséges weboldal struktúráját és tartalmát, majd elkészítjük annak tervrajzát.",
       features: [
-        "Üzleti célok elemzése",
+        "Üzleti célok meghatározása",
         "Weboldal struktúra tervezés",
-        "Tartalom stratégia",
+        "Tartalom tervezés",
         "Wireframe készítés",
       ],
-      icon: "📋",
+      icon: "📝",
     },
     {
       title: "Szövegírás",
       description:
         "Segítünk a tartalom összeállításában és a szövegírásban, hogy az önazonos, de mégis hatásos, könnyen érthető és konverzióra optimalizált legyen.",
       features: [
-        "SEO-optimalizált szövegírás",
+        "SEO-optimalizált szövegek",
         "Konverziófókuszú tartalom",
-        "Márkaidentitás tükrözése",
-        "Célközönség-specifikus megfogalmazás",
+        "Márkahang kialakítása",
+        "Könnyen érthető fogalmazás",
       ],
       icon: "✍️",
     },
@@ -29,10 +29,10 @@ export default function ServiceDetails() {
       description:
         "Kidolgozzuk a weboldalát egyedi látványtervét, amely személyiségét és márkáját tükrözi, így bizalmat, hitelességet és profizmust sugall majd.",
       features: [
-        "Egyedi dizájn tervezés",
-        "Reszponzív megjelenés",
-        "Modern UI elemek",
-        "Márkaidentitás integráció",
+        "Egyedi dizájn",
+        "Márkaidentitás tükrözése",
+        "Modern megjelenés",
+        "UX/UI tervezés",
       ],
       icon: "🎨",
     },
@@ -75,7 +75,7 @@ export default function ServiceDetails() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-primary-50 py-24 dark:bg-gradient-to-br dark:from-primary-900 dark:to-primary-950">
+    <section className="dark:to-primary-950 relative overflow-hidden bg-primary-50 py-24 dark:bg-gradient-to-br dark:from-primary-900">
       {/* Lebegő elemek */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="animate-float bg-primary-200/30 dark:bg-primary-300/10 absolute -left-32 bottom-0 h-96 w-96 rounded-full blur-3xl" />
@@ -90,15 +90,15 @@ export default function ServiceDetails() {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group animate-[fadeIn_0.5s_ease-out_forwards] rounded-lg bg-white/80 dark:bg-primary-800 backdrop-blur-md p-6 opacity-0 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:bg-white dark:hover:bg-primary-700 sm:p-8"
+              className="group animate-[fadeIn_0.5s_ease-out_forwards] rounded-lg bg-white/80 p-6 opacity-0 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:bg-white hover:shadow-2xl sm:p-8 dark:bg-primary-800 dark:hover:bg-primary-700"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               {/* Dekoratív elemek */}
-              <div className="bg-accent-500/10 dark:bg-accent-400/5 absolute -right-4 -top-4 h-24 w-24 rounded-full blur-2xl transition-all duration-500 group-hover:bg-accent-500/20 dark:group-hover:bg-accent-400/10" />
-              <div className="bg-primary-500/10 dark:bg-primary-400/5 absolute -bottom-4 -left-4 h-24 w-24 rounded-full blur-2xl transition-all duration-500 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-400/10" />
-              
+              <div className="bg-accent-500/10 dark:bg-accent-400/5 group-hover:bg-accent-500/20 dark:group-hover:bg-accent-400/10 absolute -right-4 -top-4 h-24 w-24 rounded-full blur-2xl transition-all duration-500" />
+              <div className="bg-primary-500/10 dark:bg-primary-400/5 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-400/10 absolute -bottom-4 -left-4 h-24 w-24 rounded-full blur-2xl transition-all duration-500" />
+
               <div className="relative">
-                <div className="mb-4 text-4xl transition-all duration-500 group-hover:scale-110 group-hover:transform group-hover:rotate-12">
+                <div className="mb-4 text-4xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 group-hover:transform">
                   {service.icon}
                 </div>
                 <h3 className="mb-3 text-xl font-bold text-primary-900 transition-all duration-300 group-hover:text-accent-600 dark:text-primary-50 dark:group-hover:text-accent-400">
@@ -111,9 +111,11 @@ export default function ServiceDetails() {
                   {service.features.map((feature, featureIndex) => (
                     <li
                       key={featureIndex}
-                      className="flex items-center text-primary-700 transition-all duration-300 dark:text-primary-300 group-hover:translate-x-1"
+                      className="flex items-center text-primary-700 transition-all duration-300 group-hover:translate-x-1 dark:text-primary-300"
                     >
-                      <span className="mr-2 text-accent-600 transition-all duration-300 dark:text-accent-400 group-hover:scale-125">•</span>
+                      <span className="mr-2 text-accent-600 transition-all duration-300 group-hover:scale-125 dark:text-accent-400">
+                        •
+                      </span>
                       {feature}
                     </li>
                   ))}
@@ -121,7 +123,7 @@ export default function ServiceDetails() {
               </div>
 
               {/* Üveghatású keret */}
-              <div className="absolute inset-0 rounded-lg bg-white/5 ring-1 ring-inset ring-white/10 transition-all duration-500 group-hover:ring-accent-500/20 dark:ring-primary-200/10" />
+              <div className="group-hover:ring-accent-500/20 dark:ring-primary-200/10 absolute inset-0 rounded-lg bg-white/5 ring-1 ring-inset ring-white/10 transition-all duration-500" />
             </div>
           ))}
         </div>

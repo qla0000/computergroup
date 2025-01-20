@@ -7,7 +7,7 @@ export default function Stats() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-primary-50 py-16 dark:bg-gradient-to-br dark:from-primary-900 dark:to-primary-950">
+    <section className="dark:to-primary-950 relative overflow-hidden bg-primary-50 py-16 dark:bg-gradient-to-br dark:from-primary-900">
       {/* Lebegő elemek */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="animate-float bg-primary-200/30 dark:bg-primary-300/10 absolute -left-32 bottom-0 h-96 w-96 rounded-full blur-3xl" />

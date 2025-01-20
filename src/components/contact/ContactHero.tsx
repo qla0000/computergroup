@@ -4,12 +4,16 @@ export default function ContactHero() {
       {/* Háttérkép */}
       <div
         className="absolute inset-0 scale-110 bg-[url('/backend.jpg')] bg-cover bg-fixed bg-center bg-no-repeat sm:scale-105"
-        style={{
-          transform: "scale(var(--bg-scale))",
-          transformOrigin: "center center",
-          "--bg-scale": "calc(1.1 + (0.4 * (1 - var(--viewport-scale))))",
-          "--viewport-scale": "clamp(0, (100vw - 400px) / 800, 1)",
-        } as any}
+        style={
+          {
+            transform: "scale(var(--bg-scale))",
+            transformOrigin: "center center",
+            ["--bg-scale" as string]:
+              "calc(1.1 + (0.4 * (1 - var(--viewport-scale))))",
+            ["--viewport-scale" as string]:
+              "clamp(0, (100vw - 400px) / 800, 1)",
+          } as React.CSSProperties
+        }
         aria-hidden="true"
       />
       <div className="from-primary-900/60 to-primary-950/60 absolute inset-0 bg-gradient-to-br backdrop-blur-[1px]" />

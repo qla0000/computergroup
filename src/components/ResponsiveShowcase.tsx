@@ -57,11 +57,11 @@ export default function ResponsiveShowcase() {
 
           {/* Kép rész */}
           <div className="relative w-full">
-            <div className="relative mx-auto aspect-[16/9] w-full max-w-5xl overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl dark:bg-primary-800/50">
+            <div className="dark:bg-primary-800/50 relative mx-auto aspect-[16/9] w-full max-w-5xl overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl">
               {/* Dekoratív elemek */}
               <div className="bg-accent-500/20 absolute -right-8 -top-8 h-32 w-32 animate-spin-slow rounded-full blur-2xl" />
               <div className="bg-primary-500/20 absolute -bottom-8 -left-8 h-32 w-32 animate-spin-slow rounded-full blur-2xl" />
-              
+
               {/* Kép */}
               <Image
                 src="/responsiveness-devices-final.jpg"
@@ -72,12 +72,12 @@ export default function ResponsiveShowcase() {
                 priority
                 quality={90}
               />
-              
+
               {/* Üveghatású keret */}
-              <div className="absolute inset-0 rounded-2xl bg-white/5 ring-1 ring-inset ring-white/10 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] dark:bg-primary-950/10 dark:ring-primary-200/10 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]" />
-              
+              <div className="dark:bg-primary-950/10 dark:ring-primary-200/10 absolute inset-0 rounded-2xl bg-white/5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] ring-1 ring-inset ring-white/10 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]" />
+
               {/* Fényes szegély effekt */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-transparent via-primary-500/10 to-transparent opacity-50 mix-blend-overlay" />
+              <div className="via-primary-500/10 absolute inset-0 rounded-2xl bg-gradient-to-tr from-transparent to-transparent opacity-50 mix-blend-overlay" />
             </div>
           </div>
         </div>

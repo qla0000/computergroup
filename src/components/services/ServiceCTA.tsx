@@ -8,9 +8,11 @@ export default function ServiceCTA() {
           {
             transform: "scale(var(--bg-scale))",
             transformOrigin: "center center",
-            "--bg-scale": "calc(1.1 + (0.4 * (1 - var(--viewport-scale))))",
-            "--viewport-scale": "clamp(0, (100vw - 400px) / 800, 1)",
-          } as any
+            ["--bg-scale" as string]:
+              "calc(1.1 + (0.4 * (1 - var(--viewport-scale))))",
+            ["--viewport-scale" as string]:
+              "clamp(0, (100vw - 400px) / 800, 1)",
+          } as React.CSSProperties
         }
         aria-hidden="true"
       />

@@ -20,16 +20,20 @@ export default function Portfolio() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-24">
+    <section className="to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-900 py-24">
       {/* Háttérkép */}
       <div
         className="absolute inset-0 scale-110 bg-[url('/portfolio.jpg')] bg-cover bg-fixed bg-center bg-no-repeat sm:scale-105"
-        style={{ 
-          transform: 'scale(var(--bg-scale))',
-          transformOrigin: 'center center',
-          ['--bg-scale' as string]: 'calc(1.1 + (0.4 * (1 - var(--viewport-scale))))',
-          ['--viewport-scale' as string]: 'clamp(0, (100vw - 400px) / 800, 1)'
-        } as React.CSSProperties}
+        style={
+          {
+            transform: "scale(var(--bg-scale))",
+            transformOrigin: "center center",
+            ["--bg-scale" as string]:
+              "calc(1.1 + (0.4 * (1 - var(--viewport-scale))))",
+            ["--viewport-scale" as string]:
+              "clamp(0, (100vw - 400px) / 800, 1)",
+          } as React.CSSProperties
+        }
         aria-hidden="true"
       />
       <div className="from-primary-900/50 to-primary-950/50 absolute inset-0 bg-gradient-to-br" />
@@ -48,7 +52,7 @@ export default function Portfolio() {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="group relative aspect-video animate-[scaleIn_0.6s_ease-out_forwards] overflow-hidden rounded-lg bg-white/10 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl dark:bg-primary-800/50"
+              className="dark:bg-primary-800/50 group relative aspect-video animate-[scaleIn_0.6s_ease-out_forwards] overflow-hidden rounded-lg bg-white/10 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <Image

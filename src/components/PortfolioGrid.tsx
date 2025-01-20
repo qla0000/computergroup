@@ -59,13 +59,13 @@ const projects = [
 
 export default function PortfolioGrid() {
   return (
-    <section className="py-20">
+    <section className="dark:to-primary-950 bg-primary-50 py-20 dark:bg-gradient-to-br dark:from-primary-900">
       <div className="container mx-auto px-4">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <div
               key={project.title}
-              className="group overflow-hidden rounded-lg bg-white shadow-lg transition hover:shadow-xl dark:bg-primary-900"
+              className="group overflow-hidden rounded-lg bg-white shadow-lg transition hover:shadow-xl dark:bg-primary-800"
             >
               <div className="relative aspect-video">
                 <Image

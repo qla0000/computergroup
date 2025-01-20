@@ -7,7 +7,7 @@ export default function ContactInfo() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold text-primary-900 dark:text-primary-50 transition-colors duration-300 group-hover:text-primary-500 sm:text-2xl">
+      <h2 className="text-xl font-bold text-primary-900 transition-colors duration-300 group-hover:text-primary-500 sm:text-2xl dark:text-primary-50">
         Elérhetőségeink
       </h2>
       {contactDetails.map((detail) => (

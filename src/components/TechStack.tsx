@@ -1,14 +1,14 @@
 import {
   SiReact,
-  SiNextdotjs, 
-  SiTypescript, 
+  SiNextdotjs,
+  SiTypescript,
   SiTailwindcss,
   SiNodedotjs,
   SiMongodb,
   SiPostgresql,
   SiDocker,
   SiAmazon,
-  SiGit 
+  SiGit,
 } from "@icons-pack/react-simple-icons";
 
 export default function TechStack() {
@@ -22,11 +22,11 @@ export default function TechStack() {
     { name: "PostgreSQL", Icon: SiPostgresql, delay: "600" },
     { name: "Docker", Icon: SiDocker, delay: "700" },
     { name: "AWS", Icon: SiAmazon, delay: "800" },
-    { name: "Git", Icon: SiGit, delay: "900" }
+    { name: "Git", Icon: SiGit, delay: "900" },
   ];
 
   return (
-    <section className="relative overflow-hidden bg-primary-50 py-24 dark:bg-gradient-to-br dark:from-primary-900 dark:to-primary-950">
+    <section className="dark:to-primary-950 relative overflow-hidden bg-primary-50 py-24 dark:bg-gradient-to-br dark:from-primary-900">
       {/* Lebegő elemek */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="animate-float bg-primary-200/30 dark:bg-primary-300/10 absolute -left-32 bottom-0 h-96 w-96 rounded-full blur-3xl" />
@@ -45,9 +45,9 @@ export default function TechStack() {
               style={{ animationDelay: `${delay}ms` }}
             >
               <div className="relative mb-4 h-20 w-20 transition-transform duration-300 group-hover:scale-110">
-                <div className="absolute -inset-2 rounded-full bg-white/50 backdrop-blur-sm dark:bg-primary-800/50" />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-primary-500/10 to-transparent opacity-0 mix-blend-overlay transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="relative flex h-full w-full items-center justify-center p-4 text-primary-700 text-2xl transition-all duration-500 group-hover:rotate-6 dark:text-primary-700">
+                <div className="dark:bg-primary-800/50 absolute -inset-2 rounded-full bg-white/50 backdrop-blur-sm" />
+                <div className="via-primary-500/10 absolute inset-0 rounded-full bg-gradient-to-tr from-transparent to-transparent opacity-0 mix-blend-overlay transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="relative flex h-full w-full items-center justify-center p-4 text-2xl text-primary-700 transition-all duration-500 group-hover:rotate-6 dark:text-primary-700">
                   <Icon />
                 </div>
               </div>
@@ -56,7 +56,7 @@ export default function TechStack() {
               </span>
             </div>
           ))}
-          <div className="col-span-2 sm:col-span-3 md:col-span-4 lg:col-span-5 mt-8">
+          <div className="col-span-2 mt-8 sm:col-span-3 md:col-span-4 lg:col-span-5">
             <p className="text-center text-xl font-semibold text-primary-700 transition-colors duration-300 hover:text-accent-500 dark:text-primary-900 dark:hover:text-accent-400">
               És még sok más...
             </p>

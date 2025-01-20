@@ -7,7 +7,7 @@ import Footer from "@/components/ui/Footer";
 export default function ContactPage() {
   return (
     <>
-      <main className="relative overflow-hidden bg-primary-50 dark:bg-gradient-to-br dark:from-primary-900 dark:to-primary-950">
+      <main className="dark:to-primary-950 relative overflow-hidden bg-primary-50 dark:bg-gradient-to-br dark:from-primary-900">
         <div className="absolute inset-0 overflow-hidden">
           <div className="animate-float bg-primary-200/30 dark:bg-primary-300/10 absolute -left-32 bottom-0 h-96 w-96 rounded-full blur-3xl" />
           <div className="animate-float-delayed bg-accent-200/30 dark:bg-accent-300/10 absolute -right-32 top-0 h-96 w-96 rounded-full blur-3xl" />
@@ -30,7 +30,7 @@ export default function ContactPage() {
                 <ContactInfo />
               </div>
               <div className="group animate-[fadeIn_1s_ease-out_0.6s_forwards] rounded-2xl bg-white p-6 opacity-0 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl sm:p-8 dark:bg-primary-800">
-                <h2 className="mb-6 text-xl font-bold text-primary-900 dark:text-primary-50 transition-colors duration-300 group-hover:text-accent-500 sm:text-2xl">
+                <h2 className="mb-6 text-xl font-bold text-primary-900 transition-colors duration-300 group-hover:text-accent-500 sm:text-2xl dark:text-primary-50">
                   Térképen
                 </h2>
                 <ContactMap />

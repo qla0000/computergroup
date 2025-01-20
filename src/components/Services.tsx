@@ -25,12 +25,16 @@ export default function Services() {
       {/* Háttérkép */}
       <div
         className="absolute inset-0 scale-110 bg-[url('/bg-services.jpg')] bg-cover bg-fixed bg-center bg-no-repeat sm:scale-105"
-        style={{ 
-          transform: 'scale(var(--bg-scale))',
-          transformOrigin: 'center center',
-          ['--bg-scale' as string]: 'calc(1.1 + (0.4 * (1 - var(--viewport-scale))))',
-          ['--viewport-scale' as string]: 'clamp(0, (100vw - 400px) / 800, 1)'
-        } as React.CSSProperties}
+        style={
+          {
+            transform: "scale(var(--bg-scale))",
+            transformOrigin: "center center",
+            ["--bg-scale" as string]:
+              "calc(1.1 + (0.4 * (1 - var(--viewport-scale))))",
+            ["--viewport-scale" as string]:
+              "clamp(0, (100vw - 400px) / 800, 1)",
+          } as React.CSSProperties
+        }
         aria-hidden="true"
       />
       <div className="from-primary-900/50 to-primary-950/50 absolute inset-0 bg-gradient-to-br" />
@@ -50,7 +54,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group animate-[fadeIn_0.5s_ease-out_forwards] rounded-lg bg-white/10 backdrop-blur-md p-6 opacity-0 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl sm:p-8"
+              className="group animate-[fadeIn_0.5s_ease-out_forwards] rounded-lg bg-white/10 p-6 opacity-0 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl sm:p-8"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="mb-4 text-3xl transition-transform duration-300 group-hover:scale-110 sm:text-4xl">
