@@ -21,28 +21,45 @@ export default function Services() {
   ];
 
   return (
-    <section
-      className="bg-primary-50 py-12 sm:py-16 md:py-20 dark:bg-primary-900"
-      id="services"
-    >
-      <div className="container mx-auto px-4">
-        <h2 className="mb-8 text-center text-4xl font-bold text-primary-900 transition-colors duration-300 hover:text-accent-500 sm:mb-12 sm:text-4xl dark:text-primary-50">
+    <section className="to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-900 py-24">
+      {/* Háttérkép */}
+      <div
+        className="absolute inset-0 scale-110 bg-[url('/bg-services.jpg')] bg-cover bg-fixed bg-center bg-no-repeat sm:scale-105"
+        style={{ 
+          transform: 'scale(var(--bg-scale))',
+          transformOrigin: 'center center',
+          ['--bg-scale' as string]: 'calc(1.1 + (0.4 * (1 - var(--viewport-scale))))',
+          ['--viewport-scale' as string]: 'clamp(0, (100vw - 400px) / 800, 1)'
+        } as React.CSSProperties}
+        aria-hidden="true"
+      />
+      <div className="from-primary-900/50 to-primary-950/50 absolute inset-0 bg-gradient-to-br" />
+
+      {/* Lebegő elemek */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="animate-float bg-primary-300/10 absolute left-1/4 top-1/4 h-32 w-32 rounded-full" />
+        <div className="animate-float-delayed bg-accent-300/10 absolute bottom-1/4 right-1/4 h-24 w-24 rounded-full" />
+      </div>
+
+      {/* Tartalom */}
+      <div className="container relative mx-auto px-4">
+        <h2 className="mb-12 text-center text-4xl font-bold text-white sm:text-5xl">
           Szolgáltatásaink
         </h2>
         <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group animate-[fadeIn_0.5s_ease-out_forwards] rounded-lg bg-white p-6 opacity-0 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl sm:p-8 dark:bg-primary-800"
+              className="group animate-[fadeIn_0.5s_ease-out_forwards] rounded-lg bg-white/10 backdrop-blur-md p-6 opacity-0 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl sm:p-8"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="mb-4 text-3xl transition-transform duration-300 group-hover:scale-110 sm:text-4xl">
                 {service.icon}
               </div>
-              <h3 className="mb-3 text-lg font-bold text-primary-900 transition-colors duration-300 group-hover:text-accent-500 sm:mb-4 sm:text-xl dark:text-primary-50">
+              <h3 className="mb-3 text-lg font-bold text-white transition-colors duration-300 group-hover:text-accent-400 sm:mb-4 sm:text-xl">
                 {service.title}
               </h3>
-              <p className="text-sm text-primary-700 transition-colors duration-300 group-hover:text-primary-900 sm:text-base dark:text-primary-200 dark:group-hover:text-primary-50">
+              <p className="text-sm text-primary-100 transition-colors duration-300 sm:text-base">
                 {service.description}
               </p>
             </div>

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-import Image from "next/image";
+import Image from 'next/image';
 
 // Swiper CSS importok
 import "swiper/css";
@@ -13,24 +13,21 @@ const testimonials = [
   {
     name: "Nagy Péter",
     role: "CEO, TechStart Kft.",
-    content:
-      "Kiváló munkát végeztek a weboldalunk fejlesztésében. Professzionális és megbízható partner.",
-    image: "/profile.png",
+    content: "Kiváló munkát végeztek a weboldalunk fejlesztésében. Professzionális és megbízható partner.",
+    image: "/profile.png"
   },
   {
     name: "Kiss Anna",
     role: "Marketing Vezető, Digital Solutions",
-    content:
-      "A csapat kreativitása és szakértelme kiemelkedő. Maximálisan elégedettek vagyunk az eredménnyel.",
-    image: "/profile.png",
+    content: "A csapat kreativitása és szakértelme kiemelkedő. Maximálisan elégedettek vagyunk az eredménnyel.",
+    image: "/profile.png"
   },
   {
     name: "Kovács János",
     role: "Alapító, InnoTech",
-    content:
-      "Rugalmas és hatékony együttműködés, modern technológiai megoldások. Csak ajánlani tudom!",
-    image: "/profile.png",
-  },
+    content: "Rugalmas és hatékony együttműködés, modern technológiai megoldások. Csak ajánlani tudom!",
+    image: "/profile.png"
+  }
 ];
 
 export default function Testimonials() {
@@ -58,7 +55,7 @@ export default function Testimonials() {
           autoplay={{ delay: 5000 }}
           breakpoints={{
             640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            1024: { slidesPerView: 3 }
           }}
           className="pb-12"
         >
@@ -70,7 +67,7 @@ export default function Testimonials() {
                 </div>
                 <div className="flex items-center">
                   <div className="h-12 w-12 overflow-hidden rounded-full border-2 border-accent-500">
-                    <Image
+                    <Image 
                       src={testimonial.image}
                       alt={testimonial.name}
                       width={64}

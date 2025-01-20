@@ -81,7 +81,7 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-5 xl:col-span-4 lg:ml-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3 lg:col-span-4">
             <nav>
               <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">
                 Menü
@@ -126,8 +126,9 @@ export default function Footer() {
                 ))}
               </ul>
             </nav>
+
           </div>
-          <div className="lg:col-span-3 xl:col-span-4">
+          <div className="lg:col-span-4">
             <h3 className="mb-6 text-lg font-bold text-primary-900 dark:text-primary-50">
               Kapcsolat
             </h3>
