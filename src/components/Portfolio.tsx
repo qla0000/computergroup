@@ -25,7 +25,7 @@ export default function Portfolio() {
       id="portfolio"
     >
       <div className="container mx-auto px-4">
-        <h2 className="mb-8 text-center text-4xl font-bold text-primary-100 transition-colors duration-300 hover:text-accent-500 sm:mb-12 sm:text-4xl dark:text-primary-50">
+        <h2 className="mb-8 text-center text-4xl font-bold text-primary-900 transition-colors duration-300 hover:text-accent-500 sm:mb-12 sm:text-4xl dark:text-primary-50">
           Portfólió
         </h2>
         <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
