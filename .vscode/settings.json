@@ -1,8 +1,8 @@
 {
-    "css.validate": false,
-    "tailwindCSS.experimental.classRegex": [],
-    "tailwindCSS.includeLanguages": {
-        "typescript": "javascript",
-        "typescriptreact": "javascript"
+  "css.validate": false,
+  "tailwindCSS.experimental.classRegex": [],
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
   }
 }

@@ -3,52 +3,58 @@ import Image from "next/image";
 const projects = [
   {
     title: "E-commerce Platform",
-    description: "Modern webáruház fejlesztése React és Next.js alapokon. Teljes körű e-commerce megoldás egyedi design-nal és adminisztrációs felülettel.",
+    description:
+      "Modern webáruház fejlesztése React és Next.js alapokon. Teljes körű e-commerce megoldás egyedi design-nal és adminisztrációs felülettel.",
     image: "/portfolio/ecommerce.webp",
     category: "Webáruház",
     technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
-    link: "#"
+    link: "#",
   },
   {
     title: "Vállalati Weboldal",
-    description: "Reszponzív vállalati weboldal tervezése és fejlesztése. Modern, letisztult design SEO-optimalizálással.",
+    description:
+      "Reszponzív vállalati weboldal tervezése és fejlesztése. Modern, letisztult design SEO-optimalizálással.",
     image: "/portfolio/corporate.webp",
     category: "Weboldal",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-    link: "#"
+    link: "#",
   },
   {
     title: "SaaS Dashboard",
-    description: "Komplex adminisztrációs felület vállalatirányítási rendszerhez. Valós idejű adatmegjelenítés és elemzések.",
+    description:
+      "Komplex adminisztrációs felület vállalatirányítási rendszerhez. Valós idejű adatmegjelenítés és elemzések.",
     image: "/portfolio/dashboard.webp",
     category: "Alkalmazás",
     technologies: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"],
-    link: "#"
+    link: "#",
   },
   {
     title: "Ingatlan Portál",
-    description: "Ingatlan kereső és hirdető platform fejlesztése részletes keresési funkciókkal és térképes megjelenítéssel.",
+    description:
+      "Ingatlan kereső és hirdető platform fejlesztése részletes keresési funkciókkal és térképes megjelenítéssel.",
     image: "/portfolio/realestate.webp",
     category: "Webportál",
     technologies: ["Next.js", "MongoDB", "Google Maps API", "AWS S3"],
-    link: "#"
+    link: "#",
   },
   {
     title: "Étterem Weboldal",
-    description: "Étterem bemutatkozó oldal online foglalási rendszerrel és ételrendelési lehetőséggel.",
+    description:
+      "Étterem bemutatkozó oldal online foglalási rendszerrel és ételrendelési lehetőséggel.",
     image: "/portfolio/restaurant.webp",
     category: "Weboldal",
     technologies: ["React", "Firebase", "Stripe", "Google Calendar API"],
-    link: "#"
+    link: "#",
   },
   {
     title: "Oktatási Platform",
-    description: "Online oktatási platform videós tartalmakkal, kvízekkel és előrehaladás követéssel.",
+    description:
+      "Online oktatási platform videós tartalmakkal, kvízekkel és előrehaladás követéssel.",
     image: "/portfolio/education.webp",
     category: "E-learning",
     technologies: ["Next.js", "PostgreSQL", "AWS", "Mux Video"],
-    link: "#"
-  }
+    link: "#",
+  },
 ];
 
 export default function PortfolioGrid() {
@@ -57,7 +63,7 @@ export default function PortfolioGrid() {
       <div className="container mx-auto px-4">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <div 
+            <div
               key={project.title}
               className="group overflow-hidden rounded-lg bg-white shadow-lg transition hover:shadow-xl dark:bg-primary-900"
             >
@@ -73,7 +79,9 @@ export default function PortfolioGrid() {
                 <div className="mb-2 inline-block rounded-full bg-primary-100 px-3 py-1 text-sm text-primary-800 dark:bg-primary-800 dark:text-primary-100">
                   {project.category}
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-primary-900 dark:text-primary-50">{project.title}</h3>
+                <h3 className="mb-2 text-xl font-bold text-primary-900 dark:text-primary-50">
+                  {project.title}
+                </h3>
                 <p className="mb-4 text-primary-700 dark:text-primary-200">
                   {project.description}
                 </p>

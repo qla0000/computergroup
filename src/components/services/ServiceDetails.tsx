@@ -2,83 +2,89 @@ export default function ServiceDetails() {
   const services = [
     {
       title: "Tervezés",
-      description: "Közösen meghatározzuk az üzleti célját, megtervezzük az eléréséhez szükséges weboldal struktúráját és tartalmát, majd elkészítjük annak tervrajzát.",
+      description:
+        "Közösen meghatározzuk az üzleti célját, megtervezzük az eléréséhez szükséges weboldal struktúráját és tartalmát, majd elkészítjük annak tervrajzát.",
       features: [
         "Üzleti célok elemzése",
         "Weboldal struktúra tervezés",
         "Tartalom stratégia",
-        "Wireframe készítés"
+        "Wireframe készítés",
       ],
-      icon: "📋"
+      icon: "📋",
     },
     {
       title: "Szövegírás",
-      description: "Segítünk a tartalom összeállításában és a szövegírásban, hogy az önazonos, de mégis hatásos, könnyen érthető és konverzióra optimalizált legyen.",
+      description:
+        "Segítünk a tartalom összeállításában és a szövegírásban, hogy az önazonos, de mégis hatásos, könnyen érthető és konverzióra optimalizált legyen.",
       features: [
         "SEO-optimalizált szövegírás",
         "Konverziófókuszú tartalom",
         "Márkaidentitás tükrözése",
-        "Célközönség-specifikus megfogalmazás"
+        "Célközönség-specifikus megfogalmazás",
       ],
-      icon: "✍️"
+      icon: "✍️",
     },
     {
       title: "Webdesign kidolgozás",
-      description: "Kidolgozzuk a weboldalát egyedi látványtervét, amely személyiségét és márkáját tükrözi, így bizalmat, hitelességet és profizmust sugall majd.",
+      description:
+        "Kidolgozzuk a weboldalát egyedi látványtervét, amely személyiségét és márkáját tükrözi, így bizalmat, hitelességet és profizmust sugall majd.",
       features: [
         "Egyedi dizájn tervezés",
         "Reszponzív megjelenés",
         "Modern UI elemek",
-        "Márkaidentitás integráció"
+        "Márkaidentitás integráció",
       ],
-      icon: "🎨"
+      icon: "🎨",
     },
     {
       title: "Webfejlesztés",
-      description: "Megépítjük a megbeszéltek szerinti tervet – minden eszközön tökéletesen megjelenő – reszponzív kialakítást úgy, hogy közben minél jobban megfeleljen a keresőmotorok elvárásainak.",
+      description:
+        "Megépítjük a megbeszéltek szerinti tervet – minden eszközön tökéletesen megjelenő – reszponzív kialakítást úgy, hogy közben minél jobban megfeleljen a keresőmotorok elvárásainak.",
       features: [
         "Reszponzív fejlesztés",
         "SEO-barát kódolás",
         "Teljesítményoptimalizálás",
-        "Keresztböngésző kompatibilitás"
+        "Keresztböngésző kompatibilitás",
       ],
-      icon: "💻"
+      icon: "💻",
     },
     {
       title: "Támogatás, karbantartás",
-      description: "Átadás után sem hagyunk magadra, gondoskodunk weboldala biztonságáról és rendelkezésedre állunk, ha módosítanál a tartalmán.",
+      description:
+        "Átadás után sem hagyunk magadra, gondoskodunk weboldala biztonságáról és rendelkezésedre állunk, ha módosítanál a tartalmán.",
       features: [
         "Folyamatos biztonsági frissítések",
         "Rendszeres mentések",
         "Technikai támogatás",
-        "Tartalom frissítések"
+        "Tartalom frissítések",
       ],
-      icon: "🛠️"
+      icon: "🛠️",
     },
     {
       title: "Hirdetés, Marketing",
-      description: "Segítünk kidolgozni a megfelelő hirdetési stratégiákat a szükséges platformokon – Google, Facebook, Instagram, stb.",
+      description:
+        "Segítünk kidolgozni a megfelelő hirdetési stratégiákat a szükséges platformokon – Google, Facebook, Instagram, stb.",
       features: [
         "Google Ads kampányok",
         "Social media marketing",
         "Analitika és követés",
-        "Konverzióoptimalizálás"
+        "Konverzióoptimalizálás",
       ],
-      icon: "📈"
-    }
+      icon: "📈",
+    },
   ];
 
   return (
     <section className="py-24">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
-            <div 
+            <div
               key={service.title}
-              className="group p-6 bg-primary-50 dark:bg-primary-900 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="group rounded-2xl bg-primary-50 p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl dark:bg-primary-900"
             >
               <div className="mb-4 text-4xl">{service.icon}</div>
-              <h3 className="text-xl font-bold mb-3 text-primary-900 dark:text-primary-50 group-hover:text-accent-500 dark:group-hover:text-accent-400 transition-colors duration-300">
+              <h3 className="mb-3 text-xl font-bold text-primary-900 transition-colors duration-300 group-hover:text-accent-500 dark:text-primary-50 dark:group-hover:text-accent-400">
                 {service.title}
               </h3>
               <p className="mb-4 text-primary-700 dark:text-primary-300">
@@ -86,7 +92,7 @@ export default function ServiceDetails() {
               </p>
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
-                  <li 
+                  <li
                     key={featureIndex}
                     className="flex items-center text-primary-600 dark:text-primary-400"
                   >
