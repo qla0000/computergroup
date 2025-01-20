@@ -4,12 +4,12 @@ export default function Portfolio() {
   const projects = [
     {
       title: "E-commerce Platform",
-      image: "/ia-forrest.png",
+      image: "/ecommerce.jpg",
       category: "Webshop"
     },
     {
       title: "SaaS Dashboard",
-      image: "/ia-forrest.png",
+      image: "/saas-dashboard.jpg",
       category: "Alkalmazás"
     },
     {
@@ -22,7 +22,7 @@ export default function Portfolio() {
   return (
     <section className="bg-primary-50 py-12 dark:bg-primary-900 sm:py-16 md:py-20" id="portfolio">
       <div className="container mx-auto px-4">
-        <h2 className="mb-8 text-center text-4xl font-bold text-primary-900 sm:mb-12 sm:text-4xl hover:text-accent-500 transition-colors duration-300 dark:text-primary-50">
+        <h2 className="mb-8 text-center text-4xl font-bold text-primary-100 sm:mb-12 sm:text-4xl hover:text-accent-500 transition-colors duration-300 dark:text-primary-50">
           Portfólió
         </h2>
         <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">

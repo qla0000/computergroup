@@ -1,4 +1,11 @@
 export default function ResponsiveShowcase() {
+  const features = [
+    { icon: "💻", text: "Reszponzív dizájn" },
+    { icon: "🚀", text: "Gyors betöltés" },
+    { icon: "🎨", text: "Modern megjelenés" },
+    { icon: "📱", text: "Mobilbarát felület" }
+  ];
+
   return (
     <section className="relative overflow-hidden bg-primary-50 py-24 dark:bg-gradient-to-br dark:from-primary-900 dark:to-primary-950">
       {/* Lebegő elemek */}
@@ -20,15 +27,35 @@ export default function ResponsiveShowcase() {
             <p className="mt-4 text-lg text-primary-700 dark:text-primary-200">
               A nagy látogatottságú honlapjaink a kor minden követelményeinek is eleget tesznek. Segítségével a piacot hazai és nemzetközi szinten is nyomon követjük.
             </p>
+            
+            {/* Új feature lista */}
+            <div className="mt-8 grid grid-cols-2 gap-4">
+              {features.map((feature, index) => (
+                <div 
+                  key={feature.text}
+                  className="group flex items-center space-x-3 rounded-lg bg-white p-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:bg-primary-800/50"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <span className="text-2xl transition-transform duration-300 group-hover:scale-110">
+                    {feature.icon}
+                  </span>
+                  <span className="text-sm font-medium text-primary-900 dark:text-primary-700">
+                    {feature.text}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Kép rész */}
           <div className="relative mx-auto max-w-2xl lg:max-w-none">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-primary-800">
+              <div className="absolute -right-6 -top-6 h-24 w-24 animate-spin-slow rounded-full bg-accent-500/10 blur-xl" />
+              <div className="absolute -left-6 -bottom-6 h-24 w-24 animate-spin-slow rounded-full bg-primary-500/10 blur-xl" />
               <img
                 src="/responsiveness-devices-final.jpg"
                 alt="Reszponzív weboldal megjelenítése különböző eszközökön"
-                className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                className="relative h-full w-full object-cover transition-transform duration-700 hover:scale-105"
               />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-primary-900/10 dark:ring-primary-50/10" />
             </div>
