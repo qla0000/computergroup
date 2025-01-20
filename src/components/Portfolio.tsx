@@ -14,25 +14,41 @@ export default function Portfolio() {
     },
     {
       title: "Vállalati Weboldal",
-      image: "/ia-forrest.png",
+      image: "/bg-webdesign.jpg",
       category: "Weboldal",
     },
   ];
 
   return (
-    <section
-      className="bg-primary-50 py-12 sm:py-16 md:py-20 dark:bg-primary-900"
-      id="portfolio"
-    >
-      <div className="container mx-auto px-4">
-        <h2 className="mb-8 text-center text-4xl font-bold text-primary-900 transition-colors duration-300 hover:text-accent-500 sm:mb-12 sm:text-4xl dark:text-primary-50">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-24">
+      {/* Háttérkép */}
+      <div
+        className="absolute inset-0 scale-110 bg-[url('/portfolio.jpg')] bg-cover bg-fixed bg-center bg-no-repeat sm:scale-105"
+        style={{ 
+          transform: 'scale(var(--bg-scale))',
+          transformOrigin: 'center center',
+          ['--bg-scale' as string]: 'calc(1.1 + (0.4 * (1 - var(--viewport-scale))))',
+          ['--viewport-scale' as string]: 'clamp(0, (100vw - 400px) / 800, 1)'
+        } as React.CSSProperties}
+        aria-hidden="true"
+      />
+      <div className="from-primary-900/50 to-primary-950/50 absolute inset-0 bg-gradient-to-br" />
+
+      {/* Lebegő elemek */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="animate-float bg-primary-300/10 absolute left-1/4 top-1/4 h-32 w-32 rounded-full" />
+        <div className="animate-float-delayed bg-accent-300/10 absolute bottom-1/4 right-1/4 h-24 w-24 rounded-full" />
+      </div>
+
+      <div className="container relative mx-auto px-4">
+        <h2 className="mb-12 text-center text-4xl font-bold text-white sm:text-5xl">
           Portfólió
         </h2>
         <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="group relative aspect-video animate-[scaleIn_0.6s_ease-out_forwards] overflow-hidden rounded-lg bg-white opacity-0 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-primary-800"
+              className="group relative aspect-video animate-[scaleIn_0.6s_ease-out_forwards] overflow-hidden rounded-lg bg-white/10 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl dark:bg-primary-800/50"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <Image

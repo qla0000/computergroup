@@ -46,52 +46,56 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="relative space-y-6">
+      {/* Dekoratív elemek */}
+      <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-accent-500/10 blur-2xl transition-all duration-500 group-hover:bg-accent-500/20 dark:bg-accent-400/5 dark:group-hover:bg-accent-400/10" />
+      <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-full bg-primary-500/10 blur-2xl transition-all duration-500 group-hover:bg-primary-500/20 dark:bg-primary-400/5 dark:group-hover:bg-primary-400/10" />
+      
       <div className="grid gap-6 sm:grid-cols-2">
-        <div className="group">
+        <div className="group relative">
           <input
             {...register("name", { required: true })}
             type="text"
             placeholder="Név"
-            className="focus:ring-primary-500/20 w-full rounded-lg border border-primary-700 bg-primary-800 p-3 text-primary-50 transition-all duration-300 placeholder:text-primary-400 focus:border-primary-500 focus:outline-none focus:ring-2 group-hover:border-primary-400"
+            className="w-full rounded-lg border border-primary-200/50 dark:bg-primary-900  p-3 text-primary-950 transition-all duration-300 placeholder:text-primary-400 hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-primary-700 dark:bg-primary-900/80 dark:text-primary-50 dark:hover:border-primary-600 dark:focus:border-primary-500 dark:focus:bg-primary-900"
           />
         </div>
-        <div className="group">
+        <div className="group relative">
           <input
             {...register("email", { required: true })}
             type="email"
             placeholder="Email"
-            className="focus:ring-primary-500/20 w-full rounded-lg border border-primary-700 bg-primary-800 p-3 text-primary-50 transition-all duration-300 placeholder:text-primary-400 focus:border-primary-500 focus:outline-none focus:ring-2 group-hover:border-primary-400"
+            className="w-full rounded-lg border border-primary-200/50 dark:bg-primary-900 p-3 text-primary-950 transition-all duration-300 placeholder:text-primary-400 hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-primary-700 dark:bg-primary-900/80 dark:text-primary-50 dark:hover:border-primary-600 dark:focus:border-primary-500 dark:focus:bg-primary-900"
           />
         </div>
-        <div className="group">
+        <div className="group relative">
           <input
             {...register("subject", { required: true })}
             type="text"
             placeholder="Tárgy"
-            className="focus:ring-primary-500/20 w-full rounded-lg border border-primary-700 bg-primary-800 p-3 text-primary-50 transition-all duration-300 placeholder:text-primary-400 focus:border-primary-500 focus:outline-none focus:ring-2 group-hover:border-primary-400"
+            className="w-full rounded-lg border border-primary-200/50 dark:bg-primary-900 p-3 text-primary-950 transition-all duration-300 placeholder:text-primary-400 hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-primary-700 dark:bg-primary-900/80 dark:text-primary-50 dark:hover:border-primary-600 dark:focus:border-primary-500 dark:focus:bg-primary-900"
           />
         </div>
       </div>
-      <div className="group">
+      <div className="group relative">
         <textarea
           {...register("message", { required: true })}
           placeholder="Üzenet"
           rows={6}
-          className="focus:ring-primary-500/20 w-full rounded-lg border border-primary-700 bg-primary-800 p-3 text-primary-50 transition-all duration-300 placeholder:text-primary-400 focus:border-primary-500 focus:outline-none focus:ring-2 group-hover:border-primary-400"
+          className="w-full rounded-lg border border-primary-200/50 dark:bg-primary-900 p-3 text-primary-950 transition-all duration-300 placeholder:text-primary-400 hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/20 dark:border-primary-700 dark:bg-primary-900/80 dark:text-primary-50 dark:hover:border-primary-600 dark:focus:border-primary-500 dark:focus:bg-primary-900"
         ></textarea>
       </div>
       <div className="text-center">
         {status === "success" && (
-          <div className="text-green-500">Üzenet sikeresen elküldve!</div>
+          <div className="mb-4 text-green-500 dark:text-green-400">Üzenet sikeresen elküldve!</div>
         )}
         {status === "error" && (
-          <div className="text-red-500">Hiba történt a küldés során.</div>
+          <div className="mb-4 text-red-500 dark:text-red-400">Hiba történt a küldés során.</div>
         )}
         <button
           type="submit"
           disabled={isLoading}
-          className="text-primary-950 rounded-full bg-accent-500 px-8 py-3 font-semibold transition-all duration-300 hover:bg-accent-400 disabled:opacity-50"
+          className="rounded-full bg-accent-500 px-8 py-3 font-semibold text-primary-950 transition-all duration-300 hover:-translate-y-1 hover:bg-accent-400 hover:shadow-lg hover:shadow-accent-500/25 disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none"
         >
           {isLoading ? "Küldés..." : "Üzenet küldése"}
         </button>

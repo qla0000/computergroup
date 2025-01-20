@@ -5,7 +5,7 @@ const projects = [
     title: "E-commerce Platform",
     description:
       "Modern webáruház fejlesztése React és Next.js alapokon. Teljes körű e-commerce megoldás egyedi design-nal és adminisztrációs felülettel.",
-    image: "/portfolio/ecommerce.webp",
+    image: "/ecommerce.jpg",
     category: "Webáruház",
     technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
     link: "#",
@@ -23,7 +23,7 @@ const projects = [
     title: "SaaS Dashboard",
     description:
       "Komplex adminisztrációs felület vállalatirányítási rendszerhez. Valós idejű adatmegjelenítés és elemzések.",
-    image: "/portfolio/dashboard.webp",
+    image: "/saas-dashboard.jpg",
     category: "Alkalmazás",
     technologies: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"],
     link: "#",

@@ -42,9 +42,28 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="bg-primary-50 py-20 dark:bg-primary-900">
-      <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-4xl font-bold text-primary-900 dark:text-primary-50">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-24">
+      {/* Háttérkép */}
+      <div
+        className="absolute inset-0 scale-110 bg-[url('/bg-testimonials.jpg')] bg-cover bg-fixed bg-center bg-no-repeat sm:scale-105"
+        style={{ 
+          transform: 'scale(var(--bg-scale))',
+          transformOrigin: 'center center',
+          ['--bg-scale' as string]: 'calc(1.1 + (0.4 * (1 - var(--viewport-scale))))',
+          ['--viewport-scale' as string]: 'clamp(0, (100vw - 400px) / 800, 1)'
+        } as React.CSSProperties}
+        aria-hidden="true"
+      />
+      <div className="from-primary-900/50 to-primary-950/50 absolute inset-0 bg-gradient-to-br" />
+
+      {/* Lebegő elemek */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="animate-float bg-primary-300/10 absolute left-1/4 top-1/4 h-32 w-32 rounded-full" />
+        <div className="animate-float-delayed bg-accent-300/10 absolute bottom-1/4 right-1/4 h-24 w-24 rounded-full" />
+      </div>
+
+      <div className="container relative mx-auto px-4">
+        <h2 className="mb-12 text-center text-4xl font-bold text-white sm:text-5xl">
           Ügyfeleink Mondták
         </h2>
         <Swiper
@@ -61,8 +80,8 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.name}>
-              <div className="rounded-lg bg-white p-8 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-primary-800">
-                <div className="mb-4 text-primary-700 dark:text-primary-200">
+              <div className="rounded-lg bg-white/10 backdrop-blur-sm p-8 shadow-lg transition-all duration-300 hover:shadow-xl dark:bg-primary-800/50">
+                <div className="mb-4 text-primary-100">
                   <p>&quot;{testimonial.content}&quot;</p>
                 </div>
                 <div className="flex items-center">
@@ -76,10 +95,10 @@ export default function Testimonials() {
                     />
                   </div>
                   <div className="ml-4">
-                    <div className="font-bold text-primary-900 dark:text-primary-50">
+                    <div className="font-bold text-white">
                       {testimonial.name}
                     </div>
-                    <div className="text-sm text-primary-600 dark:text-primary-300">
+                    <div className="text-sm text-primary-200">
                       {testimonial.role}
                     </div>
                   </div>

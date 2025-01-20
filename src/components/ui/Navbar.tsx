@@ -65,7 +65,11 @@ export default function Navbar() {
                   className="group relative px-4 py-2 text-sm font-medium"
                 >
                   <span
-                    className={`relative z-10 transition-colors duration-300 ${scrolled ? "text-primary-950 dark:text-primary-50" : "text-primary-950 dark:text-primary-50"} group-hover:text-accent-500 dark:group-hover:text-accent-400`}
+                    className={`relative z-10 transition-colors duration-300 ${
+                      scrolled 
+                        ? "text-primary-900 dark:text-primary-50" 
+                        : "text-primary-950 dark:text-primary-50"
+                    } group-hover:text-accent-500 dark:group-hover:text-accent-400`}
                   >
                     {item.name}
                   </span>
