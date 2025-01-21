@@ -7,10 +7,14 @@ import { useEffect, useState } from 'react';
 export default function ResponsiveShowcase() {
   const { ref, isVisible } = useIntersectionObserver();
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [isContentVisible, setIsContentVisible] = useState(false);
 
   useEffect(() => {
     if (isVisible && !hasAnimated) {
       setHasAnimated(true);
+      setTimeout(() => {
+        setIsContentVisible(true);
+      }, 300);
     }
   }, [isVisible, hasAnimated]);
 
@@ -37,7 +41,9 @@ export default function ResponsiveShowcase() {
       <div className="container relative mx-auto px-4">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Szöveg rész */}
-          <div className={`text-center lg:text-left ${hasAnimated ? 'slide-in-left' : ''}`}>
+          <div className={`text-center lg:text-left opacity-0 transition-opacity duration-500 ${
+            hasAnimated ? 'slide-in-left' : ''
+          } ${isContentVisible ? 'opacity-100' : ''}`}>
             <h2 className="mb-6 text-3xl font-bold text-primary-900 sm:text-4xl dark:text-primary-50">
               Weboldal készítés
             </h2>
@@ -74,7 +80,9 @@ export default function ResponsiveShowcase() {
           </div>
 
           {/* Kép rész */}
-          <div className={`relative w-full ${hasAnimated ? 'fade-in' : ''}`}>
+          <div className={`relative w-full opacity-0 transition-opacity duration-500 ${
+            hasAnimated ? 'fade-in' : ''
+          } ${isContentVisible ? 'opacity-100' : ''}`}>
             <div className="dark:bg-primary-800/50 relative mx-auto aspect-[16/9] w-full max-w-5xl overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl">
               {/* Dekoratív elemek */}
               <div className="bg-accent-500/20 absolute -right-8 -top-8 h-32 w-32 animate-spin-slow rounded-full blur-2xl" />

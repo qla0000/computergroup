@@ -34,10 +34,15 @@ export default function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [isChanging, setIsChanging] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setIsChanging(true);
+      setTimeout(() => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+        setIsChanging(false);
+      }, 300);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
@@ -80,46 +85,51 @@ export default function Carousel() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            currentSlide === index ? "opacity-100" : "opacity-0"
+          className={`absolute inset-0 transition-all duration-1000 ${
+            currentSlide === index 
+              ? "opacity-100 scale-100" 
+              : "opacity-0 scale-110"
           }`}
         >
           <Image
             src={slide.image}
             alt={slide.title}
             fill
-            className="object-cover brightness-[0.4]"
+            className="transform object-cover brightness-[0.4] transition-transform duration-[3s] hover:scale-105"
             priority={index === 0}
           />
-          <div className="from-primary-800/60 to-primary-900/80 absolute inset-0 bg-gradient-to-b" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-800/60 to-primary-900/80" />
         </div>
       ))}
 
-      {/* Lebegő elemek */}
+      {/* Lebegő elemek továbbfejlesztett animációkkal */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-float bg-primary-300/20 absolute left-1/4 top-1/4 h-64 w-64 rounded-full blur-2xl" />
-        <div className="animate-float-delayed bg-accent-300/20 absolute right-1/4 top-1/2 h-48 w-48 rounded-full blur-2xl" />
+        <div className="absolute left-1/4 top-1/4 h-64 w-64 rounded-full bg-primary-300/20 blur-2xl animate-[float_6s_ease-in-out_infinite]" />
+        <div className="absolute right-1/4 top-1/2 h-48 w-48 rounded-full bg-accent-300/20 blur-2xl animate-[float_8s_ease-in-out_2s_infinite]" />
+        <div className="absolute left-1/3 bottom-1/4 h-32 w-32 rounded-full bg-primary-400/10 blur-xl animate-[float_7s_ease-in-out_1s_infinite]" />
       </div>
 
-      {/* Tartalom */}
+      {/* Tartalom továbbfejlesztett animációkkal */}
       <div className="relative flex h-full items-center justify-center px-4">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute w-full max-w-7xl text-center transition-all duration-1000 ${
+            className={`absolute w-full max-w-7xl text-center transition-all duration-700 ${
               currentSlide === index
-                ? "pointer-events-auto translate-y-0 opacity-100"
-                : "pointer-events-none translate-y-10 opacity-0"
+                ? "pointer-events-auto translate-y-0 opacity-100 scale-100"
+                : isChanging
+                ? "pointer-events-none -translate-y-10 opacity-0 scale-95"
+                : "pointer-events-none translate-y-10 opacity-0 scale-95"
             }`}
           >
-            <h1 className="mb-6 text-4xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] sm:text-5xl md:text-7xl">
+            <h1 className="mb-6 text-4xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] sm:text-5xl md:text-7xl animate-[fadeIn_0.5s_ease-out_forwards]">
               {slide.title}
             </h1>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] sm:text-xl md:text-2xl">
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] sm:text-xl md:text-2xl animate-[fadeIn_0.5s_ease-out_0.3s_forwards] opacity-0">
               {slide.description}
             </p>
             <a href={slide.buttonLink}>
-              <button className="text-primary-950 rounded-full bg-accent-500 px-6 py-3 text-base font-semibold backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-accent-400 hover:shadow-[0_0_30px_rgba(255,193,7,0.5)] sm:px-8 sm:py-4 sm:text-lg">
+              <button className="rounded-full bg-accent-500 px-6 py-3 text-base font-semibold text-primary-950 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:scale-110 hover:bg-accent-400 hover:shadow-[0_10px_40px_rgba(255,193,7,0.5)] active:scale-95 sm:px-8 sm:py-4 sm:text-lg animate-[fadeIn_0.5s_ease-out_0.6s_forwards] opacity-0">
                 {slide.buttonText}
               </button>
             </a>
@@ -127,16 +137,16 @@ export default function Carousel() {
         ))}
       </div>
 
-      {/* Navigáció */}
-      <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 space-x-3">
+      {/* Navigáció továbbfejlesztett animációkkal */}
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-3 animate-[fadeIn_1s_ease-out_forwards]">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-2 w-2 rounded-full transition-all duration-300 sm:h-3 sm:w-3 ${
+            className={`transition-all duration-500 rounded-full ${
               currentSlide === index
-                ? "w-8 bg-accent-400 shadow-[0_0_10px_rgba(58,169,255,0.5)] sm:w-12"
-                : "bg-primary-300 hover:bg-primary-400 hover:shadow-[0_0_10px_rgba(58,169,255,0.3)]"
+                ? "h-3 w-12 bg-accent-400 shadow-[0_0_20px_rgba(255,193,7,0.5)] sm:h-4 sm:w-16"
+                : "h-3 w-3 bg-primary-300 hover:bg-primary-400 hover:shadow-[0_0_15px_rgba(58,169,255,0.3)] sm:h-4 sm:w-4"
             }`}
             aria-label={`Ugrás a ${index + 1}. diára`}
           />

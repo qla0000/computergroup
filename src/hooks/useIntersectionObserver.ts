@@ -14,7 +14,7 @@ export function useIntersectionObserver() {
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.6 }
     );
 
     if (ref.current) {
