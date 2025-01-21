@@ -27,3 +27,26 @@ CSRF védelem
 Rate limiting
 Security headers
 A többi elem a projekt növekedésével
+
+## reCaptcha implementálása
+A reCAPTCHA implementálásának lépései:
+1. Google reCAPTCHA fiók létrehozása:
+Látogass el a Google reCAPTCHA oldalára.
+Regisztráld a weboldaladat, és válaszd ki a reCAPTCHA v2 vagy v3 verziót.
+Jegyezd fel a kapott Site Key-t és Secret Key-t.
+2. Telepítsd a szükséges csomagot:
+Használj egy reCAPTCHA csomagot, például react-google-recaptcha.
+Helyezd el a reCAPTCHA komponenst a formban:
+Add hozzá a reCAPTCHA komponenst a formodhoz, és használd a Site Key-t.
+4. Validáld a reCAPTCHA-t a szerveren:
+Küldd el a reCAPTCHA token-t a szerverre a form adatokkal együtt.
+A szerveren használd a Secret Key-t a reCAPTCHA token validálásához a Google API-n keresztül.
+5. Kezeld a validáció eredményét:
+Ha a reCAPTCHA validáció sikeres, folytasd a form feldolgozását.
+Ha nem sikeres, jeleníts meg egy hibaüzenetet a felhasználónak.
+6. Teszteld a reCAPTCHA működését:
+Ellenőrizd, hogy a reCAPTCHA megfelelően működik-e különböző böngészőkben és eszközökön.
+Kezeld a reCAPTCHA hibákat:
+Implementálj hibakezelést a reCAPTCHA API hívásokhoz és a form feldolgozásához.
+
+

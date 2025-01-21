@@ -1,4 +1,18 @@
+"use client";
+
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { useState, useEffect } from 'react';
+
 export default function Stats() {
+  const { ref, isVisible } = useIntersectionObserver();
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (isVisible && !hasAnimated) {
+      setHasAnimated(true);
+    }
+  }, [isVisible, hasAnimated]);
+
   const stats = [
     { number: "100+", label: "Sikeres projekt" },
     { number: "50+", label: "Elégedett ügyfél" },
@@ -7,7 +21,10 @@ export default function Stats() {
   ];
 
   return (
-    <section className="dark:to-primary-950 relative overflow-hidden bg-primary-50 py-16 dark:bg-gradient-to-br dark:from-primary-900">
+    <section
+      ref={ref}
+      className="dark:to-primary-950 relative overflow-hidden bg-primary-50 py-16 dark:bg-gradient-to-br dark:from-primary-900"
+    >
       {/* Lebegő elemek */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="animate-float bg-primary-200/30 dark:bg-primary-300/10 absolute -left-32 bottom-0 h-96 w-96 rounded-full blur-3xl" />
@@ -19,10 +36,12 @@ export default function Stats() {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className="group animate-[fadeIn_1s_ease-out_forwards] text-center opacity-0"
-              style={{ animationDelay: `${index * 200}ms` }}
+              className={`group text-center ${
+                hasAnimated ? 'animate-[statsAppear_0.6s_ease-out_forwards]' : 'opacity-0'
+              }`}
+              style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="mb-2 text-4xl font-bold text-primary-700 transition-all duration-300 group-hover:scale-110 dark:text-primary-200">
+              <div className="mb-2 text-4xl font-bold text-primary-700 dark:text-primary-200">
                 {stat.number}
               </div>
               <div className="text-primary-700 dark:text-primary-200">

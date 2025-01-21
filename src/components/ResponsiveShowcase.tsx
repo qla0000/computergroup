@@ -1,6 +1,19 @@
+"use client";
+
 import Image from "next/image";
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { useEffect, useState } from 'react';
 
 export default function ResponsiveShowcase() {
+  const { ref, isVisible } = useIntersectionObserver();
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (isVisible && !hasAnimated) {
+      setHasAnimated(true);
+    }
+  }, [isVisible, hasAnimated]);
+
   const features = [
     { icon: "💻", text: "Reszponzív dizájn" },
     { icon: "🚀", text: "Gyors betöltés" },
@@ -9,7 +22,12 @@ export default function ResponsiveShowcase() {
   ];
 
   return (
-    <section className="dark:to-primary-950 relative overflow-hidden bg-primary-50 py-24 dark:bg-gradient-to-br dark:from-primary-900">
+    <section
+      ref={ref}
+      className={`dark:to-primary-950 relative overflow-hidden bg-primary-50 py-24 dark:bg-gradient-to-br dark:from-primary-900 ${
+        hasAnimated ? 'animate' : ''
+      }`}
+    >
       {/* Lebegő elemek */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="animate-float bg-primary-200/30 dark:bg-primary-300/10 absolute -left-32 bottom-0 h-96 w-96 rounded-full blur-3xl" />
@@ -19,7 +37,7 @@ export default function ResponsiveShowcase() {
       <div className="container relative mx-auto px-4">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Szöveg rész */}
-          <div className="text-center lg:text-left">
+          <div className={`text-center lg:text-left ${hasAnimated ? 'slide-in-left' : ''}`}>
             <h2 className="mb-6 text-3xl font-bold text-primary-900 sm:text-4xl dark:text-primary-50">
               Weboldal készítés
             </h2>
@@ -56,7 +74,7 @@ export default function ResponsiveShowcase() {
           </div>
 
           {/* Kép rész */}
-          <div className="relative w-full">
+          <div className={`relative w-full ${hasAnimated ? 'fade-in' : ''}`}>
             <div className="dark:bg-primary-800/50 relative mx-auto aspect-[16/9] w-full max-w-5xl overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl">
               {/* Dekoratív elemek */}
               <div className="bg-accent-500/20 absolute -right-8 -top-8 h-32 w-32 animate-spin-slow rounded-full blur-2xl" />
