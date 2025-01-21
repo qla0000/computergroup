@@ -18,8 +18,8 @@ export default function ContactPage() {
         <ContactHero />
         <div className="container relative mx-auto px-4 py-12 sm:py-16 md:py-20">
           <div className="mx-auto max-w-4xl">
-            <div className="mb-12 animate-[fadeIn_1s_ease-out_forwards] rounded-2xl bg-primary-500 p-6 opacity-0 shadow-lg transition-all duration-500 hover:shadow-2xl sm:p-8 md:p-10 dark:bg-primary-800">
-              <h2 className="mb-8 text-center text-2xl font-bold transition-colors duration-300 hover:text-accent-500 sm:text-3xl">
+            <div className="mb-12 animate-[fadeIn_1s_ease-out_forwards] rounded-2xl bg-primary-200 p-6 opacity-0 shadow-lg transition-all duration-500 hover:shadow-2xl sm:p-8 md:p-10 dark:bg-primary-800">
+              <h2 className="mb-8 text-center text-primary-900 dark:text-primary-50 text-2xl font-bold transition-colors duration-300 hover:text-accent-500 sm:text-3xl">
                 Küldjön nekünk üzenetet
               </h2>
               <ContactForm />
