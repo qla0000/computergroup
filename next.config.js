@@ -10,8 +10,8 @@ const nextConfig = {
       },
     ],
   },
-  basePath: process.env.NODE_ENV === "production" ? "/computergroup" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/computergroup" : "",
+  basePath: "",
+  assetPrefix: "",
 };
 
 module.exports = nextConfig;
