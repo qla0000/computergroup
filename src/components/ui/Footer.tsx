@@ -47,7 +47,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="dark:to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900">
+    <footer className="dark:to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900 z-[2]">
       <div className="absolute inset-0">
         <div className="animate-float bg-primary-200/20 dark:bg-primary-300/10 absolute -left-32 bottom-0 h-96 w-96 rounded-full blur-3xl" />
         <div className="animate-float-delayed bg-accent-200/20 dark:bg-accent-300/10 absolute -right-32 top-0 h-96 w-96 rounded-full blur-3xl" />

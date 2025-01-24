@@ -2,28 +2,18 @@ import Image from "next/image";
 
 export default function ServiceHero() {
   return (
-    <section className="relative min-h-[30vh] overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-20">
-      {/* Parallax háttérkép */}
-      <div className="fixed inset-0 -z-10 h-[150%] w-full">
-        <div 
-          className="absolute inset-0 h-full w-full"
-          style={{ 
-            transform: "translateZ(0px) scale(1.1)",
-            willChange: "transform",
-            transition: "transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)"
-          }}
-        >
-          <Image
-            src="/code.jpg"
-            alt="Háttérkép"
-            fill
-            className="object-cover"
-            priority
-            quality={90}
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
-      </div>
+    <section className="relative min-h-[50vh] overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-20 isolate">
+      {/* Háttérkép */}
+      <div
+        className="absolute inset-0 scale-110 bg-[url('/code.jpg')] bg-cover bg-fixed bg-center bg-no-repeat sm:scale-105"
+        style={{
+          transform: "scale(var(--bg-scale))",
+          transformOrigin: "center center",
+          ["--bg-scale" as string]: "calc(1.1 + (0.4 * (1 - var(--viewport-scale))))",
+          ["--viewport-scale" as string]: "clamp(0, (100vw - 400px) / 800, 1)",
+        }}
+        aria-hidden="true"
+      />
 
       {/* Overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900/70 to-primary-950/80" />
@@ -34,7 +24,7 @@ export default function ServiceHero() {
         <div className="animate-float-delayed bg-accent-300/10 absolute bottom-1/4 right-1/4 h-12 w-12 rounded-full md:h-24 md:w-24" />
       </div>
 
-      {/* Fő tartalom */}
+      {/* Tartalom */}
       <div className="container relative mx-auto px-4">
         <div className="relative z-10 mx-auto max-w-3xl text-center text-white">
           <h1 className="mb-3 translate-y-10 transform animate-[slideUp_1s_ease-out_forwards] text-3xl font-bold opacity-0 sm:text-4xl md:text-5xl">
