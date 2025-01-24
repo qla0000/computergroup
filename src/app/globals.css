@@ -299,9 +299,9 @@ body {
 
 .parallax-container {
   position: relative;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
   perspective: 2px;
 }
 
@@ -310,20 +310,16 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  height: 120%; /* Nagyobb magasság a parallax hatáshoz */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 120%;
+  transform: translateZ(-1px) scale(2.1);
+  z-index: -1;
   background-size: cover;
-  transform: translateZ(0);
-  pointer-events: none;
+  background-position: center;
 }
 
 .parallax-content {
   position: relative;
   transform-style: preserve-3d;
-  transform: translateZ(0);
 }
 
 .parallax-bg img {
@@ -339,14 +335,16 @@ body {
   object-fit: cover;
 }
 
-@media (max-width: 768px) {
-  .parallax-container {
-    perspective: none;
+@media (pointer: coarse) {
+  .parallax-bg {
+    transform: translateY(${scrollY * 0.2}px) scale(1.05) !important;
+    animation: parallaxMobile 20s linear infinite;
   }
   
-  .parallax-bg {
-    background-attachment: scroll;
-    height: 100%;
+  @keyframes parallaxMobile {
+    0% { transform: translateY(-10%); }
+    50% { transform: translateY(10%); }
+    100% { transform: translateY(-10%); }
   }
 }
 
