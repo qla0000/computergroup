@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function ServiceHero() {
   return (
     <section className="relative min-h-[50vh] overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-20 isolate">
