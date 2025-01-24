@@ -22,7 +22,7 @@ export default function ServicesPage() {
         <ServiceDetails />
         <ServiceCTA />
       </main>
-      <Footer />
+        <Footer />
     </>
   );
 }

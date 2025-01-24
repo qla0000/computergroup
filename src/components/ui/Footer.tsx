@@ -47,15 +47,15 @@ export default function Footer() {
   };
 
   return (
-    <footer className="dark:to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900 z-[2]">
-      <div className="absolute inset-0">
+    <footer className="relative overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100 before:absolute before:inset-0 dark:before:bg-primary-900 z-[9999] isolate">
+      <div className="relative z-[2]">
         <div className="animate-float bg-primary-200/20 dark:bg-primary-300/10 absolute -left-32 bottom-0 h-96 w-96 rounded-full blur-3xl" />
         <div className="animate-float-delayed bg-accent-200/20 dark:bg-accent-300/10 absolute -right-32 top-0 h-96 w-96 rounded-full blur-3xl" />
       </div>
 
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-200 to-transparent dark:via-primary-700" />
+      <div className="fixed inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-200 to-transparent dark:via-primary-700" />
 
-      <div className="container relative mx-auto px-4 py-16">
+      <div className="container relative z-[2] mx-auto px-4 py-16">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="mb-6 inline-block transform transition-all duration-300 hover:scale-105">

@@ -336,8 +336,12 @@ body {
 }
 
 @media (pointer: coarse) {
+  /* Mobileszközökön egyszerűbb megoldás */
   .parallax-bg {
-    transform: translateY(${scrollY * 0.2}px) scale(1.05) !important;
+    transform: none;
+    height: 100%;
+    position: fixed;
+    background-attachment: scroll;
     animation: parallaxMobile 20s linear infinite;
   }
   
