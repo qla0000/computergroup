@@ -51,7 +51,14 @@ export default function Navbar() {
               alt="Company Logo"
               width={120}
               height={32}
-              className="dark:invert"
+              className="block dark:hidden"
+            />
+            <Image
+              src="/logo-white.png"
+              alt="Company Logo Dark"
+              width={120}
+              height={32}
+              className="hidden dark:block"
             />
           </Link>
 

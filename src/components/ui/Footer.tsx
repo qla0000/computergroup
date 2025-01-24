@@ -64,7 +64,14 @@ export default function Footer() {
                 alt="Company Logo"
                 width={180}
                 height={48}
-                className="dark:invert"
+                className="block dark:hidden"
+              />
+              <Image
+                src="/logo-white.png"
+                alt="Company Logo Dark"
+                width={180}
+                height={48}
+                className="hidden dark:block"
               />
             </div>
             <p className="max-w-sm text-lg font-medium text-primary-800 dark:text-primary-200">
