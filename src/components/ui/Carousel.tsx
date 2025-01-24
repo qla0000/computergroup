@@ -129,7 +129,7 @@ export default function Carousel() {
               {slide.description}
             </p>
             <a href={slide.buttonLink}>
-              <button className="rounded-full bg-accent-500 px-6 py-3 text-base font-semibold text-primary-950 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:scale-110 hover:bg-accent-400 hover:shadow-[0_10px_40px_rgba(255,193,7,0.5)] active:scale-95 sm:px-8 sm:py-4 sm:text-lg animate-[fadeIn_0.5s_ease-out_0.6s_forwards] opacity-0">
+              <button className="translate-y-10 transform animate-[slideUp_1s_ease-out_0.6s_forwards] rounded-full bg-primary-500 px-6 py-3 text-base font-semibold opacity-0 transition-all duration-300 hover:scale-105 hover:bg-primary-600 hover:shadow-[0_0_30px_rgba(3,169,244,0.5)] sm:px-8 sm:py-4 sm:text-lg">
                 {slide.buttonText}
               </button>
             </a>
