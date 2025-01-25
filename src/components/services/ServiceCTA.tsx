@@ -1,19 +1,30 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+
 export default function ServiceCTA() {
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const newScale = 1 + (scrolled * 0.0005);
+      setScale(Math.min(newScale, 1.15));
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-900 py-24 text-white">
       {/* Háttérkép */}
       <div
-        className="absolute inset-0 scale-110 bg-[url('/bg-servicecta.jpg')] bg-cover bg-fixed bg-center bg-no-repeat sm:scale-105"
-        style={
-          {
-            transform: "scale(var(--bg-scale))",
-            transformOrigin: "center center",
-            ["--bg-scale" as string]:
-              "calc(1.1 + (0.4 * (1 - var(--viewport-scale))))",
-            ["--viewport-scale" as string]:
-              "clamp(0, (100vw - 400px) / 800, 1)",
-          } as React.CSSProperties
-        }
+        className="absolute inset-0 scale-110 bg-[url('/bg-servicecta.jpg')] bg-cover bg-center bg-no-repeat parallax-bg sm:scale-105"
+        style={{
+          transform: `scale(${scale})`,
+          transformOrigin: "center center",
+        }}
         aria-hidden="true"
       />
       <div className="from-primary-900/60 to-primary-950/60 absolute inset-0 bg-gradient-to-br backdrop-blur-[1px]" />
