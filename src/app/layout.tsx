@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+"use client";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import SkipToContent from "@/components/ui/SkipToContent";
 import { Toaster } from 'react-hot-toast';
+import { useEffect } from 'react';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,44 +16,19 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Digitális Megoldások a Jövőért",
-    template: "%s | Cégnév",
-  },
-  description:
-    "Modern webalkalmazások fejlesztése, amelyek előreviszik vállalkozását",
-  keywords: [
-    "webfejlesztés",
-    "frontend",
-    "backend",
-    "UI/UX",
-    "React",
-    "Next.js",
-  ],
-  openGraph: {
-    type: "website",
-    locale: "hu_HU",
-    url: "https://yourdomain.com",
-    siteName: "Cégnév",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Cégnév",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@cegnev",
-    creator: "@cegnev",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+const ViewportHandler = () => {
+  useEffect(() => {
+    const setAppHeight = () => {
+      document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+    };
+    
+    window.addEventListener('resize', setAppHeight);
+    setAppHeight(); // Initial set
+    
+    return () => window.removeEventListener('resize', setAppHeight);
+  }, []);
+
+  return null;
 };
 
 export default function RootLayout({
@@ -71,6 +47,7 @@ export default function RootLayout({
           {children}
         </main>
         <Toaster position="bottom-right" />
+        <ViewportHandler />
       </body>
     </html>
   );
