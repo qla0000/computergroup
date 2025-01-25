@@ -14,6 +14,14 @@ const Services = dynamic(() => import('@/components/Services'), {
   loading: () => <div className="h-screen bg-primary-900" />
 });
 
+const TestimonialsComponent = dynamic(() => import('@/components/Testimonials'), {
+  loading: () => <div className="h-96 bg-primary-900/50 animate-pulse" />
+});
+
+const StatsComponent = dynamic(() => import('@/components/Stats'), {
+  loading: () => <div className="h-72 bg-primary-900/50 animate-pulse" />
+});
+
 export default function Home() {
   return (
     <div className="mobile-viewport">
@@ -23,8 +31,8 @@ export default function Home() {
         <Services />
         <TechStack />
         <Portfolio />
-        <Stats />
-        <Testimonials />
+        <StatsComponent />
+        <TestimonialsComponent />
       </main>
       <Footer />
     </div>
