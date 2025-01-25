@@ -20,7 +20,7 @@ export default function ServiceCTA() {
     <section className="to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-900 py-24 text-white">
       {/* Háttérkép */}
       <div
-        className="absolute inset-0 scale-110 bg-[url('/bg-servicecta.jpg')] bg-cover bg-center bg-no-repeat parallax-bg sm:scale-105"
+        className="absolute inset-0 scale-110 bg-[url('/bg-servicecta.jpg')] bg-cover bg-center bg-no-repeat parallax-bg sm:scale-105 mobile-viewport h-[var(--viewport-height)]"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: "center center",

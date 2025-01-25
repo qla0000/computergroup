@@ -20,7 +20,7 @@ const HeroSection = () => {
     <section ref={sectionRef} className="relative h-[var(--viewport-height)] overflow-hidden">
       {/* Parallax Background */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 mobile-viewport"
         style={{
           backgroundImage: 'url(/code.jpg)',
           backgroundSize: 'cover',

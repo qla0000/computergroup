@@ -135,3 +135,34 @@
 - Cumulative Layout Shift (CLS): <0.1
 
 A fenti optimalizálások után várható teljesítményjavulás: 60-70%
+
+
+A fő problémák:
+Main-thread munka: 5.0s
+LCP (Largest Contentful Paint) elem betöltési ideje: 47s
+JavaScript végrehajtási idő: 0.9s
+Nagy DOM méret: 450 elem
+Nagy payload méret: 18,512 KiB
+A legfontosabb optimalizálási javaslatok:
+Képek optimalizálása:
+A ServiceHero komponensben a háttérkép nincs optimalizálva:
+Használjunk next/image komponenst
+Konvertáljuk WebP formátumba
+Állítsunk be megfelelő méretezést
+JavaScript optimalizálás:
+Túl sok scroll event listener van párhuzamosan:
+Használjunk throttling-ot vagy debouncing-ot
+Vonjuk össze egy központi scroll kezelőbe
+Lazy loading és code splitting:
+A nagy komponenseket (ServiceDetails, Portfolio, ContactForm) töltsük be dinamikusan
+Használjunk Suspense boundary-t a betöltéshez
+CSS optimalizálás:
+Túl sok animáció fut párhuzamosan
+Használjunk will-change tulajdonságot a parallax effekteknél
+Optimalizáljuk a Tailwind konfigurációt
+Javasolt azonnali intézkedések:
+Képek optimalizálása (18,694 KiB megtakarítás)
+JavaScript optimalizálás (906 KiB megtakarítás)
+CSS optimalizálás (143 KiB megtakarítás)
+Animációk és layout javítása
+Hálózati optimalizálás
