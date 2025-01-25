@@ -96,6 +96,9 @@ export default function Carousel() {
               src={slide.image}
               alt={slide.title}
               fill
+              quality={85}
+              placeholder="empty"
+              sizes="100vw"
               className="transform object-cover brightness-[0.4] transition-transform duration-[3s] hover:scale-105"
               priority={index === 0}
             />
