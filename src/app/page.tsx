@@ -2,8 +2,6 @@ import Carousel from "@/components/ui/Carousel";
 import dynamic from 'next/dynamic';
 import ResponsiveShowcase from "@/components/ResponsiveShowcase";
 import TechStack from "@/components/TechStack";
-import Stats from "@/components/Stats";
-import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/ui/Footer";
 
 const Portfolio = dynamic(() => import('@/components/Portfolio'), {
