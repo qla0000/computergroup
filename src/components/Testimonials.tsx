@@ -35,9 +35,21 @@ const testimonials = [
 
 export default function Testimonials() {
   const [mounted, setMounted] = useState(false);
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const newScale = 1 + (scrolled * 0.0005);
+      setScale(Math.min(newScale, 1.15));
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   if (!mounted) {
@@ -48,17 +60,11 @@ export default function Testimonials() {
     <section className="to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-900 py-24">
       {/* Háttérkép */}
       <div
-        className="absolute inset-0 scale-110 bg-[url('/bg-testimonials.jpg')] bg-cover bg-fixed bg-center bg-no-repeat sm:scale-105"
-        style={
-          {
-            transform: "scale(var(--bg-scale))",
-            transformOrigin: "center center",
-            ["--bg-scale" as string]:
-              "calc(1.1 + (0.4 * (1 - var(--viewport-scale))))",
-            ["--viewport-scale" as string]:
-              "clamp(0, (100vw - 400px) / 800, 1)",
-          } as React.CSSProperties
-        }
+        className="absolute inset-0 scale-110 bg-[url('/bg-testimonials.jpg')] bg-cover bg-center bg-no-repeat parallax-bg sm:scale-105"
+        style={{
+          transform: `scale(${scale})`,
+          transformOrigin: "center center",
+        }}
         aria-hidden="true"
       />
       <div className="from-primary-900/50 to-primary-950/50 absolute inset-0 bg-gradient-to-br" />
