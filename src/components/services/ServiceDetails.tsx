@@ -93,10 +93,6 @@ export default function ServiceDetails() {
               className="group animate-[fadeIn_0.5s_ease-out_forwards] rounded-lg bg-white/80 p-6 opacity-0 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:bg-white hover:shadow-2xl sm:p-8 dark:bg-primary-800 dark:hover:bg-primary-700"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              {/* Dekoratív elemek */}
-              <div className="bg-accent-500/10 dark:bg-accent-400/5 group-hover:bg-accent-500/20 dark:group-hover:bg-accent-400/10 absolute -right-4 -top-4 h-24 w-24 rounded-full blur-2xl transition-all duration-500" />
-              <div className="bg-primary-500/10 dark:bg-primary-400/5 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-400/10 absolute -bottom-4 -left-4 h-24 w-24 rounded-full blur-2xl transition-all duration-500" />
-
               <div className="relative">
                 <div className="mb-4 text-4xl transition-all duration-500 group-hover:rotate-12 group-hover:scale-110 group-hover:transform">
                   {service.icon}

@@ -98,7 +98,7 @@ export default function Carousel() {
               fill
               quality={85}
               placeholder="empty"
-              sizes="100vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
               className="transform object-cover brightness-[0.4] transition-transform duration-[3s] hover:scale-105"
               priority={index === 0}
             />
@@ -106,13 +106,6 @@ export default function Carousel() {
           <div className="from-primary-800/60 to-primary-900/80 absolute inset-0 bg-gradient-to-b" />
         </div>
       ))}
-
-      {/* Lebegő elemek továbbfejlesztett animációkkal */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="bg-primary-300/20 absolute left-1/4 top-1/4 h-64 w-64 animate-[float_6s_ease-in-out_infinite] rounded-full blur-2xl" />
-        <div className="bg-accent-300/20 absolute right-1/4 top-1/2 h-48 w-48 animate-[float_8s_ease-in-out_2s_infinite] rounded-full blur-2xl" />
-        <div className="bg-primary-400/10 absolute bottom-1/4 left-1/3 h-32 w-32 animate-[float_7s_ease-in-out_1s_infinite] rounded-full blur-xl" />
-      </div>
 
       {/* Tartalom továbbfejlesztett animációkkal */}
       <div className="relative flex h-full items-center justify-center px-4">

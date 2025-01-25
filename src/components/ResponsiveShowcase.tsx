@@ -98,9 +98,9 @@ export default function ResponsiveShowcase() {
                 alt="Reszponzív weboldal megjelenítése különböző eszközökön"
                 className="h-full w-full scale-105 object-cover transition-transform duration-700 hover:scale-110"
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
                 priority
-                quality={90}
+                quality={85}
               />
 
               {/* Üveghatású keret */}

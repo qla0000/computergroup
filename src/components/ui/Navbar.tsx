@@ -52,6 +52,11 @@ export default function Navbar() {
               width={120}
               height={32}
               className="block dark:hidden"
+              priority
+              quality={90}
+              sizes="120px"
+              placeholder="blur"
+              blurDataURL="data:image/webp;base64,/9j/4AAQSkZJRg..."
             />
             <Image
               src="/logo-white.png"
@@ -59,6 +64,11 @@ export default function Navbar() {
               width={120}
               height={32}
               className="hidden dark:block"
+              priority
+              quality={90}
+              sizes="120px"
+              placeholder="blur"
+              blurDataURL="data:image/webp;base64,/9j/4AAQSkZJRg..."
             />
           </Link>
 
