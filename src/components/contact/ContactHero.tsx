@@ -22,6 +22,7 @@ export default function ContactHero() {
         <div
           className="fixed inset-0 bg-[url('/backend.jpg')] bg-cover bg-center bg-no-repeat transition-transform duration-300 ease-out"
           style={{
+            height: 'var(--app-height)',
             transform: `scale(${scale})`,
             transformOrigin: "center center",
           }}

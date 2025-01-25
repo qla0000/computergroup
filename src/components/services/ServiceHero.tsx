@@ -22,6 +22,7 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 z-0"
         style={{
+          height: 'var(--app-height)',
           backgroundImage: 'url(/code.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
