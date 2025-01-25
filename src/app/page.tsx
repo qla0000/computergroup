@@ -9,7 +9,7 @@ import Stats from "@/components/Stats";
 
 export default function Home() {
   return (
-    <>
+    <div className="mobile-viewport">
       <main>
         <Carousel />
         <ResponsiveShowcase />
@@ -20,6 +20,6 @@ export default function Home() {
         <Testimonials />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

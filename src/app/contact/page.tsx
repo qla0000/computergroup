@@ -7,7 +7,7 @@ import Footer from "@/components/ui/Footer";
 export default function ContactPage() {
   return (
     <>
-      <main className="dark:to-primary-950 relative overflow-hidden bg-primary-50 dark:bg-gradient-to-br dark:from-primary-900">
+      <main className="dark:to-primary-950 relative overflow-hidden bg-primary-50 dark:bg-gradient-to-br dark:from-primary-900 mobile-viewport">
         <ContactHero />
         <div className="relative z-10 bg-primary-50 dark:bg-gradient-to-br dark:from-primary-900 dark:to-primary-950">
           <div className="container relative mx-auto px-4 py-12 sm:py-16 md:py-20">
