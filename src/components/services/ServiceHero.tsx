@@ -17,7 +17,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-screen overflow-hidden">
+    <section ref={sectionRef} className="relative h-[var(--viewport-height)] overflow-hidden">
       {/* Parallax Background */}
       <div 
         className="absolute inset-0 z-0"
