@@ -72,6 +72,8 @@ export default function Portfolio() {
                 src={project.image}
                 alt={project.title}
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                priority={index === 0}
                 className="object-cover transition-all duration-700 group-hover:rotate-2 group-hover:scale-110"
               />
               <div className="from-primary-900/80 absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t to-transparent opacity-0 backdrop-blur-sm transition-all duration-500 group-hover:opacity-100">
