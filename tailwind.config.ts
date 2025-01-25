@@ -64,6 +64,18 @@ export default {
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "spin-slow": "spin 8s linear infinite",
       },
+      height: {
+        screen: '100dvh',
+        'screen-fallback': '100vh',
+      },
+      minHeight: {
+        screen: '100dvh',
+        'screen-fallback': '100vh',
+      },
+      maxHeight: {
+        screen: '100dvh',
+        'screen-fallback': '100vh',
+      },
     },
   },
   plugins: [],

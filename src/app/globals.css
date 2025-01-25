@@ -46,7 +46,20 @@
   --background: var(--primary-950);
   --foreground: var(--neutral-50);
 
+  --viewport-height: 100vh;
   --app-height: 100%;
+}
+
+@supports (-webkit-touch-callout: none) {
+  :root {
+    --viewport-height: -webkit-fill-available;
+  }
+}
+
+.mobile-viewport {
+  height: var(--viewport-height);
+  min-height: var(--viewport-height);
+  max-height: var(--viewport-height);
 }
 
 body {

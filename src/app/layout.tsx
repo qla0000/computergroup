@@ -18,14 +18,25 @@ const geistMono = Geist_Mono({
 
 const ViewportHandler = () => {
   useEffect(() => {
-    const setAppHeight = () => {
-      document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+    const setViewportHeight = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--viewport-height', `${window.innerHeight}px`);
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
     };
+
+    setViewportHeight();
     
-    window.addEventListener('resize', setAppHeight);
-    setAppHeight(); // Initial set
-    
-    return () => window.removeEventListener('resize', setAppHeight);
+    // Késleltetett frissítés az iOS Safari számára
+    window.addEventListener('resize', () => {
+      const timeout = setTimeout(setViewportHeight, 50);
+      return () => clearTimeout(timeout);
+    });
+
+    // Orientációváltás kezelése
+    window.addEventListener('orientationchange', () => {
+      const timeout = setTimeout(setViewportHeight, 50);
+      return () => clearTimeout(timeout);
+    });
   }, []);
 
   return null;
