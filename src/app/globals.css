@@ -45,6 +45,8 @@
   /* Alapértelmezett háttér és szöveg */
   --background: var(--primary-950);
   --foreground: var(--neutral-50);
+
+  --app-height: 100%;
 }
 
 body {
@@ -299,18 +301,18 @@ body {
 
 .parallax-container {
   position: relative;
-  height: 100vh;
+  height: 100dvh;
   overflow-x: hidden;
   overflow-y: auto;
   perspective: 2px;
 }
 
 .parallax-bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 120%;
+  height: var(--app-height);
   transform: translateZ(-1px) scale(2.1);
   z-index: -1;
   background-size: cover;
@@ -318,12 +320,12 @@ body {
 }
 
 .parallax-content {
-  position: relative;
+  position: fixed;
   transform-style: preserve-3d;
 }
 
 .parallax-bg img {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   width: 100%;
@@ -353,8 +355,8 @@ body {
 }
 
 .parallax-section {
-  position: relative;
-  height: 100%;
+  position: fixed;
+  height: var(--app-height);
   overflow: hidden;
 }
 
