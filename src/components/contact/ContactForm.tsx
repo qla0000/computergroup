@@ -19,29 +19,29 @@ export default function ContactForm() {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-    
+
     const result = validateForm(data);
     if (!result.success) return;
-    
-    const loadingToast = toast.loading('Üzenet küldése...');
-    
+
+    const loadingToast = toast.loading("Üzenet küldése...");
+
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(result.data)
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(result.data),
       });
-      
+
       if (!response.ok) {
         const error = await response.json();
-        throw new Error(error.message || 'Hiba történt a küldés során');
+        throw new Error(error.message || "Hiba történt a küldés során");
       }
-      
+
       formReset();
-      toast.success('Üzenet sikeresen elküldve!', { id: loadingToast });
+      toast.success("Üzenet sikeresen elküldve!", { id: loadingToast });
     } catch (error) {
-      console.error('Form submission error:', error);
-      toast.error('Hiba történt az üzenet küldése során', { id: loadingToast });
+      console.error("Form submission error:", error);
+      toast.error("Hiba történt az üzenet küldése során", { id: loadingToast });
     }
   };
 
@@ -65,7 +65,7 @@ export default function ContactForm() {
             {...register("name", { required: true })}
             type="text"
             placeholder="Név"
-            className={`border-primary-200/50 text-primary-900 focus:ring-primary-500/20 dark:bg-primary-900/80 w-full rounded-lg border p-3 transition-all duration-300 placeholder:text-primary-400 hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 dark:border-primary-700 dark:bg-primary-900 dark:text-primary-50 dark:hover:border-primary-600 dark:focus:border-primary-500 dark:focus:bg-primary-900 ${
+            className={`border-primary-200/50 focus:ring-primary-500/20 dark:bg-primary-900/80 w-full rounded-lg border p-3 text-primary-900 transition-all duration-300 placeholder:text-primary-400 hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 dark:border-primary-700 dark:bg-primary-900 dark:text-primary-50 dark:hover:border-primary-600 dark:focus:border-primary-500 dark:focus:bg-primary-900 ${
               errors.name ? "border-red-500" : ""
             }`}
           />
@@ -78,7 +78,7 @@ export default function ContactForm() {
             {...register("email", { required: true })}
             type="email"
             placeholder="Email"
-            className={`border-primary-200/50 text-primary-900 focus:ring-primary-500/20 dark:bg-primary-900/80 w-full rounded-lg border p-3 transition-all duration-300 placeholder:text-primary-400 hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 dark:border-primary-700 dark:bg-primary-900 dark:text-primary-50 dark:hover:border-primary-600 dark:focus:border-primary-500 dark:focus:bg-primary-900 ${
+            className={`border-primary-200/50 focus:ring-primary-500/20 dark:bg-primary-900/80 w-full rounded-lg border p-3 text-primary-900 transition-all duration-300 placeholder:text-primary-400 hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 dark:border-primary-700 dark:bg-primary-900 dark:text-primary-50 dark:hover:border-primary-600 dark:focus:border-primary-500 dark:focus:bg-primary-900 ${
               errors.email ? "border-red-500" : ""
             }`}
           />
@@ -91,7 +91,7 @@ export default function ContactForm() {
             {...register("subject", { required: true })}
             type="text"
             placeholder="Tárgy"
-            className={`border-primary-200/50 text-primary-900 focus:ring-primary-500/20 dark:bg-primary-900/80 w-full rounded-lg border p-3 transition-all duration-300 placeholder:text-primary-400 hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 dark:border-primary-700 dark:bg-primary-900 dark:text-primary-50 dark:hover:border-primary-600 dark:focus:border-primary-500 dark:focus:bg-primary-900 ${
+            className={`border-primary-200/50 focus:ring-primary-500/20 dark:bg-primary-900/80 w-full rounded-lg border p-3 text-primary-900 transition-all duration-300 placeholder:text-primary-400 hover:border-primary-300 focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 dark:border-primary-700 dark:bg-primary-900 dark:text-primary-50 dark:hover:border-primary-600 dark:focus:border-primary-500 dark:focus:bg-primary-900 ${
               errors.subject ? "border-red-500" : ""
             }`}
           />

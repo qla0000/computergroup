@@ -8,7 +8,7 @@ export default function ContactHero() {
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
-      const newScale = 1 + (scrolled * 0.0005);
+      const newScale = 1 + scrolled * 0.0005;
       setScale(Math.min(newScale, 1.15));
     };
 
@@ -17,10 +17,10 @@ export default function ContactHero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-24 isolate">
+    <section className="to-primary-950 relative isolate overflow-hidden bg-gradient-to-br from-primary-900 py-24">
       <div className="absolute inset-0 overflow-hidden">
         <div
-          className="fixed inset-0 bg-[url('/backend.jpg')] bg-cover bg-center bg-no-repeat transition-transform duration-300 ease-out mobile-viewport h-[var(--viewport-height)]"
+          className="mobile-viewport fixed inset-0 h-[var(--viewport-height)] bg-[url('/backend.jpg')] bg-cover bg-center bg-no-repeat transition-transform duration-300 ease-out"
           style={{
             transform: `scale(${scale})`,
             transformOrigin: "center center",
@@ -28,12 +28,12 @@ export default function ContactHero() {
           aria-hidden="true"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/70 to-primary-950/80 backdrop-blur-[1px]" />
+      <div className="from-primary-900/70 to-primary-950/80 absolute inset-0 bg-gradient-to-br backdrop-blur-[1px]" />
 
       {/* Lebegő elemek */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-float absolute left-1/4 top-1/4 h-32 w-32 rounded-full bg-primary-300/10" />
-        <div className="animate-float-delayed absolute bottom-1/4 right-1/4 h-24 w-24 rounded-full bg-accent-300/10" />
+        <div className="animate-float bg-primary-300/10 absolute left-1/4 top-1/4 h-32 w-32 rounded-full" />
+        <div className="animate-float-delayed bg-accent-300/10 absolute bottom-1/4 right-1/4 h-24 w-24 rounded-full" />
       </div>
 
       <div className="container relative mx-auto px-4">

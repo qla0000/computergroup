@@ -5,11 +5,11 @@ import Footer from "@/components/ui/Footer";
 export default function PortfolioPage() {
   return (
     <>
-      <main className="mobile-viewport">
+      <main>
         <PortfolioHero />
         <PortfolioGrid />
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 }

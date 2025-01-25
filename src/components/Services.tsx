@@ -1,7 +1,7 @@
 "use client";
 
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { useState, useEffect } from 'react';
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useState, useEffect } from "react";
 
 export default function Services() {
   const { ref, isVisible } = useIntersectionObserver();
@@ -17,7 +17,7 @@ export default function Services() {
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
-      const newScale = 1 + (scrolled * 0.0005);
+      const newScale = 1 + scrolled * 0.0005;
       setScale(Math.min(newScale, 1.15));
     };
 
@@ -53,7 +53,7 @@ export default function Services() {
     >
       {/* Háttérkép */}
       <div
-        className="absolute inset-0 scale-110 bg-[url('/bg-services.jpg')] bg-cover bg-center bg-no-repeat parallax-bg sm:scale-105"
+        className="parallax-bg absolute inset-0 scale-110 bg-[url('/bg-services.jpg')] bg-cover bg-center bg-no-repeat sm:scale-105"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: "center center",
@@ -78,7 +78,7 @@ export default function Services() {
             <div
               key={service.title}
               className={`group rounded-lg bg-white/10 p-6 opacity-0 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl sm:p-8 ${
-                hasAnimated ? 'animate-[fadeIn_0.5s_ease-out_forwards]' : ''
+                hasAnimated ? "animate-[fadeIn_0.5s_ease-out_forwards]" : ""
               }`}
               style={{ animationDelay: `${index * 200}ms` }}
             >

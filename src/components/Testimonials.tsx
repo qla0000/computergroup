@@ -44,7 +44,7 @@ export default function Testimonials() {
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
-      const newScale = 1 + (scrolled * 0.0005);
+      const newScale = 1 + scrolled * 0.0005;
       setScale(Math.min(newScale, 1.15));
     };
 
@@ -60,7 +60,7 @@ export default function Testimonials() {
     <section className="to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-900 py-24">
       {/* Háttérkép */}
       <div
-        className="absolute inset-0 scale-110 bg-[url('/bg-testimonials.jpg')] bg-cover bg-center bg-no-repeat parallax-bg sm:scale-105"
+        className="parallax-bg absolute inset-0 scale-110 bg-[url('/bg-testimonials.jpg')] bg-cover bg-center bg-no-repeat sm:scale-105"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: "center center",

@@ -1,7 +1,7 @@
 "use client";
 
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { useState, useEffect } from 'react';
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useState, useEffect } from "react";
 
 export default function Stats() {
   const { ref, isVisible } = useIntersectionObserver();
@@ -37,7 +37,9 @@ export default function Stats() {
             <div
               key={stat.label}
               className={`group text-center ${
-                hasAnimated ? 'animate-[statsAppear_0.6s_ease-out_forwards]' : 'opacity-0'
+                hasAnimated
+                  ? "animate-[statsAppear_0.6s_ease-out_forwards]"
+                  : "opacity-0"
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
             >

@@ -86,9 +86,9 @@ export default function Carousel() {
         <div
           key={index}
           className={`absolute inset-0 transition-all duration-1000 ${
-            currentSlide === index 
-              ? "opacity-100 scale-100" 
-              : "opacity-0 scale-110"
+            currentSlide === index
+              ? "scale-100 opacity-100"
+              : "scale-110 opacity-0"
           }`}
         >
           <div className="absolute inset-0">
@@ -100,15 +100,15 @@ export default function Carousel() {
               priority={index === 0}
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-800/60 to-primary-900/80" />
+          <div className="from-primary-800/60 to-primary-900/80 absolute inset-0 bg-gradient-to-b" />
         </div>
       ))}
 
       {/* Lebegő elemek továbbfejlesztett animációkkal */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/4 top-1/4 h-64 w-64 rounded-full bg-primary-300/20 blur-2xl animate-[float_6s_ease-in-out_infinite]" />
-        <div className="absolute right-1/4 top-1/2 h-48 w-48 rounded-full bg-accent-300/20 blur-2xl animate-[float_8s_ease-in-out_2s_infinite]" />
-        <div className="absolute left-1/3 bottom-1/4 h-32 w-32 rounded-full bg-primary-400/10 blur-xl animate-[float_7s_ease-in-out_1s_infinite]" />
+        <div className="bg-primary-300/20 absolute left-1/4 top-1/4 h-64 w-64 animate-[float_6s_ease-in-out_infinite] rounded-full blur-2xl" />
+        <div className="bg-accent-300/20 absolute right-1/4 top-1/2 h-48 w-48 animate-[float_8s_ease-in-out_2s_infinite] rounded-full blur-2xl" />
+        <div className="bg-primary-400/10 absolute bottom-1/4 left-1/3 h-32 w-32 animate-[float_7s_ease-in-out_1s_infinite] rounded-full blur-xl" />
       </div>
 
       {/* Tartalom továbbfejlesztett animációkkal */}
@@ -118,16 +118,16 @@ export default function Carousel() {
             key={index}
             className={`absolute w-full max-w-7xl text-center transition-all duration-700 ${
               currentSlide === index
-                ? "pointer-events-auto translate-y-0 opacity-100 scale-100"
+                ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
                 : isChanging
-                ? "pointer-events-none -translate-y-10 opacity-0 scale-95"
-                : "pointer-events-none translate-y-10 opacity-0 scale-95"
+                  ? "pointer-events-none -translate-y-10 scale-95 opacity-0"
+                  : "pointer-events-none translate-y-10 scale-95 opacity-0"
             }`}
           >
-            <h1 className="mb-6 text-4xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] sm:text-5xl md:text-7xl animate-[fadeIn_0.5s_ease-out_forwards]">
+            <h1 className="mb-6 animate-[fadeIn_0.5s_ease-out_forwards] text-4xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] sm:text-5xl md:text-7xl">
               {slide.title}
             </h1>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-50 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] sm:text-xl md:text-2xl animate-[fadeIn_0.5s_ease-out_0.3s_forwards] opacity-0">
+            <p className="mx-auto mb-8 max-w-2xl animate-[fadeIn_0.5s_ease-out_0.3s_forwards] text-lg text-primary-50 opacity-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] sm:text-xl md:text-2xl">
               {slide.description}
             </p>
             <a href={slide.buttonLink}>
@@ -140,12 +140,12 @@ export default function Carousel() {
       </div>
 
       {/* Navigáció továbbfejlesztett animációkkal */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-3 animate-[fadeIn_1s_ease-out_forwards]">
+      <div className="absolute bottom-8 left-0 right-0 flex animate-[fadeIn_1s_ease-out_forwards] justify-center space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`transition-all duration-500 rounded-full ${
+            className={`rounded-full transition-all duration-500 ${
               currentSlide === index
                 ? "h-3 w-12 bg-accent-400 shadow-[0_0_20px_rgba(255,193,7,0.5)] sm:h-4 sm:w-16"
                 : "h-3 w-3 bg-primary-300 hover:bg-primary-400 hover:shadow-[0_0_15px_rgba(58,169,255,0.3)] sm:h-4 sm:w-4"

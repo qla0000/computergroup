@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { useState, useEffect } from 'react';
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useState, useEffect } from "react";
 
 export default function Portfolio() {
   const { ref, isVisible } = useIntersectionObserver();
@@ -18,7 +18,7 @@ export default function Portfolio() {
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
-      const newScale = 1 + (scrolled * 0.0005);
+      const newScale = 1 + scrolled * 0.0005;
       setScale(Math.min(newScale, 1.15));
     };
 
@@ -51,7 +51,7 @@ export default function Portfolio() {
     >
       {/* Háttérkép */}
       <div
-        className="absolute inset-0 scale-110 bg-[url('/portfolio.jpg')] bg-cover bg-center bg-no-repeat parallax-bg sm:scale-105 h-[var(--viewport-height)]"
+        className="parallax-bg absolute inset-0 h-[var(--viewport-height)] scale-110 bg-[url('/portfolio.jpg')] bg-cover bg-center bg-no-repeat sm:scale-105"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: "center center",
@@ -67,9 +67,13 @@ export default function Portfolio() {
       </div>
 
       <div className="container relative mx-auto px-4">
-        <h2 className={`mb-12 text-center text-4xl font-bold text-white sm:text-5xl ${
-          hasAnimated ? 'animate-[slideDown_1s_ease-out_forwards]' : 'opacity-0'
-        }`}>
+        <h2
+          className={`mb-12 text-center text-4xl font-bold text-white sm:text-5xl ${
+            hasAnimated
+              ? "animate-[slideDown_1s_ease-out_forwards]"
+              : "opacity-0"
+          }`}
+        >
           Portfólió
         </h2>
         <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -77,7 +81,7 @@ export default function Portfolio() {
             <div
               key={project.title}
               className={`dark:bg-primary-800/50 group relative aspect-video overflow-hidden rounded-lg bg-white/10 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-300 hover:shadow-xl ${
-                hasAnimated ? 'animate-[fadeInUp_0.6s_ease-out_forwards]' : ''
+                hasAnimated ? "animate-[fadeInUp_0.6s_ease-out_forwards]" : ""
               }`}
               style={{ animationDelay: `${index * 200}ms` }}
             >

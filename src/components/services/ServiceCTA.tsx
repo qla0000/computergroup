@@ -8,7 +8,7 @@ export default function ServiceCTA() {
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
-      const newScale = 1 + (scrolled * 0.0005);
+      const newScale = 1 + scrolled * 0.0005;
       setScale(Math.min(newScale, 1.15));
     };
 
@@ -20,7 +20,7 @@ export default function ServiceCTA() {
     <section className="to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-900 py-24 text-white">
       {/* Háttérkép */}
       <div
-        className="absolute inset-0 scale-110 bg-[url('/bg-servicecta.jpg')] bg-cover bg-center bg-no-repeat parallax-bg sm:scale-105 mobile-viewport h-[var(--viewport-height)]"
+        className="parallax-bg mobile-viewport absolute inset-0 h-[var(--viewport-height)] scale-110 bg-[url('/bg-servicecta.jpg')] bg-cover bg-center bg-no-repeat sm:scale-105"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: "center center",

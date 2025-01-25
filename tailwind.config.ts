@@ -65,16 +65,16 @@ export default {
         "spin-slow": "spin 8s linear infinite",
       },
       height: {
-        screen: '100dvh',
-        'screen-fallback': '100vh',
+        screen: "100dvh",
+        "screen-fallback": "100vh",
       },
       minHeight: {
-        screen: '100dvh',
-        'screen-fallback': '100vh',
+        screen: "100dvh",
+        "screen-fallback": "100vh",
       },
       maxHeight: {
-        screen: '100dvh',
-        'screen-fallback': '100vh',
+        screen: "100dvh",
+        "screen-fallback": "100vh",
       },
     },
   },

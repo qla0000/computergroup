@@ -12,8 +12,8 @@ import {
   SiAmazon,
   SiGit,
 } from "@icons-pack/react-simple-icons";
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { useState, useEffect } from 'react';
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useState, useEffect } from "react";
 
 export default function TechStack() {
   const { ref, isVisible } = useIntersectionObserver();
@@ -50,9 +50,13 @@ export default function TechStack() {
       </div>
 
       <div className="container relative mx-auto px-4">
-        <h2 className={`mb-12 text-center text-3xl font-bold text-primary-900 sm:text-4xl dark:text-primary-50 ${
-          hasAnimated ? 'animate-[slideDown_1s_ease-out_forwards]' : 'opacity-0'
-        }`}>
+        <h2
+          className={`mb-12 text-center text-3xl font-bold text-primary-900 sm:text-4xl dark:text-primary-50 ${
+            hasAnimated
+              ? "animate-[slideDown_1s_ease-out_forwards]"
+              : "opacity-0"
+          }`}
+        >
           Technológiáink
         </h2>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
@@ -60,7 +64,7 @@ export default function TechStack() {
             <div
               key={name}
               className={`group flex flex-col items-center opacity-0 ${
-                hasAnimated ? 'animate-[fadeIn_0.5s_ease-out_forwards]' : ''
+                hasAnimated ? "animate-[fadeIn_0.5s_ease-out_forwards]" : ""
               }`}
               style={{ animationDelay: `${hasAnimated ? delay : 0}ms` }}
             >
@@ -76,9 +80,11 @@ export default function TechStack() {
               </span>
             </div>
           ))}
-          <div className={`col-span-2 mt-8 sm:col-span-3 md:col-span-4 lg:col-span-5 opacity-0 ${
-            hasAnimated ? 'animate-[fadeIn_0.5s_ease-out_1s_forwards]' : ''
-          }`}>
+          <div
+            className={`col-span-2 mt-8 opacity-0 sm:col-span-3 md:col-span-4 lg:col-span-5 ${
+              hasAnimated ? "animate-[fadeIn_0.5s_ease-out_1s_forwards]" : ""
+            }`}
+          >
             <p className="text-center text-xl font-semibold text-primary-700 transition-colors duration-300 hover:text-accent-500 dark:text-primary-900 dark:hover:text-accent-400">
               És még sok más...
             </p>

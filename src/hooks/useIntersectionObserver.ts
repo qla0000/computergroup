@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 export function useIntersectionObserver() {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,7 +14,7 @@ export function useIntersectionObserver() {
           observer.disconnect();
         }
       },
-      { threshold: 0.35 }
+      { threshold: 0.3 }
     );
 
     if (ref.current) {
@@ -27,4 +27,4 @@ export function useIntersectionObserver() {
   }, [ref]);
 
   return { ref, isVisible };
-} 
+}

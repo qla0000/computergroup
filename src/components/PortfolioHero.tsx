@@ -1,31 +1,42 @@
+"use client";
+
+import { useRef, useEffect, useState } from "react";
+
 export default function PortfolioHero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-900 py-32">
-      {/* Háttérkép */}
+    <section
+      ref={sectionRef}
+      className="relative h-[var(--viewport-height)] overflow-hidden"
+    >
+      {/* Parallax Background */}
       <div
-        className="absolute inset-0 scale-110 bg-[url('/portfolio.jpg')] bg-cover bg-fixed bg-center bg-no-repeat sm:scale-105"
-        style={
-          {
-            transform: "scale(var(--bg-scale))",
-            transformOrigin: "center center",
-            ["--bg-scale" as string]:
-              "calc(1.1 + (0.4 * (1 - var(--viewport-scale))))",
-            ["--viewport-scale" as string]:
-              "clamp(0, (100vw - 400px) / 800, 1)",
-          } as React.CSSProperties
-        }
-        aria-hidden="true"
-      />
-      <div className="from-primary-900/50 to-primary-950/50 absolute inset-0 bg-gradient-to-br" />
-
-      {/* Lebegő elemek */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-float bg-primary-300/10 absolute left-1/4 top-1/4 h-24 w-24 rounded-full" />
-        <div className="animate-float-delayed bg-accent-300/10 absolute bottom-1/4 right-1/4 h-20 w-20 rounded-full" />
+        className="mobile-viewport absolute inset-0 z-0 h-[var(--viewport-height)] overflow-hidden"
+        style={{
+          backgroundImage: "url(/portfolio.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          transform: `translateY(${scrollY * 0.5}px)`,
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="from-primary-900/70 to-primary-950/80 absolute inset-0 bg-gradient-to-br" />
       </div>
-
-      <div className="container relative mx-auto px-4">
-        <div className="mx-auto max-w-3xl text-center text-white">
+      {/* Content */}
+      <div className="relative z-10 flex h-full items-center justify-center">
+        <div className="container mx-auto px-4 text-center text-white">
           <h1 className="mb-4 translate-y-10 transform animate-[slideUp_1s_ease-out_forwards] text-4xl font-bold opacity-0 sm:text-5xl md:text-6xl">
             Portfóliónk
           </h1>

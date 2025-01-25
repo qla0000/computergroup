@@ -1,7 +1,7 @@
 // components/HeroSection.tsx
 "use client";
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from "react";
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -12,20 +12,23 @@ const HeroSection = () => {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-[var(--viewport-height)] overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative h-[var(--viewport-height)] overflow-hidden"
+    >
       {/* Parallax Background */}
-      <div 
-        className="absolute inset-0 z-0 mobile-viewport h-[var(--viewport-height)] overflow-hidden"
+      <div
+        className="mobile-viewport absolute inset-0 z-0 h-[var(--viewport-height)] overflow-hidden"
         style={{
-          backgroundImage: 'url(/code.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
+          backgroundImage: "url(/code.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
           transform: `translateY(${scrollY * 0.5}px)`, // Parallax effect
         }}
       >

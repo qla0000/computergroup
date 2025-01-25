@@ -3,8 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/Navbar";
 import SkipToContent from "@/components/ui/SkipToContent";
-import { Toaster } from 'react-hot-toast';
-import { useEffect } from 'react';
+import { Toaster } from "react-hot-toast";
+import { useEffect } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,25 +21,31 @@ const ViewportHandler = () => {
     // Kezdeti viewport magasság beállítása
     const setInitialHeight = () => {
       const vh = window.innerHeight;
-      document.documentElement.style.setProperty('--viewport-height', `${vh}px`);
-      document.documentElement.style.setProperty('--app-height', `${vh}px`);
+      document.documentElement.style.setProperty(
+        "--viewport-height",
+        `${vh}px`
+      );
+      document.documentElement.style.setProperty("--app-height", `${vh}px`);
     };
 
     // Csak orientációváltáskor frissítjük a magasságot
     const handleOrientationChange = () => {
       setTimeout(() => {
         const vh = window.innerHeight;
-        document.documentElement.style.setProperty('--viewport-height', `${vh}px`);
-        document.documentElement.style.setProperty('--app-height', `${vh}px`);
+        document.documentElement.style.setProperty(
+          "--viewport-height",
+          `${vh}px`
+        );
+        document.documentElement.style.setProperty("--app-height", `${vh}px`);
       }, 100);
     };
 
     setInitialHeight();
 
-    window.addEventListener('orientationchange', handleOrientationChange);
+    window.addEventListener("orientationchange", handleOrientationChange);
 
     return () => {
-      window.removeEventListener('orientationchange', handleOrientationChange);
+      window.removeEventListener("orientationchange", handleOrientationChange);
     };
   }, []);
 
