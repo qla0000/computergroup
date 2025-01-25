@@ -135,7 +135,7 @@ export default function Carousel() {
         ))}
       </div>
 
-      {/* Navigáció továbbfejlesztett animációkkal */}
+      {/* alsó kis gombok */}
       <div className="absolute bottom-8 left-0 right-0 flex animate-[fadeIn_1s_ease-out_forwards] justify-center space-x-3">
         {slides.map((_, index) => (
           <button
@@ -143,7 +143,7 @@ export default function Carousel() {
             onClick={() => setCurrentSlide(index)}
             className={`rounded-full transition-all duration-500 ${
               currentSlide === index
-                ? "h-3 w-12 bg-accent-400 shadow-[0_0_20px_rgba(255,193,7,0.5)] sm:h-4 sm:w-16"
+                ? "h-3 w-12 bg-accent-400 shadow-[0_0_20px_rgba(3,169,244,1)] sm:h-4 sm:w-16"
                 : "h-3 w-3 bg-primary-300 hover:bg-primary-400 hover:shadow-[0_0_15px_rgba(58,169,255,0.3)] sm:h-4 sm:w-4"
             }`}
             aria-label={`Ugrás a ${index + 1}. diára`}
