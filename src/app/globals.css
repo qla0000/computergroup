@@ -53,6 +53,7 @@
 @supports (-webkit-touch-callout: none) {
   :root {
     --viewport-height: -webkit-fill-available;
+    --app-height: -webkit-fill-available;
   }
 }
 

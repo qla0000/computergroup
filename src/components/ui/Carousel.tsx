@@ -76,7 +76,7 @@ export default function Carousel() {
 
   return (
     <section
-      className="relative h-screen w-screen overflow-hidden"
+      className="relative h-[var(--viewport-height)] overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -91,13 +91,15 @@ export default function Carousel() {
               : "opacity-0 scale-110"
           }`}
         >
-          <Image
-            src={slide.image}
-            alt={slide.title}
-            fill
-            className="transform object-cover brightness-[0.4] transition-transform duration-[3s] hover:scale-105"
-            priority={index === 0}
-          />
+          <div className="absolute inset-0">
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              className="transform object-cover brightness-[0.4] transition-transform duration-[3s] hover:scale-105"
+              priority={index === 0}
+            />
+          </div>
           <div className="absolute inset-0 bg-gradient-to-b from-primary-800/60 to-primary-900/80" />
         </div>
       ))}
