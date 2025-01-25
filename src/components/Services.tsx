@@ -6,12 +6,24 @@ import { useState, useEffect } from 'react';
 export default function Services() {
   const { ref, isVisible } = useIntersectionObserver();
   const [hasAnimated, setHasAnimated] = useState(false);
+  const [scale, setScale] = useState(1);
 
   useEffect(() => {
     if (isVisible && !hasAnimated) {
       setHasAnimated(true);
     }
   }, [isVisible, hasAnimated]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const newScale = 1 + (scrolled * 0.0005);
+      setScale(Math.min(newScale, 1.15));
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const services = [
     {
@@ -41,12 +53,10 @@ export default function Services() {
     >
       {/* Háttérkép */}
       <div
-        className="absolute inset-0 scale-110 bg-[url('/bg-services.jpg')] bg-cover bg-fixed bg-center bg-no-repeat sm:scale-105"
+        className="absolute inset-0 scale-110 bg-[url('/bg-services.jpg')] bg-cover bg-center bg-no-repeat parallax-bg sm:scale-105"
         style={{
-          transform: "scale(var(--bg-scale))",
+          transform: `scale(${scale})`,
           transformOrigin: "center center",
-          ["--bg-scale" as string]: "calc(1.1 + (0.4 * (1 - var(--viewport-scale))))",
-          ["--viewport-scale" as string]: "clamp(0, (100vw - 400px) / 800, 1)",
         }}
         aria-hidden="true"
       />
