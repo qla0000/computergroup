@@ -324,16 +324,20 @@ body {
   perspective: 2px;
 }
 
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
 .parallax-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--app-height);
-  transform: translateZ(-1px) scale(2.1);
-  z-index: -1;
+  position: absolute;
+  inset: 0;
+  height: 120%;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+  will-change: transform;
 }
 
 .parallax-content {
@@ -355,12 +359,9 @@ body {
 }
 
 @media (pointer: coarse) {
-  /* Mobileszközökön egyszerűbb megoldás */
   .parallax-bg {
-    transform: none;
-    height: 100%;
-    position: fixed;
     background-attachment: scroll;
+    height: 120%;
     animation: parallaxMobile 20s linear infinite;
   }
 
@@ -369,18 +370,12 @@ body {
       transform: translateY(-10%);
     }
     50% {
-      transform: translateY(10%);
+      transform: translateY(0%);
     }
     100% {
       transform: translateY(-10%);
     }
   }
-}
-
-.parallax-section {
-  position: fixed;
-  height: var(--app-height);
-  overflow: hidden;
 }
 
 /* Fix for mobile background-attachment */

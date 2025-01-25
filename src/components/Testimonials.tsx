@@ -35,39 +35,21 @@ const testimonials = [
 
 export default function Testimonials() {
   const [mounted, setMounted] = useState(false);
-  const [scale, setScale] = useState(1);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY;
-      const newScale = 1 + scrolled * 0.0005;
-      setScale(Math.min(newScale, 1.15));
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
   return (
-    <section className="to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-900 py-24">
+    <section className="parallax-section relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-24">
       {/* Háttérkép */}
       <div
-        className="parallax-bg absolute inset-0 scale-110 bg-[url('/bg-testimonials.jpg')] bg-cover bg-center bg-no-repeat sm:scale-105"
-        style={{
-          transform: `scale(${scale})`,
-          transformOrigin: "center center",
-        }}
+        className="parallax-bg bg-[url('/bg-testimonials.jpg')]"
         aria-hidden="true"
       />
-      <div className="from-primary-900/50 to-primary-950/50 absolute inset-0 bg-gradient-to-br" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 to-primary-950/50" />
 
       {/* Lebegő elemek */}
       <div className="absolute inset-0 overflow-hidden">
