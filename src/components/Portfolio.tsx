@@ -7,24 +7,12 @@ import { useState, useEffect } from "react";
 export default function Portfolio() {
   const { ref, isVisible } = useIntersectionObserver();
   const [hasAnimated, setHasAnimated] = useState(false);
-  const [scale, setScale] = useState(1);
 
   useEffect(() => {
     if (isVisible && !hasAnimated) {
       setHasAnimated(true);
     }
   }, [isVisible, hasAnimated]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY;
-      const newScale = 1 + scrolled * 0.0005;
-      setScale(Math.min(newScale, 1.15));
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const projects = [
     {
@@ -47,18 +35,13 @@ export default function Portfolio() {
   return (
     <section
       ref={ref}
-      className="to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-900 py-24"
+      className="parallax-section relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-24"
     >
       {/* Háttérkép */}
       <div
-        className="parallax-bg absolute inset-0 h-[var(--viewport-height)] scale-110 bg-[url('/portfolio.jpg')] bg-cover bg-center bg-no-repeat sm:scale-105"
-        style={{
-          transform: `scale(${scale})`,
-          transformOrigin: "center center",
-        }}
+        className="parallax-bg bg-[url('/portfolio.jpg')]"
         aria-hidden="true"
       />
-      <div className="from-primary-900/50 to-primary-950/50 absolute inset-0 bg-gradient-to-br" />
 
       {/* Lebegő elemek */}
       <div className="absolute inset-0 overflow-hidden">
