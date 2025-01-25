@@ -49,7 +49,7 @@ export default function Services() {
   return (
     <section
       ref={ref}
-      className="to-primary-950 relative overflow-hidden bg-gradient-to-br from-primary-900 py-24"
+      className="to-primary-950 relative h-[var(--viewport-height)] overflow-hidden bg-gradient-to-br from-primary-900 py-24"
     >
       {/* Háttérkép */}
       <div
