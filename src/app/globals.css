@@ -357,3 +357,10 @@ body {
   height: 100%;
   overflow: hidden;
 }
+
+/* Fix for mobile background-attachment */
+@media (max-width: 768px) {
+  .hero-background {
+    background-attachment: scroll !important;
+  }
+}
