@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <main className="mobile-viewport">
+      <main className="h-[var(--viewport-height)]">
         <ServiceHero />
         <ServiceDetails />
         <ServiceCTA />
