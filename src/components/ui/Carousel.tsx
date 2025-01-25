@@ -34,42 +34,26 @@ export default function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
-  const [isChanging, setIsChanging] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setIsChanging(true);
-      setTimeout(() => {
-        setCurrentSlide((prev) => (prev + 1) % slides.length);
-        setIsChanging(false);
-      }, 300);
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
 
-  const handleTouchStart = (e: TouchEvent) => {
-    setTouchStart(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e: TouchEvent) => {
-    setTouchEnd(e.touches[0].clientX);
-  };
-
+  const handleTouchStart = (e: TouchEvent) => setTouchStart(e.touches[0].clientX);
+  const handleTouchMove = (e: TouchEvent) => setTouchEnd(e.touches[0].clientX);
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-
     const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-
-    if (isLeftSwipe) {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    if (Math.abs(distance) > 50) {
+      setCurrentSlide((prev) => 
+        distance > 0 
+          ? (prev + 1) % slides.length
+          : (prev - 1 + slides.length) % slides.length
+      );
     }
-
-    if (isRightSwipe) {
-      setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-    }
-
     setTouchStart(0);
     setTouchEnd(0);
   };
@@ -81,62 +65,48 @@ export default function Carousel() {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Háttér képek */}
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-all duration-1000 ${
-            currentSlide === index
-              ? "scale-100 opacity-100"
-              : "scale-110 opacity-0"
+          className={`absolute inset-0 transition-opacity duration-500 ${
+            currentSlide === index ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div className="absolute inset-0">
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              fill
-              quality={85}
-              placeholder="empty"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1920px"
-              className="transform object-cover brightness-[0.4] transition-transform duration-[3s] hover:scale-105"
-              priority={index === 0}
-            />
-          </div>
+          <Image
+            src={slide.image}
+            alt={slide.title}
+            fill
+            quality={85}
+            sizes="100vw"
+            className="object-cover brightness-[0.4]"
+            priority={index === 0}
+          />
           <div className="from-primary-800/60 to-primary-900/80 absolute inset-0 bg-gradient-to-b" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="max-w-7xl px-4 text-center">
+              <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl md:text-7xl">
+                {slide.title}
+              </h1>
+              <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-50 sm:text-xl md:text-2xl">
+                {slide.description}
+              </p>
+              <a href={slide.buttonLink} className="relative z-20">
+                <button 
+                  className={`relative rounded-full bg-primary-500 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(3,169,244,0.8)] ${
+                    currentSlide === index ? "pointer-events-auto" : "pointer-events-none"
+                  }`}
+                >
+                  <span className="text-white">
+                    {slide.buttonText}
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
         </div>
       ))}
-
-      {/* Tartalom továbbfejlesztett animációkkal */}
-      <div className="relative flex h-full items-center justify-center px-4">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute w-full max-w-7xl text-center transition-all duration-700 ${
-              currentSlide === index
-                ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
-                : isChanging
-                  ? "pointer-events-none -translate-y-10 scale-95 opacity-0"
-                  : "pointer-events-none translate-y-10 scale-95 opacity-0"
-            }`}
-          >
-            <h1 className="mb-6 animate-[fadeIn_0.5s_ease-out_forwards] text-4xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] sm:text-5xl md:text-7xl">
-              {slide.title}
-            </h1>
-            <p className="mx-auto mb-8 max-w-2xl animate-[fadeIn_0.5s_ease-out_0.3s_forwards] text-lg text-primary-50 opacity-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] sm:text-xl md:text-2xl">
-              {slide.description}
-            </p>
-            <a href={slide.buttonLink}>
-              <button className="translate-y-10 transform animate-[slideUp_1s_ease-out_0.6s_forwards] rounded-full bg-primary-500 px-6 py-3 text-base font-semibold opacity-0 transition-all duration-300 hover:scale-105 hover:bg-primary-600 hover:shadow-[0_0_30px_rgba(3,169,244,0.5)] sm:px-8 sm:py-4 sm:text-lg">
-                {slide.buttonText}
-              </button>
-            </a>
-          </div>
-        ))}
-      </div>
-
-      {/* alsó kis gombok */}
-      <div className="absolute bottom-8 left-0 right-0 flex animate-[fadeIn_1s_ease-out_forwards] justify-center space-x-3">
+      
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
