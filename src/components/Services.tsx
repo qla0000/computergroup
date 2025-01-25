@@ -61,7 +61,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className={`group rounded-lg bg-white/10 p-6 opacity-0 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:shadow-xl sm:p-8 ${
+              className={`group rounded-lg bg-white/10 p-6 opacity-0 shadow-lg backdrop-blur-md will-change-transform hover:-translate-y-2 hover:shadow-xl sm:p-8 ${
                 hasAnimated ? "animate-[fadeIn_0.5s_ease-out_forwards]" : ""
               }`}
               style={{ animationDelay: `${index * 200}ms` }}
