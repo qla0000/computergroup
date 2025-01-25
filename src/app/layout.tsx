@@ -18,25 +18,29 @@ const geistMono = Geist_Mono({
 
 const ViewportHandler = () => {
   useEffect(() => {
-    const setViewportHeight = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--viewport-height', `${window.innerHeight}px`);
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    // Kezdeti viewport magasság beállítása
+    const setInitialHeight = () => {
+      const vh = window.innerHeight;
+      document.documentElement.style.setProperty('--viewport-height', `${vh}px`);
+      document.documentElement.style.setProperty('--app-height', `${vh}px`);
     };
 
-    setViewportHeight();
-    
-    // Késleltetett frissítés az iOS Safari számára
-    window.addEventListener('resize', () => {
-      const timeout = setTimeout(setViewportHeight, 50);
-      return () => clearTimeout(timeout);
-    });
+    // Csak orientációváltáskor frissítjük a magasságot
+    const handleOrientationChange = () => {
+      setTimeout(() => {
+        const vh = window.innerHeight;
+        document.documentElement.style.setProperty('--viewport-height', `${vh}px`);
+        document.documentElement.style.setProperty('--app-height', `${vh}px`);
+      }, 100);
+    };
 
-    // Orientációváltás kezelése
-    window.addEventListener('orientationchange', () => {
-      const timeout = setTimeout(setViewportHeight, 50);
-      return () => clearTimeout(timeout);
-    });
+    setInitialHeight();
+
+    window.addEventListener('orientationchange', handleOrientationChange);
+
+    return () => {
+      window.removeEventListener('orientationchange', handleOrientationChange);
+    };
   }, []);
 
   return null;

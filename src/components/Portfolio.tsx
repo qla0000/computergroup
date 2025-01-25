@@ -51,7 +51,7 @@ export default function Portfolio() {
     >
       {/* Háttérkép */}
       <div
-        className="absolute inset-0 scale-110 bg-[url('/portfolio.jpg')] bg-cover bg-center bg-no-repeat parallax-bg sm:scale-105"
+        className="absolute inset-0 scale-110 bg-[url('/portfolio.jpg')] bg-cover bg-center bg-no-repeat parallax-bg sm:scale-105 h-[var(--viewport-height)]"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: "center center",

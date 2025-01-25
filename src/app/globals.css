@@ -47,7 +47,7 @@
   --foreground: var(--neutral-50);
 
   --viewport-height: 100vh;
-  --app-height: 100%;
+  --app-height: 100vh;
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -60,6 +60,8 @@
   height: var(--viewport-height);
   min-height: var(--viewport-height);
   max-height: var(--viewport-height);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
