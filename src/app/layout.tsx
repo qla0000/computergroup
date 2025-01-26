@@ -4,6 +4,7 @@ import Navbar from "@/components/ui/Navbar";
 import SkipToContent from "@/components/ui/SkipToContent";
 import { Toaster } from "react-hot-toast";
 import ViewportHandler from "@/components/ViewportHandler";
+import { metadata } from "./metadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,3 +37,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+export { metadata };
