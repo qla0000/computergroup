@@ -3,11 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://computergroup.vercel.app"),
   title: {
-    default: "Harmony Design",
+    default: "Harmony Design | Weboldal és Webáruház Készítés Szegeden",
     template: "%s | Harmony Design",
   },
-  description:
-    "Modern webalkalmazások fejlesztése, amelyek előreviszik vállalkozását",
+  description: "Értékesítést segítő, modern weboldalak és webáruházak készítése. Testre szabott megoldások, reszponzív design és SEO optimalizálás. Kérjen árajánlatot még ma!",
   keywords: [
     "webfejlesztés",
     "weboldal készítés",
@@ -20,6 +19,7 @@ export const metadata: Metadata = {
     "egyedi weboldal",
     "modern webdesign",
     "SEO optimalizálás",
+    "keresőoptimalizálás",
     "webfejlesztő Szeged",
     "webes megoldások",
     "honlap készítés",
@@ -38,10 +38,10 @@ export const metadata: Metadata = {
     siteName: "Harmony Design",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/favicon.ico",
         width: 1200,
         height: 630,
-        alt: "Harmony Design",
+        alt: "Harmony Design | Weboldal és Webáruház Készítés Szegeden",
       },
     ],
   },
