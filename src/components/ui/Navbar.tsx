@@ -47,7 +47,7 @@ export default function Navbar() {
             className="group flex items-center transition-transform duration-300 hover:scale-105"
           >
             <Image
-              src="/logo/logo.webp"
+              src="/logo/new-logo.webp"
               alt="Company Logo"
               width={120}
               height={32}
@@ -59,7 +59,7 @@ export default function Navbar() {
               blurDataURL="data:image/webp;base64,/9j/4AAQSkZJRg..."
             />
             <Image
-              src="/logo/logo-white.webp"
+              src="/logo/new-logo-white.webp"
               alt="Company Logo Dark"
               width={120}
               height={32}
