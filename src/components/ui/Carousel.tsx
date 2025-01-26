@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const slides = [
   {
-    image: "/responsiveness.jpg",
+    image: "/carousel/responsiveness.webp",
     title: "Modern weboldalak készítése",
     description:
       "Valójában egy dolgot csinálunk, de annak minden részletét, ráadásul szívből: WEBOLDALT",
@@ -14,7 +14,7 @@ const slides = [
     buttonLink: "/contact",
   },
   {
-    image: "/ui-design-mac.jpg",
+    image: "/carousel/ui-design-mac.webp",
     title: "Együtt gondolkodunk",
     description:
       "Számíthatsz ránk a stratégiai tervezéstől kezdve, a tartalom és a design kialakításán át, egészen a lenyűgöző végeredmény publikálásig.",
@@ -22,7 +22,7 @@ const slides = [
     buttonLink: "/services",
   },
   {
-    image: "/webpage-on-mac.jpg",
+    image: "/carousel/webpage-on-mac.webp",
     title: "Hosszútávú partnerség",
     description:
       "Nálunk a weboldalkészítés nemcsak egyszeri tevékenység, hanem egy hosszú távú partnerség kezdete. Évek múlva is ott leszünk, ha változtatni, fejleszteni szeretne az oldalán.",
@@ -83,6 +83,10 @@ export default function Carousel() {
             className="object-cover brightness-[0.4]"
             placeholder="blur"
             blurDataURL={slide.image}
+            style={{
+              objectFit: 'cover',
+              color: 'transparent'
+            }}
           />
           <div className="from-primary-800/60 to-primary-900/80 absolute inset-0 bg-gradient-to-b" />
           <div className="absolute inset-0 flex items-center justify-center">

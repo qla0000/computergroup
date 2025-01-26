@@ -17,17 +17,17 @@ export default function Portfolio() {
   const projects = [
     {
       title: "E-commerce Platform",
-      image: "/ecommerce.jpg",
+      image: "/portfolio/ecommerce.webp",
       category: "Webshop",
     },
     {
       title: "SaaS Dashboard",
-      image: "/saas-dashboard.jpg",
+      image: "/portfolio/saas-dashboard.webp",
       category: "Alkalmazás",
     },
     {
       title: "Vállalati Weboldal",
-      image: "/bg-webdesign.jpg",
+      image: "/portfolio/webdesign.webp",
       category: "Weboldal",
     },
   ];
@@ -39,7 +39,7 @@ export default function Portfolio() {
     >
       {/* Háttérkép */}
       <div
-        className="parallax-bg bg-[url('/portfolio.jpg')]"
+        className="parallax-bg bg-[url('/bg/portfolio.webp')]"
         aria-hidden="true"
       />
 

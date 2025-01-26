@@ -22,6 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="hu" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+        <meta name="color-scheme" content="light dark" />
+        <meta name="darkreader-lock" />
+      </head>
       <body>
         <ViewportHandler />
         <SkipToContent />

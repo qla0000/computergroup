@@ -41,7 +41,7 @@ export default function Services() {
     >
       {/* Háttérkép */}
       <div
-        className="parallax-bg bg-[url('/bg-services.jpg')]"
+        className="parallax-bg bg-[url('/bg/services.webp')]"
         aria-hidden="true"
       />
       <div className="from-primary-900/50 to-primary-950/50 absolute inset-0 bg-gradient-to-br" />

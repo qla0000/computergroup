@@ -24,7 +24,7 @@ export default function PortfolioHero() {
       <div
         className="mobile-viewport absolute inset-0 z-0 h-[var(--viewport-height)] overflow-hidden"
         style={{
-          backgroundImage: "url(/portfolio.jpg)",
+          backgroundImage: "url(/bg/portfolio.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",

@@ -15,21 +15,21 @@ const testimonials = [
     role: "CEO, TechStart Kft.",
     content:
       "Kiváló munkát végeztek a weboldalunk fejlesztésében. Professzionális és megbízható partner.",
-    image: "/profile.png",
+    image: "/cards/profile.webp",
   },
   {
     name: "Kiss Anna",
     role: "Marketing Vezető, Digital Solutions",
     content:
       "A csapat kreativitása és szakértelme kiemelkedő. Maximálisan elégedettek vagyunk az eredménnyel.",
-    image: "/profile.png",
+    image: "/cards/profile.webp",
   },
   {
     name: "Kovács János",
     role: "Alapító, InnoTech",
     content:
       "Rugalmas és hatékony együttműködés, modern technológiai megoldások. Csak ajánlani tudom!",
-    image: "/profile.png",
+    image: "/cards/profile.webp",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function Testimonials() {
     <section className="parallax-section relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-24">
       {/* Háttérkép */}
       <div
-        className="parallax-bg bg-[url('/bg-testimonials.jpg')]"
+        className="parallax-bg bg-[url('/bg/testimonials.webp')]"
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 to-primary-950/50" />

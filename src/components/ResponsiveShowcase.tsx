@@ -94,7 +94,7 @@ export default function ResponsiveShowcase() {
 
               {/* Kép */}
               <Image
-                src="/responsiveness-devices-final.jpg"
+                src="/cards/responsiveness-devices-final.webp"
                 alt="Reszponzív weboldal megjelenítése különböző eszközökön"
                 className="h-full w-full scale-105 object-cover transition-transform duration-700 hover:scale-110"
                 fill

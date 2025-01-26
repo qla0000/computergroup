@@ -25,7 +25,7 @@ const HeroSection = () => {
       <div
         className="mobile-viewport absolute inset-0 z-0 h-[var(--viewport-height)] overflow-hidden"
         style={{
-          backgroundImage: "url(/code.jpg)",
+          backgroundImage: "url(/hero/code.webp)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",

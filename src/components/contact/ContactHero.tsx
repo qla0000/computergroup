@@ -20,7 +20,7 @@ export default function ContactHero() {
     <section className="to-primary-950 relative isolate overflow-hidden bg-gradient-to-br from-primary-900 py-24">
       <div className="absolute inset-0 overflow-hidden">
         <div
-          className="mobile-viewport fixed inset-0 h-[var(--viewport-height)] bg-[url('/backend.jpg')] bg-cover bg-center bg-no-repeat transition-transform duration-300 ease-out"
+          className="mobile-viewport fixed inset-0 h-[var(--viewport-height)] bg-[url('/hero/backend.webp')] bg-cover bg-center bg-no-repeat transition-transform duration-300 ease-out"
           style={{
             transform: `scale(${scale})`,
             transformOrigin: "center center",

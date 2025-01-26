@@ -12,6 +12,10 @@ const nextConfig = {
   },
   basePath: "",
   assetPrefix: "",
+  experimental: {
+    optimizeCss: true,
+    optimizeImages: true,
+  },
 };
 
 module.exports = nextConfig;

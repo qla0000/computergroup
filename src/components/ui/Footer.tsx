@@ -60,14 +60,14 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <div className="mb-6 inline-block transform transition-all duration-300 hover:scale-105">
               <Image
-                src="/logo.png"
+                src="/logo/logo.webp"
                 alt="Company Logo"
                 width={180}
                 height={48}
                 className="block dark:hidden"
               />
               <Image
-                src="/logo-white.png"
+                src="/logo/logo-white.webp"
                 alt="Company Logo Dark"
                 width={180}
                 height={48}
