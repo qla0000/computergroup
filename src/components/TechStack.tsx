@@ -45,10 +45,7 @@ export default function TechStack() {
   }));
 
   return (
-    <section
-      ref={ref}
-      className="dark:to-primary-950 relative overflow-hidden bg-primary-50 py-24 dark:bg-gradient-to-br dark:from-primary-900"
-    >
+    <section ref={ref} className="relative bg-primary-50 py-24 dark:bg-gradient-to-br dark:from-primary-900 dark:to-primary-950">
       <div className="container relative mx-auto px-4">
         <h2
           className={`mb-12 text-center text-3xl font-bold text-primary-900 sm:text-4xl dark:text-primary-50 ${
