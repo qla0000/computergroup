@@ -47,10 +47,6 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleFormSubmit} className="relative space-y-6">
-      {/* Dekoratív elemek */}
-      <div className="bg-accent-500/10 group-hover:bg-accent-500/20 dark:bg-accent-400/5 dark:group-hover:bg-accent-400/10 absolute -right-4 -top-4 h-24 w-24 rounded-full transition-all duration-500" />
-      <div className="bg-primary-500/10 group-hover:bg-primary-500/20 dark:bg-primary-400/5 dark:group-hover:bg-primary-400/10 absolute -bottom-4 -left-4 h-24 w-24 rounded-full transition-all duration-500" />
-
       <input
         type="text"
         name="honeypot"
