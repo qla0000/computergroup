@@ -28,7 +28,7 @@ export default function ContactHero() {
           aria-hidden="true"
         />
       </div>
-      <div className="from-primary-900/70 to-primary-950/80 absolute inset-0 bg-gradient-to-br backdrop-blur-[1px]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/90 to-primary-950/95 backdrop-blur-[1px]" />
       <div className="container relative mx-auto px-4">
         <div className="relative z-10 mx-auto max-w-3xl text-center text-white">
           <h1 className="mb-6 translate-y-10 transform animate-[slideUp_1s_ease-out_forwards] text-4xl font-bold opacity-0 sm:text-5xl md:text-6xl">
