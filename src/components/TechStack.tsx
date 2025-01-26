@@ -15,6 +15,19 @@ import {
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useState, useEffect } from "react";
 
+const TECH_ICONS = {
+  React: SiReact,
+  "Next.js": SiNextdotjs,
+  TypeScript: SiTypescript,
+  TailwindCSS: SiTailwindcss,
+  NodeJS: SiNodedotjs,
+  MongoDB: SiMongodb,
+  PostgreSQL: SiPostgresql,
+  Docker: SiDocker,
+  AWS: SiAmazon,
+  Git: SiGit,
+} as const;
+
 export default function TechStack() {
   const { ref, isVisible } = useIntersectionObserver();
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -25,18 +38,11 @@ export default function TechStack() {
     }
   }, [isVisible, hasAnimated]);
 
-  const technologies = [
-    { name: "React", Icon: SiReact, delay: "0" },
-    { name: "Next.js", Icon: SiNextdotjs, delay: "100" },
-    { name: "TypeScript", Icon: SiTypescript, delay: "200" },
-    { name: "Tailwind CSS", Icon: SiTailwindcss, delay: "300" },
-    { name: "Node.js", Icon: SiNodedotjs, delay: "400" },
-    { name: "MongoDB", Icon: SiMongodb, delay: "500" },
-    { name: "PostgreSQL", Icon: SiPostgresql, delay: "600" },
-    { name: "Docker", Icon: SiDocker, delay: "700" },
-    { name: "AWS", Icon: SiAmazon, delay: "800" },
-    { name: "Git", Icon: SiGit, delay: "900" },
-  ];
+  const technologies = Object.entries(TECH_ICONS).map(([name, Icon], index) => ({
+    name,
+    Icon,
+    delay: (index * 50).toString(),
+  }));
 
   return (
     <section
