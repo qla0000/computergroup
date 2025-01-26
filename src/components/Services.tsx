@@ -29,7 +29,7 @@ export default function Services() {
     {
       title: "Webáruház készítés",
       description:
-        "Olyan online megoldásokat kínálunk hírlevelél, weblap, webáruház, webportál készítés területén, amelyeket belső munkatársak is könnyen kezelhetnek. Minden esetben átlátható, felhasználóbarát kezelőfelületet biztosítunk a tartalmak egyszerű módosításához.",
+        "Olyan online megoldásokat kínálunk hírlevél, weblap, webáruház, webportál készítés területén, amelyeket belső munkatársak is könnyen kezelhetnek. Minden esetben átlátható, felhasználóbarát kezelőfelületet biztosítunk a tartalmak egyszerű módosításához.",
       icon: "🛍️",
     },
   ];

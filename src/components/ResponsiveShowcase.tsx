@@ -32,12 +32,6 @@ export default function ResponsiveShowcase() {
         hasAnimated ? "animate" : ""
       }`}
     >
-      {/* Lebegő elemek */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-float bg-primary-200/30 dark:bg-primary-300/10 absolute -left-32 bottom-0 h-96 w-96 rounded-full blur-3xl" />
-        <div className="animate-float-delayed bg-accent-200/30 dark:bg-accent-300/10 absolute -right-32 top-0 h-96 w-96 rounded-full blur-3xl" />
-      </div>
-
       <div className="container relative mx-auto px-4">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Szöveg rész */}
@@ -88,10 +82,6 @@ export default function ResponsiveShowcase() {
             } ${isContentVisible ? "opacity-100" : ""}`}
           >
             <div className="dark:bg-primary-800/50 relative mx-auto aspect-[16/9] w-full max-w-5xl overflow-hidden rounded-2xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl">
-              {/* Dekoratív elemek */}
-              <div className="bg-accent-500/20 absolute -right-8 -top-8 h-32 w-32 animate-spin-slow rounded-full blur-2xl" />
-              <div className="bg-primary-500/20 absolute -bottom-8 -left-8 h-32 w-32 animate-spin-slow rounded-full blur-2xl" />
-
               {/* Kép */}
               <Image
                 src="/cards/responsiveness-devices-final.webp"
@@ -102,12 +92,6 @@ export default function ResponsiveShowcase() {
                 priority
                 quality={85}
               />
-
-              {/* Üveghatású keret */}
-              <div className="dark:bg-primary-950/10 dark:ring-primary-200/10 absolute inset-0 rounded-2xl bg-white/5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1)] ring-1 ring-inset ring-white/10 dark:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]" />
-
-              {/* Fényes szegély effekt */}
-              <div className="via-primary-500/10 absolute inset-0 rounded-2xl bg-gradient-to-tr from-transparent to-transparent opacity-50 mix-blend-overlay" />
             </div>
           </div>
         </div>
