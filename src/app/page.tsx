@@ -1,5 +1,6 @@
 import Carousel from "@/components/ui/Carousel";
 import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 import ResponsiveShowcase from "@/components/ResponsiveShowcase";
 import TechStack from "@/components/TechStack";
 import Footer from "@/components/ui/Footer";
@@ -22,17 +23,17 @@ const StatsComponent = dynamic(() => import('@/components/Stats'), {
 
 export default function Home() {
   return (
-    <div className="mobile-viewport">
-      <main>
-        <Carousel />
+    <>
+      <Carousel />
+      <Suspense fallback={<div className="h-screen animate-pulse bg-primary-900/50" />}>
         <ResponsiveShowcase />
         <Services />
         <TechStack />
         <Portfolio />
         <StatsComponent />
         <TestimonialsComponent />
-      </main>
+      </Suspense>
       <Footer />
-    </div>
+    </>
   );
 }

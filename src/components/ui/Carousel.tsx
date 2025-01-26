@@ -68,7 +68,7 @@ export default function Carousel() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-500 ${
+          className={`absolute inset-0 transition-opacity duration-500 will-change-[opacity,transform] ${
             currentSlide === index ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -76,15 +76,17 @@ export default function Carousel() {
             src={slide.image}
             alt={slide.title}
             fill
+            priority={index === 0}
             quality={85}
             sizes="100vw"
             className="object-cover brightness-[0.4]"
-            priority={index === 0}
+            placeholder="blur"
+            blurDataURL={slide.image}
           />
           <div className="from-primary-800/60 to-primary-900/80 absolute inset-0 bg-gradient-to-b" />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="max-w-7xl px-4 text-center">
-              <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl md:text-7xl">
+              <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl md:text-7xl will-change-transform">
                 {slide.title}
               </h1>
               <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-50 sm:text-xl md:text-2xl">
