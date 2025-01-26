@@ -1,0 +1,7 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://computergroup.vercel.app/sitemap.xml
