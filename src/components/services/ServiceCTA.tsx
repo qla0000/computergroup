@@ -28,13 +28,6 @@ export default function ServiceCTA() {
         aria-hidden="true"
       />
       <div className="from-primary-900/60 to-primary-950/60 absolute inset-0 bg-gradient-to-br backdrop-blur-[1px]" />
-
-      {/* Lebegő elemek */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-float bg-primary-300/10 absolute left-1/4 top-1/4 h-32 w-32 rounded-full" />
-        <div className="animate-float-delayed bg-accent-300/10 absolute bottom-1/4 right-1/4 h-24 w-24 rounded-full" />
-      </div>
-
       <div className="container relative mx-auto px-4 text-center">
         <h2 className="mb-6 translate-y-10 transform animate-[slideUp_1s_ease-out_forwards] text-3xl font-bold opacity-0 sm:text-4xl">
           Készen áll a következő projektjére?

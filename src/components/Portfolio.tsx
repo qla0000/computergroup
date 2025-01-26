@@ -42,13 +42,6 @@ export default function Portfolio() {
         className="parallax-bg bg-[url('/bg/portfolio.webp')]"
         aria-hidden="true"
       />
-
-      {/* Lebegő elemek */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="animate-float bg-primary-300/10 absolute left-1/4 top-1/4 h-32 w-32 rounded-full" />
-        <div className="animate-float-delayed bg-accent-300/10 absolute bottom-1/4 right-1/4 h-24 w-24 rounded-full" />
-      </div>
-
       <div className="container relative mx-auto px-4">
         <h2
           className={`mb-12 text-center text-4xl font-bold text-white sm:text-5xl ${
