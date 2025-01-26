@@ -13,7 +13,13 @@ const nextConfig = {
   basePath: "",
   assetPrefix: "",
   experimental: {
-    optimizeCss: true,
+    optimizeCss: {
+      critters: {
+        ssrMode: true,
+        reduceInlineStyles: false,
+        pruneSource: true,
+      }
+    },
     optimizeImages: true,
   },
 };
