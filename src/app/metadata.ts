@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://harmonydesign.hu"),
   title: {
     default: "Harmony Design",
     template: "%s | Harmony Design",
@@ -12,7 +13,9 @@ export const metadata: Metadata = {
     "weboldal készítés",
     "webdesign",
     "webalkalmazás fejlesztés",
-    "Harmony Design"
+    "Harmony Design",
+    "Szeged",
+    "weboldal",
   ],
   
   openGraph: {

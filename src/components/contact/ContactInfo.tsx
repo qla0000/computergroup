@@ -1,8 +1,8 @@
 export default function ContactInfo() {
   const contactDetails = [
-    { icon: "📍", title: "Cím", content: "1234 Budapest, Példa utca 1." },
-    { icon: "📞", title: "Telefon", content: "+36 1 234 5678" },
-    { icon: "✉️", title: "Email", content: "info@pelda.hu" },
+    { icon: "📍", title: "Cím", content: "Szeged, Hajós u. 12." },
+    { icon: "📞", title: "Telefon", content: "+36 30 348 2139" },
+    { icon: "✉️", title: "Email", content: "hello@harmonydesign.hu" },
   ];
 
   return (

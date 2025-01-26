@@ -20,9 +20,9 @@ export default function Footer() {
       { name: "UI/UX Tervezés", href: "/services#design" },
     ],
     contact: {
-      email: "info@pelda.hu",
-      phone: "+36 1 234 5678",
-      address: "1234 Budapest, Példa utca 1.",
+      email: "hello@harmonydesign.hu",
+      phone: "+36 30 348 2139",
+      address: "Szeged, Hajós u. 12.",
     },
     social: [
       {
