@@ -42,6 +42,7 @@ export default function Portfolio() {
         className="parallax-bg bg-[url('/bg/portfolio.webp')]"
         aria-hidden="true"
       />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 to-primary-950/50" />
       <div className="container relative mx-auto px-4">
         <h2
           className={`mb-12 text-center text-4xl font-bold text-white sm:text-5xl ${

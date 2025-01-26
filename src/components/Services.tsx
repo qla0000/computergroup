@@ -37,16 +37,21 @@ export default function Services() {
   return (
     <section
       ref={ref}
-      className="parallax-section relative overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950 py-24"
+      className="relative min-h-[80vh] overflow-hidden bg-gradient-to-br from-primary-900 to-primary-950"
     >
-      {/* Háttérkép */}
-      <div
-        className="parallax-bg bg-[url('/bg/services.webp')]"
+      {/* Háttérkép - Parallax */}
+      <div 
+        className="fixed inset-0 h-full w-full bg-[url('/bg/services.webp')] bg-cover bg-center bg-no-repeat opacity-50"
+        style={{
+          transform: 'translateZ(0)',
+          willChange: 'transform',
+          zIndex: -1
+        }}
         aria-hidden="true"
       />
       <div className="from-primary-900/50 to-primary-950/50 absolute inset-0 bg-gradient-to-br" />
       {/* Tartalom */}
-      <div className="container relative mx-auto px-4">
+      <div className="container relative mx-auto px-4 py-24">
         <h2 className="mb-12 text-center text-4xl font-bold text-white sm:text-5xl">
           Szolgáltatásaink
         </h2>

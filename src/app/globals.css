@@ -232,6 +232,11 @@ body {
       margin-bottom: 1.5rem;
     }
   }
+  .bg-fixed {
+    background-attachment: fixed;
+    transform: translateZ(0);
+    will-change: transform;
+  }
 }
 
 .animate .slide-in-left {
