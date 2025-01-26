@@ -28,9 +28,7 @@ export default function ResponsiveShowcase() {
   return (
     <section
       ref={ref}
-      className={`dark:to-primary-950 relative overflow-hidden bg-primary-50 py-24 dark:bg-gradient-to-br dark:from-primary-900 ${
-        hasAnimated ? "animate" : ""
-      }`}
+      className="relative overflow-hidden bg-primary-50 py-24 dark:bg-gradient-to-br dark:from-primary-900 dark:to-primary-950"
     >
       <div className="container relative mx-auto px-4">
         <div className="grid items-center gap-12 lg:grid-cols-2">
