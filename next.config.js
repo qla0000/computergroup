@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  output: "standalone",
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -21,6 +21,17 @@ const nextConfig = {
       }
     }
   },
+  async headers() {
+    return [
+      {
+        source: '/api/:path*',
+        headers: [
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'Access-Control-Allow-Methods', value: 'POST, OPTIONS' }
+        ]
+      }
+    ]
+  }
 };
 
 module.exports = nextConfig;
