@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import { NextResponse, NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 if (!process.env.CONTACT_EMAIL || !process.env.RESEND_API_KEY) {
   console.error("Hiányzó környezeti változók");
@@ -7,22 +7,23 @@ if (!process.env.CONTACT_EMAIL || !process.env.RESEND_API_KEY) {
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(request: NextRequest) {
+export async function POST(request: Request) {
+  // CORS headers hozzáadása
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+
+  // OPTIONS kérés kezelése
   if (request.method === 'OPTIONS') {
-    return new Response('OK', {
-      status: 200,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type'
-      }
-    });
+    return new Response(null, { status: 204, headers });
   }
 
   try {
     const { name, email, subject, message } = await request.json();
 
-    const data = await resend.emails.send({
+    await resend.emails.send({
       from: "onboarding@resend.dev",
       to: process.env.CONTACT_EMAIL!,
       subject: `Új kapcsolatfelvétel: ${subject}`,
@@ -36,19 +37,17 @@ export async function POST(request: NextRequest) {
       `,
     });
 
-    if (data.error) {
-      throw new Error(data.error.message);
-    }
-
-    return NextResponse.json({ success: true });
-  } catch (error: Error | unknown) {
+    return NextResponse.json(
+      { success: true, message: "Email sikeresen elküldve" },
+      { status: 200, headers }
+    );
+  } catch (error: unknown) {
     console.error("Resend API hiba:", error);
     return NextResponse.json(
-      {
-        error:
-          error instanceof Error ? error.message : "Ismeretlen hiba történt",
+      { 
+        error: error instanceof Error ? error.message : "Ismeretlen hiba történt" 
       },
-      { status: 500 }
+      { status: 500, headers }
     );
   }
 }
