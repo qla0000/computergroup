@@ -63,10 +63,9 @@ export default function TechStack() {
               style={{ animationDelay: `${hasAnimated ? delay : 0}ms` }}
             >
               <div className="relative mb-4 h-20 w-20 transition-transform duration-300 group-hover:scale-110">
-                <div className="dark:bg-primary-800/50 absolute -inset-2 rounded-full bg-white/50 backdrop-blur-sm" />
-                <div className="via-primary-500/10 absolute inset-0 rounded-full bg-gradient-to-tr from-transparent to-transparent opacity-0 mix-blend-overlay transition-opacity duration-300 group-hover:opacity-100" />
-                <div className="relative flex h-full w-full items-center justify-center p-4 text-2xl text-primary-700 transition-all duration-500 group-hover:rotate-6 dark:text-primary-700">
-                  <Icon />
+                <div className="dark:bg-primary-800/50 absolute inset-0 rounded-full bg-primary-200 backdrop-blur-sm" />
+                <div className="relative flex h-full w-full items-center justify-center p-4">
+                  <Icon className="text-2xl text-primary-700 dark:text-primary-700" />
                 </div>
               </div>
               <span className="text-center text-sm font-medium text-primary-700 transition-colors duration-300 group-hover:text-accent-600 dark:text-primary-900 dark:group-hover:text-accent-500">
