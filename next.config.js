@@ -19,8 +19,7 @@ const nextConfig = {
         reduceInlineStyles: false,
         pruneSource: true,
       }
-    },
-    optimizeImages: true,
+    }
   },
 };
 
