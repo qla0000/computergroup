@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://harmonydesign.hu"),
+  metadataBase: new URL("https://computergroup.vercel.app"),
   title: {
     default: "Harmony Design",
     template: "%s | Harmony Design",
@@ -16,12 +16,25 @@ export const metadata: Metadata = {
     "Harmony Design",
     "Szeged",
     "weboldal",
+    "reszponzív weboldal",
+    "egyedi weboldal",
+    "modern webdesign",
+    "SEO optimalizálás",
+    "webfejlesztő Szeged",
+    "webes megoldások",
+    "honlap készítés",
+    "weboldal karbantartás",
+    "webfejlesztő cég",
+    "professzionális weboldal",
+    "mobilbarát weboldal",
+    "e-commerce fejlesztés",
+    "webshop készítés"
   ],
   
   openGraph: {
     type: "website",
     locale: "hu_HU",
-    url: "https://yourdomain.com",
+    url: "https://computergroup.vercel.app",
     siteName: "Harmony Design",
     images: [
       {
