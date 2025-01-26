@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
 if (!process.env.CONTACT_EMAIL || !process.env.RESEND_API_KEY) {
   console.error("Hiányzó környezeti változók");
@@ -7,7 +7,18 @@ if (!process.env.CONTACT_EMAIL || !process.env.RESEND_API_KEY) {
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  if (request.method === 'OPTIONS') {
+    return new Response('OK', {
+      status: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type'
+      }
+    });
+  }
+
   try {
     const { name, email, subject, message } = await request.json();
 
