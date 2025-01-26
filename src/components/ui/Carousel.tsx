@@ -2,6 +2,7 @@
 
 import { useState, useEffect, TouchEvent } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const slides = [
   {
@@ -68,8 +69,8 @@ export default function Carousel() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-500 will-change-[opacity,transform] ${
-            currentSlide === index ? "opacity-100" : "opacity-0"
+          className={`absolute inset-0 transition-all duration-500 will-change-[opacity,transform] ${
+            currentSlide === index ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
         >
           <Image
@@ -86,23 +87,24 @@ export default function Carousel() {
           <div className="from-primary-800/60 to-primary-900/80 absolute inset-0 bg-gradient-to-b" />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="max-w-7xl px-4 text-center">
-              <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl md:text-7xl will-change-transform">
+              <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl md:text-7xl">
                 {slide.title}
               </h1>
               <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-50 sm:text-xl md:text-2xl">
                 {slide.description}
               </p>
-              <a href={slide.buttonLink} className="relative z-20">
+              <Link href={slide.buttonLink} className="relative z-20 inline-block">
                 <button 
-                  className={`relative rounded-full bg-primary-500 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(3,169,244,0.8)] ${
-                    currentSlide === index ? "pointer-events-auto" : "pointer-events-none"
-                  }`}
+                  type="button"
+                  className="group relative rounded-full bg-primary-500 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(3,169,244,0.8)]"
+                  aria-label={`${slide.buttonText} - Ugrás a ${slide.buttonLink} oldalra`}
                 >
-                  <span className="text-white">
+                  <span className="relative z-10 text-white">
                     {slide.buttonText}
                   </span>
+                  <div className="absolute inset-0 rounded-full bg-primary-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
