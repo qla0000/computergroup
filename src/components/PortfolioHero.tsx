@@ -1,19 +1,9 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 
 export default function PortfolioHero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <section
@@ -22,13 +12,11 @@ export default function PortfolioHero() {
     >
       {/* Parallax Background */}
       <div
-        className="mobile-viewport absolute inset-0 z-0 h-[var(--viewport-height)] overflow-hidden"
+        className="fixed inset-0 z-0 h-[var(--viewport-height)] overflow-hidden bg-[url('/bg/portfolio.webp')] bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: "url(/bg/portfolio.webp)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          transform: `translateY(${scrollY * 0.5}px)`,
+          transform: 'translateZ(0)',
+          willChange: 'transform',
+          zIndex: -99
         }}
       >
         {/* Dark overlay */}
