@@ -179,8 +179,6 @@ Nyisd meg a böngészőt, és navigálj a `http://yourdomain.com` címre, hogy e
   ```bash
   sudo ufw allow "Apache Full"
   ```
-
-  ```
 - Ellenőrizd az Apache logfájlokat:
   ```bash
   tail -f /var/log/apache2/error.log
