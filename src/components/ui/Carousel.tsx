@@ -77,12 +77,13 @@ export default function Carousel() {
             src={slide.image}
             alt={slide.title}
             fill
-            priority={index === 0}
-            quality={85}
+            priority={true}
+            quality={75}
             sizes="100vw"
             className="object-cover brightness-[0.4]"
             placeholder="blur"
-            blurDataURL={slide.image}
+            blurDataURL="data:image/jpeg;base64,/9j..."
+            loading="eager"
             style={{
               objectFit: 'cover',
               color: 'transparent'
