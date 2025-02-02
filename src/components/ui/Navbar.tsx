@@ -11,8 +11,7 @@ export default function Navbar() {
   const navigation = [
     { name: "Kezdőlap", href: "/" },
     { name: "Szolgáltatások", href: "/services" },
-    { name: "Portfólió", href: "/portfolio" },
-    { name: "Kapcsolat", href: "/contact" },
+    { name: "Portfólió", href: "/portfolio" }
   ];
 
   useEffect(() => {
@@ -26,7 +25,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 top-0 z-[10000] transition-all duration-300 ${
         scrolled ? "shadow-lg" : ""
       }`}
     >
@@ -139,8 +138,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="group relative w-64 transform transition-all duration-300 hover:scale-105"
               >
-                <div className="bg-primary-800/30 relative overflow-hidden rounded-xl p-4 backdrop-blur-sm">
-                  <div className="from-primary-600/10 to-accent-500/10 absolute inset-0 bg-gradient-to-r opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="relative overflow-hidden rounded-xl bg-primary-700 p-4">
                   <div className="relative z-10 flex items-center justify-between">
                     <span className="text-lg font-medium text-primary-50">
                       {item.name}
@@ -182,7 +180,7 @@ export default function Navbar() {
           <div className="mt-12 flex justify-center space-x-6">
             <a
               href="#"
-              className="transform text-primary-200 transition-all duration-300 hover:scale-125 hover:text-accent-300"
+              className="transform text-primary-600 transition-all duration-300 hover:scale-125 hover:text-accent-300 dark:text-primary-200"
             >
               <span className="sr-only">Facebook</span>
               <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
@@ -191,7 +189,7 @@ export default function Navbar() {
             </a>
             <a
               href="#"
-              className="transform text-primary-200 transition-all duration-300 hover:scale-125 hover:text-accent-300"
+              className="transform text-primary-600 transition-all duration-300 hover:scale-125 hover:text-accent-300 dark:text-primary-200"
             >
               <span className="sr-only">Instagram</span>
               <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
