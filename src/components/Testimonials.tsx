@@ -80,6 +80,9 @@ export default function Testimonials() {
                       width={64}
                       height={64}
                       className="h-full w-full object-cover"
+                      placeholder="blur"
+                      blurDataURL="data:image..."
+                      quality={70}
                     />
                   </div>
                   <div className="ml-4">

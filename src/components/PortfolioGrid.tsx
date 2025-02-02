@@ -73,6 +73,9 @@ export default function PortfolioGrid() {
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  placeholder="blur"
+                  blurDataURL="data:image..."
+                  quality={70}
                 />
               </div>
               <div className="p-6">

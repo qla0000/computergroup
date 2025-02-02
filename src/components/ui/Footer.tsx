@@ -65,6 +65,9 @@ export default function Footer() {
                 width={180}
                 height={48}
                 className="block dark:hidden"
+                placeholder="blur"
+                blurDataURL="data:image..."
+                quality={70}
               />
               <Image
                 src="/logo/new-logo-white.webp"
@@ -72,6 +75,9 @@ export default function Footer() {
                 width={180}
                 height={48}
                 className="hidden dark:block"
+                placeholder="blur"
+                blurDataURL="data:image..."
+                quality={70}
               />
             </div>
             <p className="max-w-sm text-lg font-medium text-primary-800 dark:text-primary-200">

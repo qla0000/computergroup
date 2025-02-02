@@ -69,6 +69,9 @@ export default function Portfolio() {
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 priority={index === 0}
                 className="object-cover transition-all duration-700 group-hover:rotate-2 group-hover:scale-110"
+                placeholder="blur"
+                blurDataURL="data:image..."
+                quality={75}
               />
               <div className="from-primary-900/80 absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-t to-transparent opacity-0 backdrop-blur-sm transition-all duration-500 group-hover:opacity-100">
                 <h3 className="translate-y-4 text-lg font-bold text-primary-50 transition-all duration-500 group-hover:translate-y-0 sm:text-xl">
