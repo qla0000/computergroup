@@ -1,30 +1,49 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
+
+const observerMap = new Map<Element, (isVisible: boolean) => void>();
+let globalObserver: IntersectionObserver | null = null;
 
 export function useIntersectionObserver() {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLElement | null>(null);
+  const ref = useRef<HTMLElement>(null);
+  
+  const handleVisibilityChange = useCallback((entries: IntersectionObserverEntry[]) => {
+    entries.forEach(entry => {
+      const callback = observerMap.get(entry.target);
+      callback?.(entry.isIntersecting);
+    });
+  }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2, rootMargin: '50px' }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (!globalObserver) {
+      globalObserver = new IntersectionObserver(handleVisibilityChange, {
+        threshold: 0.1,
+        rootMargin: '50px'
+      });
     }
+    
+    const element = ref.current;
+    if (!element) return;
+
+    observerMap.set(element, (visible) => {
+      if (visible) {
+        setIsVisible(true);
+        globalObserver?.unobserve(element);
+        observerMap.delete(element);
+      }
+    });
+
+    globalObserver.observe(element);
 
     return () => {
-      observer.disconnect();
+      if (element) {
+        globalObserver?.unobserve(element);
+        observerMap.delete(element);
+      }
     };
-  }, [ref]);
+  }, [handleVisibilityChange]);
 
   return { ref, isVisible };
 }

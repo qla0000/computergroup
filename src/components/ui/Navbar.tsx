@@ -73,25 +73,29 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   className="group relative px-4 py-2 text-sm font-medium"
                 >
-                  <span
-                    className={`relative z-10 transition-colors duration-300 ${
-                      scrolled
-                        ? "text-primary-900 dark:text-primary-50"
-                        : "text-primary-950 dark:text-primary-50"
-                    } group-hover:text-accent-500 dark:group-hover:text-accent-400`}
-                  >
+                  <span className="relative z-10 transition-colors duration-300 text-primary-900 dark:text-primary-50 group-hover:text-accent-500 dark:group-hover:text-accent-400">
                     {item.name}
                   </span>
                   <span className="absolute inset-x-2 bottom-1.5 h-0.5 origin-left scale-x-0 rounded-full bg-accent-500 transition-transform duration-300 group-hover:scale-x-100 dark:bg-accent-400" />
                 </Link>
               ))}
+              {/* Desktop Kapcsolat gomb */}
+              <a
+                href="/contact"
+                className="group relative ml-4 overflow-hidden rounded-full bg-accent-500 px-6 py-2 text-sm font-semibold text-primary-950 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-accent-400"
+              >
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="bg-accent-400/50 h-full w-full animate-pulse-slow rounded-full opacity-0 group-hover:opacity-100" />
+                </div>
+                <span className="relative z-10">Kapcsolatfelvétel</span>
+              </a>
             </div>
           </div>
 
