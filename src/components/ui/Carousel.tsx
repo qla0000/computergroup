@@ -78,7 +78,7 @@ export default function Carousel() {
             alt={slide.title}
             fill
             priority={true}
-            quality={75}
+            quality={70}
             sizes="100vw"
             className="object-cover brightness-[0.4]"
             placeholder="blur"

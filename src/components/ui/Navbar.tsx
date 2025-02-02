@@ -53,7 +53,7 @@ export default function Navbar() {
               height={32}
               className="block dark:hidden"
               priority
-              quality={90}
+              quality={70}
               sizes="120px"
               placeholder="blur"
               blurDataURL="data:image/webp;base64,/9j/4AAQSkZJRg..."
@@ -65,7 +65,7 @@ export default function Navbar() {
               height={32}
               className="hidden dark:block"
               priority
-              quality={90}
+              quality={70}
               sizes="120px"
               placeholder="blur"
               blurDataURL="data:image/webp;base64,/9j/4AAQSkZJRg..."

@@ -88,7 +88,7 @@ export default function ResponsiveShowcase() {
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
                 priority
-                quality={85}
+                quality={75}
               />
             </div>
           </div>
