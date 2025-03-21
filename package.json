@@ -15,7 +15,7 @@
     "@icons-pack/react-simple-icons": "^11.1.0",
     "@tailwindcss/forms": "^0.5.10",
     "critters": "^0.0.23",
-    "next": "15.1.4",
+    "next": "15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
